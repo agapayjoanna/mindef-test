@@ -1,0 +1,1312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+	<meta content="" http-equiv="keywords">
+	<script type="text/javascript">
+		{
+		    var asynchronousJSLoad = function(src){
+		        var doubleDelegate = function(func1, func2) {
+		            return function() {
+		        var args = Array.prototype.slice.call(arguments, 0);
+		        if (func1) {
+		            window.setTimeout(function() {
+		                func1.apply(this, args);
+		            },1);
+		        }
+		        if (func2) {
+		            window.setTimeout(function() {
+		                func2.apply(this, args);
+		            },1);
+		        }
+		    };
+		        };
+		        window.onload = doubleDelegate(window.onload,function() {
+		            var script = document.createElement("script");
+		            script.src = src;
+		            document.getElementsByTagName('head')[0].appendChild(script);
+		        });
+		    };
+		
+		    asynchronousJSLoad("http://localhost:4502/libs/wcm/stats/tracker.js?path=/content/imindef/home");
+		}			
+		</script>
+		<script type="text/javascript">
+		function trackMVTImpression() {
+		    
+		        if (window.randomBannerList) {
+		            var trackImg = new Image();
+		            trackImg.src = 'http://localhost:4502/libs/wcm/mvt/tracker/view?path=' + encodeURIComponent('/content/imindef/home') + '&vars=' + encodeURIComponent(window.randomBannerList);
+		        }
+		    
+		}		
+	</script>
+	<link href="assets/static.css" rel="stylesheet" type="text/css">
+	<link href="assets/imindef_style.css" rel="stylesheet" type="text/css">
+	<title>MINDEF Singapore </title>
+	<link href="assets/static(1).css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="assets/jquery.js"></script>
+	<script type="text/javascript" src="assets/jquery.cookie.js"></script>
+	<script type="text/javascript" src="assets/select-min.js"></script>
+	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
+	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/favicon.ico" rel="icon">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta content="276015381058" property="fb:pages">
+	<meta content="Ministry of Defence, Singapore" name="Title">
+	<meta content="Ministry of Defence, Singapore" name="Subject">
+	<meta content="Ministry of Defence, Singapore" name="Description">
+	<meta content="/content/imindef/home" name="Identifier">
+	<script type="text/javascript">
+		//----------------------------Same logic as the check in constants.jsp. Added for Web Server Cache will return cached page directly without execute jsp.
+		var isMobileBrowser = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
+		var searchQuery = window.location.search;
+		var siteversion = "";
+		if(searchQuery != ""){
+		    if(searchQuery.indexOf("siteversion=") > -1){
+		        siteversion = searchQuery.substring(searchQuery.indexOf("siteversion=")+12);
+		    }
+		}
+		if(siteversion == ""){
+		    siteversion = $.cookie('siteversion');
+		}
+		if(siteversion == 'pc' || siteversion == 'mobile')
+		    $.cookie('siteversion', siteversion, { path: '/' });
+		var mobile_link = "/content/imindef/mobile/home";
+		var hasMobileSite = (mobile_link!="");
+		var isMobilePath = false; 
+		var mobilePaths = ["/content/imindef/header/contact_info", "/content/imindef/footer/privacy_statement", "/content/imindef/footer/terms_of_use", "/content/imindef/mobile", "/content/imindef/resourcelibrary/cyberpioneer/mobile", "content/imindef/press_room/official_releases","/content/imindef/resourcelibrary/cyberpioneer/topics"];
+		var pathCount = 0;
+		for(pathCount = 0 ; pathCount < mobilePaths.length ; pathCount++){
+		    if("/content/imindef/home".indexOf(mobilePaths[pathCount]) > -1){
+		        isMobilePath = true;
+		        break;
+		    }
+		}
+		var displayMobileSite = (isMobileBrowser && "pc"!=siteversion || !isMobileBrowser && "mobile"==siteversion) && hasMobileSite && isMobilePath;
+		if("/content/imindef/home".indexOf("/content/imindef/mobile") > -1 || "/content/imindef/home".indexOf("/content/imindef/resourcelibrary/cyberpioneer/mobile") > -1){
+		    displayMobileSite = true;
+		}
+		//----------------------------Same logic as the check in constants.jsp. Added for Web Server Cache will return cached page directly without execute jsp.
+		var srcHref = window.location.href;
+		if(displayMobileSite){
+		    if (srcHref.indexOf('.m.html')>-1) 
+		    {
+		    } else {
+		        var addr = srcHref.replace(/.html/i,'.m.html');
+		        window.location.href = addr;
+		    }
+		}else{
+		    if (srcHref.indexOf('.m.html')>-1) 
+		    {
+		        var addr = srcHref.replace(/.m.html/i,'.html');
+		        window.location.href = addr;
+		    }
+		}
+		
+		$('body').ready(function(){
+		    var defaultVal = "Search MINDEF";
+		    $("#q").focus(function() {
+		        if($(this).val() == defaultVal){
+		            $(this).val("");
+		        }
+		    });
+		    $("#q").blur(function() {
+		        if($(this).val() == ''){
+		            $(this).val(defaultVal);
+		        }
+		    });
+		});
+		
+		function stripXSS(s, isNameField) {
+		        var str = "";
+		        var len = s.length;
+		        for (var i = 0; i < len; i++) {
+		            var ch = s.charAt(i);
+		            switch (ch) {
+		                case '<': {
+		                  break;
+		                }
+		                case '>': {            
+		                  break;
+		                }
+		                case '(': {
+		                  break;
+		                }
+		                case ')': {
+		                  break;
+		                }
+		                case '#': {
+		                  break;
+		                }
+		                case '&': {       
+		                  break;
+		                }
+		                case '"': {       
+		                  break;
+		                }
+		                case '\'': {      
+		                  break;
+		                }
+		                case '{': {       
+		                  break;
+		                }
+		                case '}': {       
+		                  break;
+		                }
+		                case ';': {       
+		                  if(isNameField) {
+		                     break;
+		                  }
+		                }
+		                case ':': {       
+		                  if(isNameField) {
+		                     break;
+		                  }
+		                }
+		                case ',': {       
+		                  if(isNameField) {
+		                     break;
+		                  }
+		                }
+		                default: {
+		                      str = str.concat(ch);
+		                }
+		            }
+		        } 
+		        return str;
+		    }
+		    
+		function submitGoogleSearch(){
+		    var keyword = $("#q").val().replace(/(^\s*)|(\s*$)/g, "");
+		    if (keyword==""){
+		        return false;
+		    }
+		   $("#q").val(stripXSS(keyword, false));
+		   document.googlesearch.submit(); 
+		  
+		    
+		}
+		function submitMobileSearch(){
+		    var keyword = $("#q").val().replace(/(^\s*)|(\s*$)/g, "");
+		    if (keyword==""||keyword=="Search Official Releases"||keyword=="Search cyberpioneer"){
+		        return false;
+		    }
+		        
+		        window.location.href =  "/content/imindef/press_room/official_releases/result"+".s." +escapeKeyword(stripXSS(keyword, true))+".html";
+		        
+		}
+		function mobileSearchUrl(){
+		    var keyword = $("#q").val().replace(/(^\s*)|(\s*$)/g, "");
+		    if (keyword==""){
+		        return false;
+		    }
+		        
+		            document.googlesearch.action =  "/content/imindef/press_room/official_releases/result"+".s." +escapeKeyword(stripXSS(keyword, true))+".html";
+		        
+		}
+		function escapeKeyword(keyword) {
+		        var escapedKeyword = "";
+		        for (var i=0; i<keyword.length; i++) {
+		            var cc = keyword.charCodeAt(i); 
+		            if ((cc>=65 && cc<=90) || (cc>=97 && cc<=122)) {
+		                escapedKeyword += keyword.charAt(i);
+		            } else {
+		                if (cc==47) {
+		                    escapedKeyword += "";
+		                } else {
+		                    var cc16 = cc.toString(16);
+		                    if (cc16.length==2) {
+		                        escapedKeyword += "%"+cc16;
+		                    } else {
+		                        escapedKeyword += "";
+		                    }
+		                }
+		            }
+		        }
+		        return escapedKeyword;
+		}
+	</script>
+	<script src="http://localhost:4502/libs/wcm/stats/tracker.js?path=/content/imindef/home"></script>
+</head>
+<body>
+
+<!--top bar-->
+
+<div style="width: 1349px; margin: 0px auto;" id="top_content_div">
+
+
+
+<div class="top_bar_box">
+        <div class="top_bar">
+          <div class="top_bar_icon_box">
+                <a href="/imindef/home.html" class="icon_home" target="_self" title="Home"></a>
+                <a href="/imindef/header/contact_info.html" class="icon_telephone" target="_self" title="Contact Us"></a>
+                <a href="/imindef/header/feedback.html" class="icon_feedback" target="_self" title="Provide Feedback"></a>
+                <a href="/imindef/header/sitemap.html" class="icon_sitemap" target="_self" title="Sitemap"></a>
+                <a href="/imindef/mobile/home.html?siteversion=mobile" class="icon_mobile" target="_self" title="Mobile"></a>       
+          </div>
+<!--TODO: add Google Search-->
+          <div class="top_bar_search_box">
+                <div class="top_bar_search">
+                    <form action="/content/imindef/tools/search.html" method="get" name="googlesearch" target="_blank">
+                        <input name="q" id="q" value="Search MINDEF" type="text">
+                        <a href="javascript:void(0);" class="button" onclick="javascript:submitGoogleSearch();"></a>
+                    </form>
+                </div>
+                <!--<span><a href="#" class="link">Advanced Search</a></span>-->
+          </div>
+            <!--div class="logo_singapore"></div-->
+          <div style="float:right">
+          	<a href="http://www.gov.sg/" target="_blank">
+          		<img src="assets/1427082117058.png" alt="Singapore Government" title="Singapore Government" border="0">
+          	</a>
+          </div>
+        </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<!--Dropdown menu start-->
+<div class="main_nav_box">
+        <div style="position: relative; width: 940px; margin: 0 auto;">
+        	<div class="logo_mindef">
+        		<a href="/imindef/home.html">
+        			<img style="border:0" alt="MINDEF Singapore" title="MINDEF Singapore" src="assets/logo_mindef.png">
+        		</a>
+        	</div>
+        </div>
+        <div class="main_nav">
+            <ul>
+                <li class="left nopad"><a class="AboutUs"></a><div class="dropdownlist_menu_box"><div class="dropdownlist_menu_box_top"></div><div class="dropdownlist_menu_box_center"><ul><li class="nopad"><a href="/imindef/about_us/mission.html" target="_self">Mission</a></li><li class="nopad"><a href="/imindef/about_us/organisation_structure.html" target="_self">Organisation Structure</a></li><li class="nopad"><a href="/imindef/about_us/biographies.html" target="_self"><span class="current_nav"></span>Biographies</a><ul><li class="nopad"><a href="/imindef/about_us/biographies/political_officeholders.html" target="_self">Political Office Holders</a></li><li class="nopad"><a href="/imindef/about_us/biographies/saf_leadership.html" target="_self">SAF Leadership</a></li></ul></li><li class="nopad"><a href="/imindef/about_us/legislation.html" target="_self">Legislation</a></li><li class="nopad"><a href="/imindef/about_us/history.html" target="_self"><span class="current_nav"></span>History</a><ul><li class="nopad"><a href="/imindef/about_us/history/overview.html" target="_self">Overview</a></li><li class="nopad"><a href="/imindef/about_us/history/milestones.html" target="_self">Milestones</a></li><li class="nopad"><a href="/imindef/about_us/history/safpioneers.html" target="_self">Saluting SAF Pioneers</a></li></ul></li><li class="nopad"><a href="/imindef/about_us/contact_us.html" target="_self">Contact Us</a></li><li class="nopad"><a href="/imindef/about_us/provide_feedback.html" target="_self">Provide Feedback</a></li></ul></div><div class="dropdownlist_menu_box_bottom"></div></div></li>
+                <li class="left nopad"><a class="KeyTOPICs"></a><div class="dropdownlist_menu_box"><div class="dropdownlist_menu_box_top"></div><div class="dropdownlist_menu_box_center"><ul><li class="nopad"><a href="/imindef/key_topics/defence_policy.html" target="_self">Defence Policy &amp; Diplomacy</a></li><li class="nopad"><a href="/imindef/key_topics/defence_spending.html" target="_self">Defence Spending</a></li><li class="nopad"><a href="/imindef/key_topics/defence_procurement.html" target="_self">Defence Procurement</a></li><li class="nopad"><a href="/imindef/key_topics/system_of_audits.html" target="_self">System of Audits</a></li><li class="nopad"><a href="/imindef/key_topics/anti_corruption_policy.html" target="_self">Anti-Corruption Policy</a></li><li class="nopad"><a href="/imindef/key_topics/strengthen_ns.html" target="_self">Strengthen National Service</a></li><li class="nopad"><a href="/imindef/key_topics/total_defence.html" target="_self">Total Defence</a></li><li class="nopad"><a href="/imindef/key_topics/3rd_generation_saf.html" target="_self">3rd Generation SAF</a></li><li class="nopad"><a href="/imindef/key_topics/overseas_operations.html" target="_self"><span class="current_nav"></span>Overseas Operations</a><ul><li class="nopad"><a href="/imindef/key_topics/overseas_operations/hadr.html" target="_self">HADR Deployments</a></li><li class="nopad"><a href="/imindef/key_topics/overseas_operations/peacesupportops.html" target="_self">Peace Support Operations</a></li></ul></li></ul></div><div class="dropdownlist_menu_box_bottom"></div></div></li>
+                <li class="left nopad"><a class="PressRoom"></a><div class="dropdownlist_menu_box"><div class="dropdownlist_menu_box_top"></div><div class="dropdownlist_menu_box_center"><ul><li class="nopad"><a href="/imindef/press_room/official_releases.html" target="_self"><span class="current_nav"></span>Official Releases</a><ul><li class="nopad"><a href="/imindef/press_room/official_releases/nr.html" target="_self">News Releases</a></li><li class="nopad"><a href="/imindef/press_room/official_releases/sp.html" target="_self">Speeches</a></li><li class="nopad"><a href="/imindef/press_room/official_releases/ps.html" target="_self">Parliamentary Statements</a></li><li class="nopad"><a href="/imindef/press_room/official_releases/fl.html" target="_self">Forum Letters</a></li><li class="nopad"><a href="/imindef/press_room/official_releases/mq.html" target="_self">Replies To Media Queries</a></li></ul></li><li class="nopad"><a href="/imindef/press_room/public_info.html" target="_self"><span class="current_nav"></span>Public Information</a><ul><li class="nopad"><a href="/imindef/press_room/public_info/disruption.html" target="_self">Disruption</a></li><li class="nopad"><a href="/imindef/press_room/public_info/enlistment_schedules.html" target="_blank">Enlistment Schedules</a></li></ul></li><li class="nopad"><a href="/imindef/press_room/clarification.html" target="_self">Clarification of Issues</a></li><li class="nopad"><a href="/imindef/press_room/faqs.html" target="_self">FAQs</a></li><li class="nopad"><a href="/imindef/press_room/terminology.html" target="_self">Translated MINDEF/SAF Terms</a></li><li class="nopad"><a href="/imindef/press_room/SAF_Rank_Insignias_Chart.html" target="_self">SAF Rank Insignias</a></li><li class="nopad"><a href="/imindef/press_room/media_contacts.html" target="_self">Media Contacts</a></li><li class="nopad"><a href="/imindef/press_room/events_and_activities.html" target="_self">Events &amp; Activities</a></li><li class="nopad"><a href="/imindef/press_room/newselse.html" target="_self">News from Elsewhere</a></li></ul></div><div class="dropdownlist_menu_box_bottom"></div></div></li>
+                <li class="center nopad"><a href="/imindef/home.html"><div title="MINDEF Singapore" style="height: 41px;width: 111px;margin-top: -15px;margin-left: -20px;"></div></a></li>
+                <li class="right nopad"><a class="MediaLibrary"></a><div class="dropdownlist_menu_box"><div class="dropdownlist_menu_box_top"></div><div class="dropdownlist_menu_box_center"><ul><li class="nopad"><a href="/imindef/resourcelibrary/cyberpioneer.html" target="_blank"><span class="current_nav"></span>cyberpioneer</a><ul><li class="nopad"><a href="/imindef/resourcelibrary/cyberpioneer/pnr_mobile.html" target="_self">PIONEER Magazine on mobile devices</a></li></ul></li><li class="nopad"><a href="/imindef/resourcelibrary/publications.html" target="_blank"><span class="current_nav"></span>Publications</a><ul><li class="nopad"><a href="/imindef/resourcelibrary/publications/pioneer.html" target="_blank">PIONEER</a></li><li class="nopad"><a href="/imindef/resourcelibrary/publications/army_news.html" target="_blank">Army News</a></li><li class="nopad"><a href="/imindef/resourcelibrary/publications/air_force_newsletter.html" target="_blank">Air Force Newsletter</a></li><li class="nopad"><a href="/imindef/resourcelibrary/publications/navy_news.html" target="_blank">Navy News</a></li><li class="nopad"><a href="/imindef/resourcelibrary/publications/pointer_journal.html" target="_blank">Pointer Journal</a></li><li class="nopad"><a href="/imindef/resourcelibrary/publications/e-books.html" target="_self">e-Books</a></li></ul></li><li class="nopad"><a href="/imindef/resourcelibrary/photos.html" target="_self">Photos</a></li><li class="nopad"><a href="/imindef/resourcelibrary/videos.html" target="_self">Videos</a></li><li class="nopad"><a href="/imindef/resourcelibrary/animations.html" target="_self">Animations</a></li><li class="nopad"><a href="/imindef/resourcelibrary/podcasts.html" target="_self">Podcasts</a></li><li class="nopad"><a href="/imindef/resourcelibrary/e-newsletter.html" target="_self">e-Newsletter</a></li></ul></div><div class="dropdownlist_menu_box_bottom"></div></div></li>
+                <li class="nopad"><a class="WebDirectory"></a><div class="dropdownlist_menu_box"><div class="dropdownlist_menu_box_top"></div><div class="dropdownlist_menu_box_center"><ul><li class="nopad"><a href="/imindef/allwebsites/atozlistings.html" target="_self">A to Z</a></li><li class="nopad"><a href="/imindef/allwebsites/topics.html" target="_self">By Topics</a></li><li class="nopad"><a href="/imindef/allwebsites/organisation_structure.html" target="_self">By Organisation</a></li><li class="nopad"><a href="/imindef/allwebsites/social_media_and_apps.html" target="_self">Social Media and Apps</a></li><li class="nopad"><a href="/imindef/allwebsites/e_services.html" target="_self">e-Services</a></li></ul></div><div class="dropdownlist_menu_box_bottom"></div></div></li>
+                <li class="last nopad"><a class="JoinUs"></a><div style="left: -111px;" class="dropdownlist_menu_box"><div class="dropdownlist_menu_box_top"></div><div class="dropdownlist_menu_box_center"><ul><li class="nopad"><a href="/imindef/join_us/careers.html" target="_self"><span class="current_nav"></span>Careers</a><ul><li class="nopad"><a href="/imindef/join_us/careers/wos.html" target="_blank">Warrant Officer</a></li><li class="nopad"><a href="/imindef/join_us/careers/officer.html" target="_blank">Officer</a></li><li class="nopad"><a href="/imindef/join_us/careers/me.html" target="_blank">Military Expert</a></li><li class="nopad"><a href="/imindef/join_us/careers/saf_career_schemes.html" target="_self">SAF Career Schemes</a></li><li class="nopad"><a href="/imindef/join_us/careers/army.html" target="_blank">Army</a></li><li class="nopad"><a href="/imindef/join_us/careers/navy.html" target="_blank">Navy</a></li><li class="nopad"><a href="/imindef/join_us/careers/air_force.html" target="_blank">Air Force</a></li><li class="nopad"><a href="/imindef/join_us/careers/dxo.html" target="_blank">Defence Executive Officer (DXO)</a></li><li class="nopad"><a href="/imindef/join_us/careers/saf_intelligence.html" target="_blank">SAF Intelligence</a></li></ul></li><li class="nopad"><a href="/imindef/join_us/scholarships.html" target="_blank">Scholarships</a></li><li class="nopad"><a href="/imindef/join_us/internships.html" target="_self">Internships</a></li><li class="nopad"><a href="/imindef/join_us/safvc.html" target="_self">SAF Volunteer Corps</a></li><li class="nopad">null</li></ul></div><div class="dropdownlist_menu_box_bottom"></div></div></li>
+            </ul>
+        </div>
+    </div>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $("#ql").click(function (e) {
+      $("#extended_box").slideToggle("slow");
+      $("#ql a").toggle();
+    });
+	$('.main_nav li.last .dropdownlist_menu_box').css('left','-111px');
+
+	$(".main_nav li").addClass("nopad");
+
+});
+</script>
+
+<div class="quicklinks_extended" id="extended_box" style="display:none;">
+        <div class="extended_box">
+            <div class="quicklinks1"><span>Websites</span><ul>
+<li><a target="_blank" href="http://www.mindef.gov.sg/army">Army</a></li>
+<li><a target="_blank" href="http://www.mindef.gov.sg/navy">Navy</a></li>
+<li><a target="_blank" href="http://www.mindef.gov.sg/rsaf">Air Force</a></li>
+<li><a target="_blank" href="http://www.mindef.gov.sg/safti">SAFTI Military Institute<br>
+</a></li>
+<li><a href="http://www.ns.sg" target="_blank">NS Portal</a></li>
+</ul>
+<a class="view_all" href="/imindef/allwebsites/webdir.html#tab-1.html">View All</a></div><div class="quicklinks2"><span>NS Matters</span><ul>
+<li><a target="_blank" href="/imindef/mindef_websites/topics/accord/total_defence_awards.html">NS Portal</a>&nbsp;</li>
+<li><a href="http://www.cmpb.gov.sg">CMPB Website</a> <br>
+</li>
+<li><a href="/imindef/mindef_websites/topics/nsmatters/home.html" target="_blank">Operationally Ready National Servicemen</a>&nbsp;</li>
+<li><a href="/imindef/mindef_websites/topics/nsmatters/nsmen/support_for_nsmen.html" target="_blank">Support for NSmen</a></li>
+<li><a href="/imindef/mindef_websites/topics/nsmatters/employers/employees_as_nsmen.html" target="_blank">Information for Employers of NSmen</a></li>
+<li><a target="_blank" href="/imindef/mindef_websites/topics/accord/total_defence_awards.html">Total Defence Awards</a></li>
+</ul>
+</div><div class="quicklinks3"><span>e-Services</span><ul>
+<li><a target="_blank" href="http://www.ns.sg/nsp/web/esvcs/mindef/selfupd/about">eSelf-Update</a></li>
+<li><a href="http://www.ns.sg/nsp/web/esvcs/mindef/nsreg/register-ns" target="_blank">Register for NS</a></li>
+<li><a target="_blank" href="http://www.ns.sg/nsp/web/esvcs/common/mnc/main">Notify Overseas Trip</a></li>
+<li><a target="_blank" href="http://www.ns.sg/nsp/web/esvcs/common/ippt/book-ippt-rt-ipt">Book Non-ICT IPPT/RT/IPT</a></li>
+<li><a target="_blank" href="http://www.ns.sg/nsp/web/esvcs/common/eep/apply">Apply for Exit Permit</a></li>
+</ul>
+<a class="view_all" href="/imindef/allwebsites/webdir.html#tab-5.html">View All</a></div><div class="quicklinks4"><span>cyberpioneer</span><ul>
+<li><a href="/imindef/resourcelibrary/cyberpioneer/about.html">About</a></li>
+<li><a href="/imindef/resourcelibrary/cyberpioneer/topics.html" target="_blank">Topics</a></li>
+<li><a href="/imindef/resourcelibrary/cyberpioneer/magazine.html" target="_blank">Magazine</a></li>
+<li><a href="/imindef/resourcelibrary/cyberpioneer/pnr_mobile.html" target="_blank">iPad</a></li>
+<li><a href="/imindef/resourcelibrary/cyberpioneer/contest.html" target="_blank">Contest</a></li>
+</ul>
+</div>
+        </div>
+</div>
+<div class="Quicklinks_box">
+        <div class="Quicklinks">
+            <ul>
+            <li><a href="http://www.mindef.gov.sg/army" target="_blank">ARMY</a></li>
+            <li><a href="http://www.mindef.gov.sg/navy" target="_blank">NAVY</a></li>
+            <li class="vertical_line"><a href="http://www.mindef.gov.sg/rsaf" target="_blank">AIR FORCE</a></li>
+            <li class="last" id="ql">
+            <a class="arr">QUICKLINKS</a>
+            <a style="display: none" class="arr1">QUICKLINKS</a>
+            </li>
+            </ul>
+      </div>
+</div>
+<!--Quicklink end-->
+<!--Rotate Background Images-->
+<!--script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script-->
+<div style="text-align:center; position:relative; top: -32px; z-index: -50;height:570px;">
+
+<!--<div id="background<!%=index+1%>" class="background" style="display:block;background-image: <!%=defaultbg%>;text-align:center; position:relative; z-index: -50;"></div>-->
+
+<div id="background1" class="background" style="display: none; background-image: url(&quot;/content/dam/imindef_media_library/imindef2012/bgimage/bg_hm_army.jpg&quot;); text-align: center; position: relative; z-index: -50; opacity: 1;"></div>
+
+<div id="background2" class="background" style="background-image: url(&quot;/content/dam/imindef_media_library/imindef2012/bgimage/bg_hm_navy.jpg&quot;); text-align: center; position: relative; z-index: -50; opacity: 1; display: block;"></div>
+
+<div id="background3" class="background" style="background-image: url(&quot;/content/dam/imindef_media_library/imindef2012/bgimage/bg_hm_af.jpg&quot;); text-align: center; position: relative; z-index: -50; opacity: 1; display: none;"></div>
+
+</div>
+<script type="text/javascript" src="assets/animation-min.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+var firstTime = true;
+//var arr = ["url(/content/dam/imindef_media_library/bgimages/hm_bg1.jpg)", "url(/content/dam/imindef_media_library/bgimages/hm_bg2.jpg)", "url(/content/dam/imindef_media_library/bgimages/hm_bg3.jpg)"];
+
+var arr = [];
+for(var i = 1 ; i <= $("div.background").length ; i++){
+	arr.push("background" + i);
+}
+    (function recurse(counter) {
+        var bgImage = arr[counter];
+        if (firstTime == false) {
+			$(".background").hide();
+			$("#"+bgImage).fadeTo(800,1);
+        } else {
+            firstTime = false;
+        }
+        delete arr[counter];
+        arr.push(bgImage);
+        setTimeout(function() {
+            recurse(counter + 1);
+        }, 10000);
+    })(0);
+});
+</script>
+<!--Page Content-->
+<table style="position:relative; top:-540px; margin:0 auto;margin-bottom: -540px;z-index: 80" width="940px" align="center" border="0px"><tbody><tr><td>
+<div style="position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 700px; height: 234px;" class="highlight">
+
+
+
+
+
+
+
+
+<script style="position: relative; cursor: default; width: 0px; overflow: hidden;" type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
+<script type="text/javascript">
+    var highlight_clickPoint = { down: { x: 0, y: 0 }, up: { x: 0, y: 0 } };
+
+    function highlight_isClick() {
+        return highlight_clickPoint.down.x == highlight_clickPoint.up.x && highlight_clickPoint.down.y == highlight_clickPoint.up.y;
+    }
+
+    function highlight_mousedownProc(event) {
+        highlight_clickPoint.down.x = event.clientX;
+        highlight_clickPoint.down.y = event.clientY;
+    }
+
+    function highlight_mouseupProc(event) {
+        highlight_clickPoint.up.x = event.clientX;
+        highlight_clickPoint.up.y = event.clientY;
+    }
+    
+    function gotoURL(url, target) {
+        if (highlight_isClick()) {
+            window.open(url, target);
+        }
+    }
+
+    function highlight_slideContentChange(args) {
+        /* indicator */
+        $(args.sliderObject).parent().find(".selectors .selector").removeClass("selected");
+        $(args.sliderObject).parent().find(".selectors .selector:eq(" + args.currentSlideNumber + ")").addClass("selected");
+    }
+
+    function highlight_slideContentLoaded(args) {
+        highlight_slideContentChange(args);
+    }
+
+    $(document).ready(function() {
+    
+        if (typeof window.highlightFlag != "undefined") {
+            return false;
+        } else {
+            window.highlightFlag = "loaded";
+        }
+		$(".item").show();
+        //disable words selection
+        $(".highlight").bind("selectstart", function() { return false; });
+        
+        //bind mousedown & mouseup event to caculate whether clicked or dragged
+        $(".highlight .slider").mousedown(highlight_mousedownProc).mouseup(highlight_mouseupProc);
+        
+        //init slider container
+        $(".highlight").iosSlider({
+            snapToChildren: true,
+            infiniteSlider: true,
+            navSlideSelector: $(".highlight .selectors .selector"),
+            desktopClickDrag: true, autoSlide: true, autoSlideTimer: 8000, 
+            onSlideChange: highlight_slideContentChange,
+            onSliderLoaded: highlight_slideContentLoaded
+        });
+        
+    });
+</script>
+
+<div style="position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 685px; height: 234px;" class="highlight">
+    <div style="position: relative; cursor: move; width: 6165px; overflow: hidden; left: -2547px;" class="slider"><div style="float: left; width: 685px;" class="item" onclick="gotoURL('http://www.mindef.gov.sg/imindef/press_room/official_releases/nr/2016/jun/26jun16_nr.html', '_blank')"><div class="imageItem" style="background: url(/content/imindef/home/highlight/jcr:content/par/highlightitem_161/image.img.jpg/1467028656765.jpg) no-repeat"></div><div class="textItem"><h3><b><span class="red">SAFTI50 </span>and 101/15 <span class="red">OCC Parade</span><span class="red"></span></b><br>
+</h3>
+<p>On 26 June, SAFTI Military Institute celebrated its 50<sup>th</sup> anniversary, along with the commissioning of 567 cadets as SAF officers.</p>
+</div></div><div class="item" style="float: left; width: 685px;" onclick="gotoURL('http://www.mindef.gov.sg/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jun/23jun16_news.html', '_blank')"><div class="imageItem" style="background: url(/content/imindef/home/highlight/jcr:content/par/highlightitem_160/image.img.jpg/1467028503567.jpg) no-repeat"></div><div class="textItem"><h3><b><span class="red">Navy@Vivo</span> returns<span class="red"></span></b><br>
+</h3>
+<p>Singaporeans got up close and personal with the Republic of Singapore Navy’s RSS Tenacious, docked at the VivoCity Promenade from 23-26 June.</p>
+</div></div><div class="item" style="float: left; width: 685px;" onclick="gotoURL('http://www.mindef.gov.sg/imindef/resourcelibrary/cyberpioneer/topics/articles/features/2016/jun16_fs3.html', '_blank')"><div class="imageItem" style="background: url(/content/imindef/home/highlight/jcr:content/par/highlightitem_159/image.img.jpg/1466494074667.jpg) no-repeat"></div><div class="textItem"><h3><b>Going back to <span class="red">bases</span><span class="red"></span></b><br>
+</h3>
+<p>The new video series "Then &amp; Now: A look at Former SAF Camps" will tell the stories behind today's hippest hangouts, and how they went from training ground to playground.</p>
+</div></div>
+        
+        <div style="float: left; width: 685px;" class="item" onclick="gotoURL('http://www.mindef.gov.sg/imindef/press_room/official_releases/nr/2016/jun/26jun16_nr.html', '_blank')"><div class="imageItem" style="background: url(/content/imindef/home/highlight/jcr:content/par/highlightitem_161/image.img.jpg/1467028656765.jpg) no-repeat"></div><div class="textItem"><h3><b><span class="red">SAFTI50 </span>and 101/15 <span class="red">OCC Parade</span><span class="red"></span></b><br>
+</h3>
+<p>On 26 June, SAFTI Military Institute celebrated its 50<sup>th</sup> anniversary, along with the commissioning of 567 cadets as SAF officers.</p>
+</div></div><div class="item" style="float: left; width: 685px;" onclick="gotoURL('http://www.mindef.gov.sg/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jun/23jun16_news.html', '_blank')"><div class="imageItem" style="background: url(/content/imindef/home/highlight/jcr:content/par/highlightitem_160/image.img.jpg/1467028503567.jpg) no-repeat"></div><div class="textItem"><h3><b><span class="red">Navy@Vivo</span> returns<span class="red"></span></b><br>
+</h3>
+<p>Singaporeans got up close and personal with the Republic of Singapore Navy’s RSS Tenacious, docked at the VivoCity Promenade from 23-26 June.</p>
+</div></div><div class="item" style="float: left; width: 685px;" onclick="gotoURL('http://www.mindef.gov.sg/imindef/resourcelibrary/cyberpioneer/topics/articles/features/2016/jun16_fs3.html', '_blank')"><div class="imageItem" style="background: url(/content/imindef/home/highlight/jcr:content/par/highlightitem_159/image.img.jpg/1466494074667.jpg) no-repeat"></div><div class="textItem"><h3><b>Going back to <span class="red">bases</span><span class="red"></span></b><br>
+</h3>
+<p>The new video series "Then &amp; Now: A look at Former SAF Camps" will tell the stories behind today's hippest hangouts, and how they went from training ground to playground.</p>
+</div></div>
+    <div style="float: left; width: 685px;" class="item" onclick="gotoURL('http://www.mindef.gov.sg/imindef/press_room/official_releases/nr/2016/jun/26jun16_nr.html', '_blank')"><div class="imageItem" style="background: url(/content/imindef/home/highlight/jcr:content/par/highlightitem_161/image.img.jpg/1467028656765.jpg) no-repeat"></div><div class="textItem"><h3><b><span class="red">SAFTI50 </span>and 101/15 <span class="red">OCC Parade</span><span class="red"></span></b><br>
+</h3>
+<p>On 26 June, SAFTI Military Institute celebrated its 50<sup>th</sup> anniversary, along with the commissioning of 567 cadets as SAF officers.</p>
+</div></div><div class="item" style="float: left; width: 685px;" onclick="gotoURL('http://www.mindef.gov.sg/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jun/23jun16_news.html', '_blank')"><div class="imageItem" style="background: url(/content/imindef/home/highlight/jcr:content/par/highlightitem_160/image.img.jpg/1467028503567.jpg) no-repeat"></div><div class="textItem"><h3><b><span class="red">Navy@Vivo</span> returns<span class="red"></span></b><br>
+</h3>
+<p>Singaporeans got up close and personal with the Republic of Singapore Navy’s RSS Tenacious, docked at the VivoCity Promenade from 23-26 June.</p>
+</div></div><div class="item" style="float: left; width: 685px;" onclick="gotoURL('http://www.mindef.gov.sg/imindef/resourcelibrary/cyberpioneer/topics/articles/features/2016/jun16_fs3.html', '_blank')"><div class="imageItem" style="background: url(/content/imindef/home/highlight/jcr:content/par/highlightitem_159/image.img.jpg/1466494074667.jpg) no-repeat"></div><div class="textItem"><h3><b>Going back to <span class="red">bases</span><span class="red"></span></b><br>
+</h3>
+<p>The new video series "Then &amp; Now: A look at Former SAF Camps" will tell the stories behind today's hippest hangouts, and how they went from training ground to playground.</p>
+</div></div></div>
+    <div class="selectors">
+        <div style="cursor: pointer;" class="selector"></div><div style="cursor: pointer;" class="selector selected"></div><div style="cursor: pointer;" class="selector"></div>
+    </div>
+</div></div>
+
+<div class="announcement">
+
+
+
+
+			<div class="annoucement_box">
+				<span class="title">ANNOUNCEMENT</span>
+			<span class="detail">
+			<div class="marqueebox1" id="marqueebox0"> 
+				<div style="margin-top: -1.69968px;" id="marqueeboxAnn">
+			
+				<p>for any queries.</p><p>Access to NS Portal will be unavailable on Wed 06 Jul, 12am-2am due to a scheduled maintenance. Please email contact@ns.sg </p></div>
+			</div>
+			</span>
+			</div>
+			
+				<script type="text/javascript">
+				(function($){
+				$.fn.extend({
+						AnnScroll:function(opt,callback){
+								if(!opt) var opt={};
+								var _this=$("#marqueeboxAnn");
+								var     lineH=_this.find("p:first").height(), 
+										line=opt.line?parseInt(opt.line,10):parseInt(this.height()/lineH,10), 
+										speed=opt.speed?parseInt(opt.speed,10):500, 
+										timer=opt.timer?parseInt(opt.timer,10):10000; 
+								if(line==0) line=1;
+								var upHeight=0-lineH;
+								scrollUp=function(){
+										_this.animate({
+												marginTop:upHeight
+										},speed,function(){
+												 _this.find("p:first").appendTo(_this);
+											   
+												_this.css({marginTop:0});
+										});
+								}
+								_this.hover(function(){
+										clearInterval(timerID);
+								},function(){
+										timerID=setInterval("scrollUp()",timer);
+								}).mouseout();
+						}        
+				})
+				})(jQuery);
+
+				$(document).ready(function(){
+						$("#marqueeboxAnn").AnnScroll({speed:1000,timer:5000});
+				});
+				</script>
+				
+			
+			
+</div>
+
+<div class="content_box">
+    <div class="content_left">
+        <div class="box">
+            <div class="officialreleases officialrelease">
+
+
+
+<link type="text/css" rel="stylesheet" href="assets/officialnews.css">
+<!-- jQuery library -->
+<script type="text/javascript" src="assets/jquery.flexslider-min.js"></script>
+
+    <script type="text/javascript">
+	$(document).ready(function(){
+
+		$('#tab_official_news > div').hide();
+		
+		$('#tab_official_news > div:first').show();
+		$('#tab_official_news > ul li:first').addClass('active');
+		
+		$('#tab_official_news > ul li a').click(function(){ 
+			pauseFlexslider();
+			$('#tab_official_news > ul li').removeClass('active');
+			$(this).parent().addClass('active'); 
+			var currentTab = $(this).attr('href'); 
+			$('#tab_official_news > div').hide();
+			$(currentTab).show();
+			var list = $("ul>li", $(currentTab+" .officialflexslider"));
+			if (list.length>1) {
+				$(currentTab+" .officialflexslider").flexslider("play");
+			} else {
+				$(list).show();
+			}
+			return false;
+		});
+		if (document.all && !document.querySelector) {
+			$('#tab_official_news-1 li:first').show();
+			setTimeout(function(){  
+				runFlexslider();
+			}, 1000);  
+		}else{
+			runFlexslider();
+		}
+
+	});
+	function runFlexslider(){
+		$('#tab_official_news .officialflexslider').each(function(){
+			var list = $("ul>li", this);
+			if (list.length>1) {
+				$(this).flexslider({
+					 directionNav: false,
+					 namespace: "officialflex-",
+					 selector: ".officialslides > li",
+					 animation: "slide",   
+					 itemWidth:400,
+					 itemMargin:0,
+					 minItems:1,
+					 animationSpeed: 1200,
+					 slideshowSpeed: 8000
+				});				
+			}
+		});
+		/*$('#tab_official_news .officialflexslider').flexslider({
+			 directionNav: false,
+			 namespace: "officialflex-",
+			 selector: ".officialslides > li",
+			 animation: "slide",   
+			 itemWidth:400,
+			 itemMargin:0,
+			 minItems:1,
+			 animationSpeed: 1200,
+			 slideshowSpeed: 8000
+		});	*/
+		pauseFlexslider();
+		$('#tab_official_news .officialflexslider').each(function(){
+			var list = $("ul>li", this);
+			if (list.length>1) {
+				$(this).flexslider("play");
+				return false;
+			}
+		});
+		//$('#tab_official_news > div:first .officialflexslider').flexslider("play");
+	}
+	function pauseFlexslider(){
+		$('#tab_official_news .officialflexslider').each(function(){
+			var list = $("ul>li", this);
+			if (list.length>1) {
+				$(this).flexslider("pause");
+			}
+		});
+		/*$('#tab_official_news-1 .officialflexslider').flexslider("pause");
+		$('#tab_official_news-2 .officialflexslider').flexslider("pause");
+		$('#tab_official_news-3 .officialflexslider').flexslider("pause");*/
+	}
+	</script>
+
+
+
+
+		<div class="officialbox">
+	<div class="h1_box"><table style="width:100%"><tbody><tr><td><h1>official releases</h1></td><td align="right"><span><a href="/imindef/rss/official_release.html" class="button_rss">&nbsp;</a></span></td></tr></tbody></table></div>
+	<div class="official_news_box">
+	<div id="tab_official_news" class="tab_official_news">
+		<ul>
+			<li class="tab_new_1 active"><a href="#tab_official_news-1" class="tab1">NEWS RELEASES</a></li>
+			<li class="tab_new_2"><a href="#tab_official_news-2" class="tab2">FORUM LETTER REPLIES</a></li>
+			<li class="tab_new_3"><a href="#tab_official_news-3" class="tab3">ACTIVITIES</a></li>
+		</ul>
+		<div style="display: block;" id="tab_official_news-1">
+					<!--tab1-->
+                    	  <div class="officialflexslider">
+								
+                           <div style="overflow: hidden; position: relative;" class="officialflex-viewport"><ul style="width: 600%; transition-duration: 1.2s; transform: translate3d(-780px, 0px, 0px);" class="officialslides">
+
+								<li style="width: 380px; float: left; display: block;" class="newreleasesCaseThree">
+									<div class="news_title postedDateString">05 Jul 2016, 1100 hours (GMT +8)</div>
+									<div class="news_content_box">
+										<img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/official_releases/nr/2016/jul/05jul16_nr/_jcr_content/newsimage/image.img.jpg/1467694868778.jpg">
+										<div class="news_pic_text">
+											<div><a href="/imindef/press_room/official_releases/nr/2016/jul/05jul16_nr.html">SAFTI MI's Partnership with People's Liberation Army National Defence University strengthens People-to-People Ties</a></div>
+										</div>
+									</div>
+								</li>
+							
+								<li style="width: 380px; float: left; display: block;" class="newreleasesCaseThree">
+									<div class="news_title postedDateString">01 Jul 2016, 2030 hours (GMT +8)</div>
+									<div class="news_content_box">
+										<img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/official_releases/nr/2016/jul/01jul16_nr2/_jcr_content/newsimage/image.img.jpg/1467376296215.jpg">
+										<div class="news_pic_text">
+											<div><a href="/imindef/press_room/official_releases/nr/2016/jul/01jul16_nr2.html">President Tony Tan Keng Yam Officiates at SAF Day Parade</a></div>
+										</div>
+									</div>
+								</li>
+							
+								<li style="width: 380px; float: left; display: block;" class="newreleasesCaseThree">
+									<div class="news_title postedDateString">01 Jul 2016, 1500 hours (GMT +8)</div>
+									<div class="news_content_box">
+										<img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/official_releases/nr/2016/jul/01jul16_nr/_jcr_content/newsimage/image.img.jpg/1467376503346.jpg">
+										<div class="news_pic_text">
+											<div><a href="/imindef/press_room/official_releases/nr/2016/jul/01jul16_nr.html">NSmen and Employers Reaffirm Commitment to Defence</a></div>
+										</div>
+									</div>
+								</li>
+							
+                                </ul></div><ol class="officialflex-control-nav officialflex-control-paging"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="officialflex-active">3</a></li></ol></div>
+							<div class="button_box1"><a href="/imindef/press_room/official_releases/nr.html" class="button_viewall">view all</a></div>
+		</div>
+		<div style="display: none;" id="tab_official_news-2">
+							<div style="" class="officialflexslider">
+								
+                            <div style="overflow: hidden; position: relative;" class="officialflex-viewport"><ul style="width: 600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);" class="officialslides">
+<li style="width: 380px; float: left; display: block;">
+									<div style="height:128px">
+										<div class="news_title">18 Mar 2016, 0720 hours (GMT +8)</div>
+										<div>
+											<div class="news_portrait">
+												<div><span><a href="/imindef/press_room/official_releases/fl/2016/18mar16_reply.html">Reply to Lianhe Zaobao Forum Letter: MINDEF Continues "Upholding Integrity of Our System"</a></span></div>
+												<div>We refer to the commentary in Lianhe Zaobao Societal trust should not be taken lightly 13 Mar.
+The key findings leading...</div>
+											</div>
+										</div>
+									</div>
+								
+						    
+									<div style="height:128px">
+										<div class="news_title">29 Oct 2015, 1100 hours (GMT +8)</div>
+										<div>
+											<div class="news_portrait">
+												<div><span><a href="/imindef/press_room/official_releases/fl/2015/29oct15_reply.html">Forum Letter on SAF Training During Haze</a></span></div>
+												<div>The SAF Adjusts Outdoor Activities According to Haze Situation
+We refer to the letter Protecting SAF recruits from haze by Ms June Hoo which was published on 24 October 2015. Since then, we have spoken to Ms Hoo to understand and address...</div>
+											</div>
+										</div>
+									</div>
+								
+						    </li><li style="width: 380px; float: left; display: block;">
+									<div style="height:128px">
+										<div class="news_title">26 Aug 2015, 1400 hours (GMT +8)</div>
+										<div>
+											<div class="news_portrait">
+												<div><span><a href="/imindef/press_room/official_releases/fl/2015/26aug15_reply.html">Forum Letter on the SAF's support during Train Service Disruption</a></span></div>
+												<div>We refer to the recent reports and forum letters on the Singapore Armed Forces SAF's support during train service...</div>
+											</div>
+										</div>
+									</div>
+								
+						    
+									<div style="height:128px">
+										<div class="news_title">04 Jul 2015, 1300 hours (GMT +8)</div>
+										<div>
+											<div class="news_portrait">
+												<div><span><a href="/imindef/press_room/official_releases/fl/2015/04jul15_reply.html">Forum Letter on NS Deferment for Exceptional Talents</a></span></div>
+												<div>NS Deferment for Exceptional Talents 
+
+We refer to the recent reports on deferment for our national sportsmen with...</div>
+											</div>
+										</div>
+									</div>
+								
+						    </li><li style="width: 380px; float: left; display: block;">
+									<div style="height:128px">
+										<div class="news_title">19 Jun 2015, 1000 hours (GMT +8)</div>
+										<div>
+											<div class="news_portrait">
+												<div><span><a href="/imindef/press_room/official_releases/fl/2015/19jun15_reply.html">Response to The Straits Times' Article "SAF shelves boot camp plans for IPPT defaulters"</a></span></div>
+												<div>Remedial Sessions and ICTPT to Continue
+The Straits Times' article SAF shelves boot camp plans for IPPT defaulters...</div>
+											</div>
+										</div>
+									</div>
+								
+						    
+									<div style="height:128px">
+										<div class="news_title">27 Apr 2015, 1000 hours (GMT +8)</div>
+										<div>
+											<div class="news_portrait">
+												<div><span><a href="/imindef/press_room/official_releases/fl/2015/27apr15_reply.html">Reply to ST Forum Letter "Shore Up SAF Medics"</a></span></div>
+												<div>SAF Medics are Well-Trained for Operational Situations
+
+We thank Dr Leong Choon Kit for his feedback and support for...</div>
+											</div>
+										</div>
+									</div>
+								
+						    </li>
+                                </ul></div><ol class="officialflex-control-nav officialflex-control-paging"><li><a class="officialflex-active">1</a></li><li><a>2</a></li><li><a>3</a></li></ol></div>
+							<div class="button_box1"><a href="/imindef/press_room/official_releases/fl.html" class="button_viewall">view all</a></div>
+		</div>
+		<div style="display: none;" id="tab_official_news-3">
+							<div style="" class="officialflexslider">
+								
+                            <div style="overflow: hidden; position: relative;" class="officialflex-viewport"><ul style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);" class="officialslides">
+									
+													<li style="width: 380px; float: left; display: block;">
+														<div class="news_title postedDateString">01 Jul 2016, 1000 hours (GMT +8)</div>
+														<div class="news_content_box">
+															<div class="news_portrait">
+																<div style="float:left"><a href="/imindef/press_room/events_and_activities/2016/01jul16_activity.html"><img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/events_and_activities/2016/01jul16_activity/_jcr_content/par0001/Single/image.img.png/1467344137380.png"></a></div>
+																<div><span><a href="/imindef/press_room/events_and_activities/2016/01jul16_activity.html">SAF Military Exercises</a></span></div>
+																<div><p>The Singapore Armed Forces (SAF) will conduct military exercises in Seletar, Marsiling, Jalan Bahar, Neo Tiew, Lim Chu Kang, Jalan Kwok Min, Tuas, Upper Jurong, Hong Kah, Ama Keng, Bedok Jetty, Kranji, Lentor, Simpang, Sembawang, Mandai from 08:00am on Mon, 4 Jul 2016 to 08:00am on Mon, 11 Jul 2016.<br>
+</p>
+</div>
+															</div>
+														</div>
+													</li>
+													
+													<li style="width: 380px; float: left; display: block;">
+														<div class="news_title postedDateString">25 Jun 2016, 1000 hours (GMT +8)</div>
+														<div class="news_content_box">
+															<div class="news_portrait">
+																<div style="float:left"><a href="/imindef/press_room/events_and_activities/2016/25jun16_activity.html"><img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/events_and_activities/2016/25jun16_activity/_jcr_content/par0001/Single/image.img.png/1466822307296.png"></a></div>
+																<div><span><a href="/imindef/press_room/events_and_activities/2016/25jun16_activity.html">SAF Military Exercises</a></span></div>
+																<div><p>The Singapore Armed Forces (SAF) will conduct military exercises in Seletar, Marsiling, Jalan Bahar, Neo Tiew, Lim Chu Kang, Jalan Kwok Min, Tuas, Upper Jurong, Hong Kah, Ama Keng, Bedok Jetty, Kranji, Lentor, Simpang, Sembawang, Mandai from 08:00am on Mon, 27 Jun 2016 to 08:00am on Mon, 4 Jul 2016.<br>
+</p>
+<p>&nbsp;</p>
+</div>
+															</div>
+														</div>
+													</li>
+													
+                                </ul></div><ol class="officialflex-control-nav officialflex-control-paging"><li><a class="officialflex-active">1</a></li><li><a>2</a></li></ol></div>
+						
+								<div class="button_box1"><a href="/imindef/press_room/events_and_activities/2016/activity_listing.html" class="button_viewall">view all</a></div>
+								
+						
+		</div>
+	</div>
+	</div>
+</div><!-- End box -->
+
+	
+		
+</div>
+
+        </div>
+        <div class="box">
+            <div class="keytopics">
+
+
+<script type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
+
+<div class="box">
+	<div class="h2_box"><h2>Key Topics</h2></div>
+	<div class="key_topics_box">
+		<div style="position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 252px;" class="flexslider">
+			<div style="position: relative; cursor: move; width: 1350px; overflow: hidden; left: 0px;">
+				<div style="float: left; width: 450px;"><div class="list_box">
+										<a href="/imindef/key_topics/defence_policy.html"><img src="/content/imindef/key_topics/defence_policy/_jcr_content/par0001/Single/image.img.jpg/1440143323965.jpg" border="0"></a>
+										<p><span><a href="/imindef/key_topics/defence_policy.html">Defence Policy &amp; Diplomacy</a></span>Singapore's defence policy is fundamentally based on the twin pillars of deterrence and diplomacy. <br>
+
+</p>
+										</div><div style="width:4px;height:252px;float:left">&nbsp;</div><div class="list_box">
+										<a href="/imindef/key_topics/defence_spending.html"><img src="/content/imindef/key_topics/defence_spending/_jcr_content/par0001/Single/image.img.jpg/1440143523106.jpg" border="0"></a>
+										<p><span><a href="/imindef/key_topics/defence_spending.html">Defence Spending</a></span>Investing wisely and prudently to build up a strong and capable defence force.
+<br>
+ <br>
+
+</p>
+										</div><div style="width:4px;height:252px;float:left">&nbsp;</div><div class="list_box">
+										<a href="/imindef/key_topics/strengthen_ns.html"><img src="/content/imindef/key_topics/strengthen_ns/_jcr_content/par0001/Single/image.img.jpg/1440143533035.jpg" border="0"></a>
+										<p><span><a href="/imindef/key_topics/strengthen_ns.html">Strengthen NS</a></span>Strengthening NS as the critical institution for Singapore’s continued survival and success.
+</p>
+										</div><div style="width:4px;height:252px;float:left">&nbsp;</div></div><div style="float: left; width: 450px;"><div class="list_box">
+										<a href="/imindef/key_topics/total_defence.html"><img src="/content/imindef/key_topics/total_defence/_jcr_content/par0001/Single/image.img.jpg/1440143318826.jpg" border="0"></a>
+										<p><span><a href="/imindef/key_topics/total_defence.html">Total Defence</a></span>Total Defence involves every Singaporean playing a part to build a strong, secure and cohesive nation.
+</p>
+										</div><div style="width:4px;height:252px;float:left">&nbsp;</div><div class="list_box">
+										<a href="/imindef/key_topics/3rd_generation_saf.html"><img src="/content/imindef/key_topics/3rd_generation_saf/_jcr_content/par0001/Single/image.img.jpg/1376988743172.jpg" border="0"></a>
+										<p><span><a href="/imindef/key_topics/3rd_generation_saf.html">3rd Generation SAF</a></span>The 3rd<sup></sup> Generation SAF is a strong and integrated force that operates across a full spectrum of operations.<br>
+
+</p>
+										</div><div style="width:4px;height:252px;float:left">&nbsp;</div><div class="list_box">
+										<a href="/imindef/key_topics/overseas_operations.html"><img src="/content/imindef/key_topics/overseas_operations/_jcr_content/par0001/Single/image.img.jpg/1440143344044.jpg" border="0"></a>
+										<p><span><a href="/imindef/key_topics/overseas_operations.html">OVERSEAS OPERATIONS</a></span>The SAF contributes towards&nbsp;multinational humanitarian &amp; security support operations.<br>
+
+<br>
+ <br>
+
+</p>
+										</div><div style="width:4px;height:252px;float:left">&nbsp;</div></div><div style="float: left; width: 450px;"><div class="list_box">
+										<a href="/imindef/key_topics/defence_procurement.html"><img src="/content/imindef/key_topics/defence_procurement/_jcr_content/par0001/Single/image.img.jpg/1440143544896.jpg" border="0"></a>
+										<p><span><a href="/imindef/key_topics/defence_procurement.html">Defence Procurement</a></span>Maintaining a robust and comprehensive procurement process to adhere to the most rigorous standards.
+<br>
+ <br>
+
+</p>
+										</div><div style="width:4px;height:252px;float:left">&nbsp;</div><div class="list_box">
+										<a href="/imindef/key_topics/system_of_audits.html"><img src="/content/imindef/key_topics/system_of_audits/_jcr_content/par0001/Single/image.img.jpg/1440143555634.jpg" border="0"></a>
+										<p><span><a href="/imindef/key_topics/system_of_audits.html">System of Audits</a></span>Ensuring a robust system of internal &amp; external audits for accountability and transparency.
+<br>
+ <br>
+
+</p>
+										</div><div style="width:4px;height:252px;float:left">&nbsp;</div><div class="list_box">
+										<a href="/imindef/key_topics/anti_corruption_policy.html"><img src="/content/imindef/key_topics/anti_corruption_policy/_jcr_content/par0001/Single/image.img.jpg/1440143551894.jpg" border="0"></a>
+										<p><span><a href="/imindef/key_topics/anti_corruption_policy.html">Anti-Corruption Policy</a></span>MINDEF and SAF adopt a zero-tolerance policy towards bribery and corruption.
+<br>
+ <br>
+
+</p>
+										</div><div style="width:4px;height:252px;float:left">&nbsp;</div></div>
+			</div>
+		</div>
+		<div>
+			
+			<div class="flex-control-nav_keytopics" style="margin-left:189px">
+				
+						<div style="cursor: pointer;" class="selector selected"></div>
+						
+						<div style="cursor: pointer;" class="selector"></div>
+						
+						<div style="cursor: pointer;" class="selector"></div>
+						
+			</div>
+		</div>
+	</div>
+</div>	
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".list_box").filter(function(){
+							return $(this).html() == "";
+						}).addClass("list_box_empty");
+	
+		$('.key_topics_box .flexslider').iosSlider({
+			snapToChildren: true,
+			desktopClickDrag: true,
+			navSlideSelector: $('.flex-control-nav_keytopics .selector'),
+			autoSlide: false,
+			autoSlideTimer: 3000,
+			onSlideChange: slideContentChange,
+			onSliderLoaded: slideContentChange
+		});
+		
+		function slideContentChange(args) {
+			/* indicator */
+			$('.flex-control-nav_keytopics .selector').removeClass('selected');
+			$('.flex-control-nav_keytopics .selector:eq(' + args.currentSlideNumber + ')').addClass('selected');
+		}
+	});
+</script>
+
+</div>
+
+        </div>
+        <div class="box">
+        <div class="h2_box"><h2>Join Us</h2></div>
+        <div class="join_us_box">
+            <div class="list_box"><div class="textimageJoinus joinus1">
+
+
+
+<div class="list_box_joinus">
+<a href="/imindef/join_us/careers/saf_career_schemes.html" target="_self"><img title="" alt="" class="cq-dd-image" src="/content/imindef/home/_jcr_content/joinus1.img.png/1440143296161.png" border="0">
+		
+		</a><span><p>Find out more about the three new career schemes: Enhanced Officers Scheme; Enhanced Warrant Officers...</p>
+</span>
+</div></div>
+</div>
+            <div class="list_box"><div class="joinus2 textimageJoinus">
+
+
+
+<div class="list_box_joinus">
+<a href="/imindef/join_us/scholarships.html" target="_self"><img title="" alt="" class="cq-dd-image" src="/content/imindef/home/_jcr_content/joinus2.img.png/1441605166743.png" border="0">
+		
+		</a><span><p>Second in prestige only to the President's Scholarship, The SAF Scholarship is for those who see the honour...<br>
+</p>
+</span>
+</div></div>
+</div>
+            <div class="list_box last"><div class="joinus3 textimageJoinus">
+
+
+
+<div class="list_box_joinus">
+<a href="/imindef/join_us/internships.html" target="_self"><img title="" alt="" class="cq-dd-image" src="/content/imindef/home/_jcr_content/joinus3.img.png/1440143289993.png" border="0">
+		
+		</a><span><p>An internship with MINDEF offers outstanding graduates who are considering various career options the opportunity to...</p>
+</span>
+</div></div>
+</div>
+            <div class="clear"></div>
+        </div>
+        </div>
+    </div>
+    <div class="content_right">
+        <div class="box">
+            <div class="cyberpioneerlatest">
+
+
+
+
+				 
+
+
+
+
+
+<script type="text/javascript" src="assets/cyberpioneerlatest-min.js"></script>
+<script type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
+
+<div class="cyberpioneerlatest box">
+    <div class="h3_box">
+        <h3 style="float: left;">
+		
+			<a href="/imindef/resourcelibrary/cyberpioneer/index.html" target="_blank" style="color: inherit; text-decoration: none;">
+				cyberpioneer
+			</a>
+
+		</h3>
+        <span>
+
+            <a href="/imindef/rss/cyberpioneer_rss.html" class="button_rss">&nbsp;</a>
+
+        </span>
+        <div class="clear"></div>
+    </div>
+    <div class="menu_cyberpioneer">
+        <a class="left_arr"></a>
+        <a class="right_arr"></a>
+        <div class="hidden_div">
+        <ul style="width: 1261px;">
+            <li class="hover" id="latest"><a class="current">Latest</a></li>
+
+            <li id="ops_training"><a>ops &amp; training</a></li>
+
+            <li id="diplomacy"><a>diplomacy</a></li>
+
+            <li id="people"><a>people</a></li>
+
+            <li id="technology"><a>technology</a></li>
+
+            <li id="national_service"><a>national service</a></li>
+
+            <li id="3rd_gen_saf"><a>3rd Gen SAF</a></li>
+
+            <li id="parades_ceremonies"><a>parades &amp; ceremonies</a></li>
+
+            <li id="public_events"><a>public events</a></li>
+
+            <li id="ndp"><a>ndp</a></li>
+
+            <li id="total_defence"><a>total defence</a></li>
+
+        </ul>
+    </div>
+    </div>
+    <div class="cyberpioneer_content_box">
+        <div id="" class="flexslider">
+            <div class="flex-control-nav">
+                <ul>
+                    <li style="cursor: pointer;"><a class="current"></a></li>
+                    <li style="cursor: pointer;"><a></a></li>
+                    <li style="cursor: pointer;"><a></a></li>
+                </ul>
+            </div>
+
+
+            <div style="position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 470px; height: 261px;" class="slides latest">
+                <div style="position: relative; cursor: move; width: 1410px; overflow: hidden; left: 0px;">
+
+                    <div style="height: 261px; float: left; width: 470px;">
+                        <div class="list_box">
+                            <div class="pageImage" style="height: 126px;">
+                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/04jul16_news.html" target="_blank">
+<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/04jul16_news/_jcr_content/newsimage/image.img.jpg/1467623134669.jpg">
+                                </a>
+                            </div>
+                            <div class="date postedDate">04 Jul 2016, 1700 hours (GMT +8)</div>
+                            <div class="viceTitle">
+                                <p>
+                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/04jul16_news.html" target="_blank">
+                                        <span>ops &amp; training / </span>
+                                        From dropout to valedictorian
+                                    </a>
+                                </p>
+                            </div>
+                            <div style="height: 59px;" class="briefDesc">He dropped out of secondary school almost 40 years ago. Today, however, 2nd Warrant Officer...</div>
+                        </div>
+                  
+                        <div class="list_box">
+                            <div class="pageImage" style="height: 126px;">
+                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/features/2016/jul16_cs.html" target="_blank">
+<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/features/2016/jul16_cs/_jcr_content/newsimage/image.img.jpg/1467596326942.jpg">
+                                </a>
+                            </div>
+                            <div class="date postedDate">04 Jul 2016, 0920 hours (GMT +8)</div>
+                            <div class="viceTitle">
+                                <p>
+                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/features/2016/jul16_cs.html" target="_blank">
+                                        <span>national service / </span>
+                                        A Stronger NS
+                                    </a>
+                                </p>
+                            </div>
+                            <div style="height: 59px;" class="briefDesc">It's been two years since the Committee to Strengthen National Service (CSNS) recommendations...</div>
+                        </div>
+                    </div>
+
+                    <div style="height: 261px; float: left; width: 470px;">
+                        <div class="list_box">
+                            <div class="pageImage" style="height: 126px;">
+                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/02jul16_news.html" target="_blank">
+<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/02jul16_news/_jcr_content/newsimage/image.img.jpg/1467520398697.jpg">
+                                </a>
+                            </div>
+                            <div class="date postedDate">02 Jul 2016, 2130 hours (GMT +8)</div>
+                            <div class="viceTitle">
+                                <p>
+                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/02jul16_news.html" target="_blank">
+                                        <span>ndp / </span>
+                                        Dr Maliki visits, sends well-wishes to participants at NDP rehearsal
+                                    </a>
+                                </p>
+                            </div>
+                            <div style="height: 37px;" class="briefDesc">Senior Minister of State for Defence Dr Mohamad Maliki bin...</div>
+                        </div>
+                  
+                        <div class="list_box">
+                            <div class="pageImage" style="height: 126px;">
+                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news2.html" target="_blank">
+<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news2/_jcr_content/newsimage/image.img.jpg/1467366769044.jpg">
+                                </a>
+                            </div>
+                            <div class="date postedDate">01 Jul 2016, 1800 hours (GMT +8)</div>
+                            <div class="viceTitle">
+                                <p>
+                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news2.html" target="_blank">
+                                        <span>3rd Gen SAF / </span>
+                                        SAF ready to defend S'pore: MG Ong 
+                                    </a>
+                                </p>
+                            </div>
+                            <div style="height: 59px;" class="briefDesc">If a Paris-style attack happens in Singapore and multiple sites are targeted, the Singapore...</div>
+                        </div>
+                    </div>
+
+                    <div style="height: 261px; float: left; width: 470px;">
+                        <div class="list_box">
+                            <div class="pageImage" style="height: 126px;">
+                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news.html" target="_blank">
+<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news/_jcr_content/newsimage/image.img.jpg/1467358691298.jpg">
+                                </a>
+                            </div>
+                            <div class="date postedDate">01 Jul 2016, 1500 hours (GMT +8)</div>
+                            <div class="viceTitle">
+                                <p>
+                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news.html" target="_blank">
+                                        <span>parades &amp; ceremonies / </span>
+                                        Reaffirming commitment to defending S'pore
+                                    </a>
+                                </p>
+                            </div>
+                            <div style="height: 37px;" class="briefDesc">Every year on 1 Jul, Operationally Ready National Servicemen...</div>
+                        </div>
+                  
+                        <div class="list_box">
+                            <div class="pageImage" style="height: 126px;">
+                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jun/30jun16_news2.html" target="_blank">
+<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jun/30jun16_news2/_jcr_content/newsimage/image.img.jpg/1467348149054.jpg">
+                                </a>
+                            </div>
+                            <div class="date postedDate">30 Jun 2016, 2320 hours (GMT +8)</div>
+                            <div class="viceTitle">
+                                <p>
+                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jun/30jun16_news2.html" target="_blank">
+                                        <span>parades &amp; ceremonies / </span>
+                                        SAF recognises senior leaders in promotion ceremony
+                                    </a>
+                                </p>
+                            </div>
+                            <div style="height: 37px;" class="briefDesc">The phrase growing with your job is usually used as a figure of...</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="button_box1" style="padding-right:20px;"><a href="/imindef/resourcelibrary/cyberpioneer/topics.html" class="button_viewall" target="_blank">view all</a></div>
+            <div class="content_path" style="display:none;"></div>
+            <div class="category_path" style="display:none;">/content/imindef/resourcelibrary/cyberpioneer/topics</div>
+            <div class="node_path" style="display:none;">/content/imindef/home/jcr:content/cyberpioneerlatest.loadtopics</div>
+        </div>
+    </div>
+</div>
+</div>
+
+        </div>
+        <div class="box">
+            <div class="youtubeplayer cyberpioneertv">
+
+
+
+
+    </div>
+
+        </div>
+        <div style="width:450px;margin-top: 17px;">
+            <div style="float:left;width:218px;"><div class="magazinebox">
+
+
+
+
+
+<div id="magazine_box">
+    <div class="h5_box"><h5>PIONEER MAGAZINE</h5></div>
+    <div class="magazineContent">
+        <a href="/imindef/resourcelibrary/cyberpioneer/magazine.html"><img src="/content/imindef/resourcelibrary/cyberpioneer/magazine/2016/jul/_jcr_content/cover/image.img.jpg/1467356669271.jpg"></a>
+        <span>INSIDE!</span>
+        <p></p><p>A Stronger NS</p><br><p>Working together for regional stability</p><br><p></p>
+    </div>
+    <div class="button_box"><a href="/imindef/resourcelibrary/cyberpioneer/pnr_mobile.html" target="_blank" class="button_iphone">Available on iPad</a><a href="/imindef/resourcelibrary/cyberpioneer/magazine.html" target="_blank" class="button_viewall">view all</a></div>
+</div>
+</div>
+</div>
+            <div style="float:right;width:222px;"><div class="facebooklikebox likebox">
+<div>
+<div class="h5_box">
+<h5 style="white-space:nowrap">Facebook</h5>
+</div>
+<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcyberpioneer.connect&amp;width=220&amp;height=220&amp;colorscheme=dark&amp;show_faces=true&amp;border_color=%236C6C6C&amp;stream=false&amp;header=false" scrolling="no" style="border:none; overflow:hidden; width:220px; height:220px;" allowtransparency="true" frameborder="0"></iframe>
+</div>
+</div>
+</div>
+        </div>
+    </div>
+<div>
+
+
+
+</div></div></td></tr>
+</tbody></table>
+
+
+
+
+
+<div class="footer_box">
+    <div class="footer2012">
+
+        <div class="title">STAY CONNECTED</div>
+        <div class="social" style="width:464px">
+        <ul><li><img src="assets/1457313597772.png"><p><a href="http://www.youtube.com/user/cyberpioneertv" target="_blank">cyberpioneer<br>
+TV</a><br>
+</p>
+</li><li><img src="assets/1349870265274.png"><p><a href="http://www.flickr.com/photos/cyberpioneer" target="_blank">cyberpioneer<br>
+Flickr</a><br>
+</p>
+</li><li><img src="assets/1349870260001.png"><p><span class="small"><a class="whitetextlink" href="http://www.facebook.com/cyberpioneer.connect" target="_blank">cyberpioneer<br>
+Facebook</a></span></p>
+</li><li><img src="assets/1446167139421.png"><p><span class="small"><a href="http://www.facebook.com/ngenghen" target="_blank">Defence <br>
+Minister's<br>
+Facebook</a></span></p>
+</li><li class="last"><img src="assets/1349870263641.png"><p><a href="http://twitter.com/cybpioneer" target="_blank">cyberpioneer<br>
+Twitter</a><br>
+</p>
+</li><li><img src="assets/1349870266300.png"><p><a target="_blank" href="/imindef/rss.html">RSS<br>
+Feeds</a><br>
+</p>
+</li><li><img src="assets/1349870264671.png"><p><a href="/imindef/resourcelibrary/podcasts.html" target="_blank">Podcasts</a><br>
+</p>
+</li><li><img src="assets/1349870258205.png"><p><a href="/imindef/resourcelibrary/e-newsletter.html" target="_blank">e-Newsletter</a><br>
+</p>
+</li><li><img src="assets/1392688665795.png"><p><a href="http://instagram.com/cybpioneer">cyberpioneer<br>
+Instagram</a></p>
+</li></ul>
+        </div>
+
+ <!--moving banner-->
+ 
+ <script type="text/javascript" src="assets/jquery.rotatebanners-min.js"></script>
+ <script type="text/javascript">
+        $(function() {
+             $(".rotateBanners").rotateBanners({ speed: 1000, interval: 5000, minBanners: 2 });
+        });
+ </script>
+    <div class="rotateBanners">
+             <div style="width: 720px;" class="rotateBannerPanel">
+                 <!--a class="banner" href="http://www.google.com" target="_blank"><img src="img/1.png"/></a>
+                 <a class="banner" href="http://www.bing.com" target="_blank"><img src="img/2.png"/></a-->
+                 
+             <a style="margin-left: -13.5974px;" class="banner" href="http://www.ns.sg/nsp/web/content/ns-mobile/nsapp/campaign" target="_blank"><img src="assets/NSapps.jpg" border="0"></a>
+             <a style="margin-left: 0px;" class="banner" href="http://www.ns.sg/" target="_blank"><img src="assets/banner_ns.jpg" border="0"></a>
+             <a style="margin-left: 0px;" class="banner" href="http://www.mindef.gov.sg/nsmark/" target="_blank"><img src="assets/For Mindef (236 x 61) v2.png" border="0"></a></div>
+        </div>
+  
+        
+        <div class="clear"></div>
+        <div class="copy">&copy; 2016 Government of Singapore.  <a href="/imindef/footer/privacy_statement.html">Privacy Statement</a>  |  <a href="/imindef/footer/terms_of_use.html">Terms of Use</a>  |  <a href="/imindef/header/contact_info.html" target="_self">Contact Us</a>  |  <a href="/imindef/header/feedback.html" target="_self">Provide Feedback</a>  |  <a href="/imindef/header/sitemap.html" target="_self">Sitemap</a>
+	
+		|  <a href="https://www.jusfeedback.asia/Community/se.ashx?s=7FDA9EA723A5704F&amp;Agency=MINDEF.HQ&amp;Svc=MINDEF%20Corporate%20Website&amp;eLnk=http://www.mindef.gov.sg/imindef/home.html&amp;Cat=Citizen" target="_blank">Rate this Website</a>
+
+		</div>
+    </div>
+</div>
+
+</div>
+<script type="text/javascript">
+    var screenWidth = screen.width;
+    if (screenWidth!=null) {
+        if (navigator.appName == 'Microsoft Internet Explorer') {
+            $("#top_content_div").css("width", screenWidth-21);
+        } else {
+            $("#top_content_div").css("width", screenWidth-17);
+        }
+    }
+    $("#top_content_div").css("margin", "0 auto");
+</script>
+</body>
+</html>
