@@ -53,7 +53,7 @@
 	*margin-top:3px;
 }
 .officialbox .button_rss {
-	background: url(../images/button_rss.png) no-repeat;
+	background: url(images/button_rss.png) no-repeat;
 	width:63px;
 	height:30px;
 	line-height:24px;
@@ -80,7 +80,7 @@
 		text-align:left;
 	}
 .official_news_box{
-	background: url(../images/bg_official_news.png) no-repeat;
+	background: url(images/bg_official_news.png) no-repeat;
 	width:450px;
 	height:345px;
 	overflow:hidden;
@@ -102,16 +102,16 @@
 	background:none;
 }
 .tab_official_news > ul .tab_new_1{
-	background: url(../images/bg_tab_official_news1.png) no-repeat;
+	background: url(images/bg_tab_official_news1.png) no-repeat;
 	width:142px;
 }
 .tab_official_news > ul .tab_new_2{
-	background: url(../images/bg_tab_official_news2.png) no-repeat;
+	background: url(images/bg_tab_official_news2.png) no-repeat;
 	width:188px;
 	margin:0 4px;
 }
 .tab_official_news > ul .tab_new_3{
-	background: url(../images/bg_tab_official_news3.png) no-repeat;
+	background: url(images/bg_tab_official_news3.png) no-repeat;
 	width:112px;
 }
 .tab_official_news > ul .tab1{
@@ -175,7 +175,7 @@
 	width: 9px; 
 	height: 9px; 
 	display: block; 
-	background: url(../images/bg_control_nav.png) no-repeat 0 0; 
+	background: url(images/bg_control_nav.png) no-repeat 0 0; 
 	cursor: pointer; 
 	text-indent: -9999px;
 }
@@ -244,7 +244,7 @@ html[xmlns] .officialslides {display: block;}
 	font-size:14px;
 	line-height:21px;
 	color:#FFF;
-	background: url(../images/bg_opacity.png) repeat scroll 0 0 transparent;
+	background: url(images/bg_opacity.png) repeat scroll 0 0 transparent;
 }
 .news_pic_text div a{
 	color:#FFF;
@@ -286,8 +286,7 @@ html[xmlns] .officialslides {display: block;}
 	width:116px;
 }
 
-/* Text & Image
-������������������������������������������������*/
+/* Text & Image */
 .news_content_box .textimage2 .big_pic{
 	position:relative;
 }
@@ -486,8 +485,7 @@ html[xmlns] .officialslides {display: block;}
 	margin-bottom:0;
 }
 
-/* Richedit
-������������������������������������������������*/
+/* Richedit */
 .news_content_box .richedit2 h1 {
 	color: #FFF;
     display: inline-block;
