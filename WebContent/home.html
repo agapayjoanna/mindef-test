@@ -48,6 +48,7 @@
 	<script type="text/javascript" src="assets/jquery.js"></script>
 	<script type="text/javascript" src="assets/jquery.cookie.js"></script>
 	<script type="text/javascript" src="assets/select-min.js"></script>
+	<script type="text/javascript" src="assets/jquery.dotdotdot.min.js"></script>
 	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
 	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/favicon.ico" rel="icon">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -441,6 +442,37 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
     function highlight_slideContentLoaded(args) {
         highlight_slideContentChange(args);
     }
+    
+    function constructHighlight(data) {
+    	var highlight = document.createElement('DIV');
+    	highlight.setAttribute('class', 'highlight');
+    	highlight.setAttribute('style', 'position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 685px; height: 234px;');
+    	
+    	var slider = document.createElement('DIV');
+    	slider.setAttribute('class', 'slider');
+    	slider.setAttribute('style', 'position: relative; cursor: default; width: 685px; overflow: hidden; left: 0px;');
+    	slider.innerHTML = data;
+    	
+    	var selectors = document.createElement('DIV');
+    	selectors.setAttribute('class', 'selectors');
+    	
+    	var selector1 = document.createElement('DIV');
+    	selector1.setAttribute('class', 'selector');
+    	selector1.setAttribute('style', 'cursor: pointer;');
+    	var selector2 = document.createElement('DIV');
+    	selector2.setAttribute('class', 'selector');
+    	selector2.setAttribute('style', 'cursor: pointer;');
+    	var selector3 = document.createElement('DIV');
+    	selector3.setAttribute('class', 'selector');
+    	selector3.setAttribute('style', 'cursor: pointer;');
+    	    	    	
+    	selectors.appendChild(selector1);
+    	selectors.appendChild(selector2);
+    	selectors.appendChild(selector3);
+    	highlight.appendChild(slider);
+    	highlight.appendChild(selectors);
+    	$('.highlight').append(highlight);
+    }
 
     $(document).ready(function() {
     
@@ -450,6 +482,21 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
             window.highlightFlag = "loaded";
         }
 		$(".item").show();
+		
+		// Get Main Carousel Content via ajax
+		var highlightURL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Highlights/Highlights";			
+		$.ajax({
+			url : highlightURL,
+			dataType : 'html',
+			async:false,
+			success : function(data) {	
+				// $('.highlight .slider').append(data);
+				constructHighlight(data);
+			}, 
+			error : function(err) { }
+		});		
+		
+		
         //disable words selection
         $(".highlight").bind("selectstart", function() { return false; });
         
@@ -468,24 +515,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
         
     });
 </script>
-
-<div style="position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 685px; height: 234px;" class="highlight">
-    <div style="position: relative; cursor: move; width: 6165px; overflow: hidden; left: -2547px;" class="slider">
-    	<!-- Highlight Content -->
-	</div>
-	<script type="text/javascript">
-		$(function(){
-			// Populate Main Carousel via ajax
-			var highlightURL = "http://192.168.2.32:10039/nsp/wcm/myconnect/iMindef%20Content/Homepage/Homepage?srv=cmpnt&cmpntname=iMindef%20Design/Homepage/Highlight&source=library";
-			$.get(highlightURL, function(data){
-				$('.highlight .slider').append(data);
-			});			
-		});
-	</script>
-    <div class="selectors">
-        <div style="cursor: pointer;" class="selector"></div><div style="cursor: pointer;" class="selector selected"></div><div style="cursor: pointer;" class="selector"></div>
-    </div>
-</div></div>
+</div>
 
 <div class="announcement">
 
@@ -635,6 +665,39 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		$('#tab_official_news-2 .officialflexslider').flexslider("pause");
 		$('#tab_official_news-3 .officialflexslider').flexslider("pause");*/
 	}
+	
+	function getOfficialReleasesContents(tab_num, url, container) {
+		// Get Official Releases Carousel Content via ajax
+		$.ajax({
+			url : url,
+			dataType : 'html',
+			async:false,
+			success : function(data) {
+				if(tab_num == "tab2") {
+					var contents = $(data);
+					if((contents !== undefined) && (contents !== null)) {
+						var innerNode = null;
+						var entry = entry = document.createElement('LI'); 
+						entry.setAttribute('style', 'width: 380px; float: left; display: block;')
+						for (var i = 0; i < contents.length; i++) {
+							var content = contents[i];
+							if (content.nodeType == 1 && content.tagName == 'DIV') {
+								entry.appendChild(content);
+								if(((i+1)%2) == 0) {
+									container.append(entry);
+									entry = document.createElement('LI');
+									entry.setAttribute('style', 'width: 380px; float: left; display: block;');	
+								}
+							}
+						}
+					}
+				} else {
+					container.html(data);
+				}				
+			}, 
+			error : function(err) { }
+		});		
+	}
 	</script>
 
 
@@ -649,164 +712,50 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			<li class="tab_new_2"><a href="#tab_official_news-2" class="tab2">FORUM LETTER REPLIES</a></li>
 			<li class="tab_new_3"><a href="#tab_official_news-3" class="tab3">ACTIVITIES</a></li>
 		</ul>
-		<div style="display: block;" id="tab_official_news-1">
-					<!--tab1-->
-                    	  <div class="officialflexslider">
-								
-                           <div style="overflow: hidden; position: relative;" class="officialflex-viewport"><ul style="width: 600%; transition-duration: 1.2s; transform: translate3d(-780px, 0px, 0px);" class="officialslides">
-
-								<li style="width: 380px; float: left; display: block;" class="newreleasesCaseThree">
-									<div class="news_title postedDateString">05 Jul 2016, 1100 hours (GMT +8)</div>
-									<div class="news_content_box">
-										<img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/official_releases/nr/2016/jul/05jul16_nr/_jcr_content/newsimage/image.img.jpg/1467694868778.jpg">
-										<div class="news_pic_text">
-											<div><a href="/imindef/press_room/official_releases/nr/2016/jul/05jul16_nr.html">SAFTI MI's Partnership with People's Liberation Army National Defence University strengthens People-to-People Ties</a></div>
-										</div>
-									</div>
-								</li>
-							
-								<li style="width: 380px; float: left; display: block;" class="newreleasesCaseThree">
-									<div class="news_title postedDateString">01 Jul 2016, 2030 hours (GMT +8)</div>
-									<div class="news_content_box">
-										<img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/official_releases/nr/2016/jul/01jul16_nr2/_jcr_content/newsimage/image.img.jpg/1467376296215.jpg">
-										<div class="news_pic_text">
-											<div><a href="/imindef/press_room/official_releases/nr/2016/jul/01jul16_nr2.html">President Tony Tan Keng Yam Officiates at SAF Day Parade</a></div>
-										</div>
-									</div>
-								</li>
-							
-								<li style="width: 380px; float: left; display: block;" class="newreleasesCaseThree">
-									<div class="news_title postedDateString">01 Jul 2016, 1500 hours (GMT +8)</div>
-									<div class="news_content_box">
-										<img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/official_releases/nr/2016/jul/01jul16_nr/_jcr_content/newsimage/image.img.jpg/1467376503346.jpg">
-										<div class="news_pic_text">
-											<div><a href="/imindef/press_room/official_releases/nr/2016/jul/01jul16_nr.html">NSmen and Employers Reaffirm Commitment to Defence</a></div>
-										</div>
-									</div>
-								</li>
-							
-                                </ul></div><ol class="officialflex-control-nav officialflex-control-paging"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="officialflex-active">3</a></li></ol></div>
-							<div class="button_box1"><a href="/imindef/press_room/official_releases/nr.html" class="button_viewall">view all</a></div>
+		<div id="tab_official_news-1" style="display: block;">
+			<!--tab1-->
+			<div class="officialflexslider">
+				<div class="officialflex-viewport" style="overflow: hidden; position: relative;">
+					<ul class="officialslides" style="width: 600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"></ul>
+				</div>
+			</div>
+			<div class="button_box1">
+				<a class="button_viewall" href="/imindef/press_room/official_releases/nr.html">view all</a>
+			</div>
 		</div>
-		<div style="display: none;" id="tab_official_news-2">
-							<div style="" class="officialflexslider">
-								
-                            <div style="overflow: hidden; position: relative;" class="officialflex-viewport"><ul style="width: 600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);" class="officialslides">
-<li style="width: 380px; float: left; display: block;">
-									<div style="height:128px">
-										<div class="news_title">18 Mar 2016, 0720 hours (GMT +8)</div>
-										<div>
-											<div class="news_portrait">
-												<div><span><a href="/imindef/press_room/official_releases/fl/2016/18mar16_reply.html">Reply to Lianhe Zaobao Forum Letter: MINDEF Continues "Upholding Integrity of Our System"</a></span></div>
-												<div>We refer to the commentary in Lianhe Zaobao Societal trust should not be taken lightly 13 Mar.
-The key findings leading...</div>
-											</div>
-										</div>
-									</div>
-								
-						    
-									<div style="height:128px">
-										<div class="news_title">29 Oct 2015, 1100 hours (GMT +8)</div>
-										<div>
-											<div class="news_portrait">
-												<div><span><a href="/imindef/press_room/official_releases/fl/2015/29oct15_reply.html">Forum Letter on SAF Training During Haze</a></span></div>
-												<div>The SAF Adjusts Outdoor Activities According to Haze Situation
-We refer to the letter Protecting SAF recruits from haze by Ms June Hoo which was published on 24 October 2015. Since then, we have spoken to Ms Hoo to understand and address...</div>
-											</div>
-										</div>
-									</div>
-								
-						    </li><li style="width: 380px; float: left; display: block;">
-									<div style="height:128px">
-										<div class="news_title">26 Aug 2015, 1400 hours (GMT +8)</div>
-										<div>
-											<div class="news_portrait">
-												<div><span><a href="/imindef/press_room/official_releases/fl/2015/26aug15_reply.html">Forum Letter on the SAF's support during Train Service Disruption</a></span></div>
-												<div>We refer to the recent reports and forum letters on the Singapore Armed Forces SAF's support during train service...</div>
-											</div>
-										</div>
-									</div>
-								
-						    
-									<div style="height:128px">
-										<div class="news_title">04 Jul 2015, 1300 hours (GMT +8)</div>
-										<div>
-											<div class="news_portrait">
-												<div><span><a href="/imindef/press_room/official_releases/fl/2015/04jul15_reply.html">Forum Letter on NS Deferment for Exceptional Talents</a></span></div>
-												<div>NS Deferment for Exceptional Talents 
-
-We refer to the recent reports on deferment for our national sportsmen with...</div>
-											</div>
-										</div>
-									</div>
-								
-						    </li><li style="width: 380px; float: left; display: block;">
-									<div style="height:128px">
-										<div class="news_title">19 Jun 2015, 1000 hours (GMT +8)</div>
-										<div>
-											<div class="news_portrait">
-												<div><span><a href="/imindef/press_room/official_releases/fl/2015/19jun15_reply.html">Response to The Straits Times' Article "SAF shelves boot camp plans for IPPT defaulters"</a></span></div>
-												<div>Remedial Sessions and ICTPT to Continue
-The Straits Times' article SAF shelves boot camp plans for IPPT defaulters...</div>
-											</div>
-										</div>
-									</div>
-								
-						    
-									<div style="height:128px">
-										<div class="news_title">27 Apr 2015, 1000 hours (GMT +8)</div>
-										<div>
-											<div class="news_portrait">
-												<div><span><a href="/imindef/press_room/official_releases/fl/2015/27apr15_reply.html">Reply to ST Forum Letter "Shore Up SAF Medics"</a></span></div>
-												<div>SAF Medics are Well-Trained for Operational Situations
-
-We thank Dr Leong Choon Kit for his feedback and support for...</div>
-											</div>
-										</div>
-									</div>
-								
-						    </li>
-                                </ul></div><ol class="officialflex-control-nav officialflex-control-paging"><li><a class="officialflex-active">1</a></li><li><a>2</a></li><li><a>3</a></li></ol></div>
-							<div class="button_box1"><a href="/imindef/press_room/official_releases/fl.html" class="button_viewall">view all</a></div>
+		<div id="tab_official_news-2" style="display: none;">
+			<div class="officialflexslider" style="">
+				<div class="officialflex-viewport" style="overflow: hidden; position: relative;">
+					<ul class="officialslides" style="width: 600%; transition-duration: 0s; transform: translate3d(-390px, 0px, 0px);"></ul>
+				</div>				
+			</div>
+			<div class="button_box1">
+				<a class="button_viewall" href="/imindef/press_room/official_releases/fl.html">view all</a>
+			</div>
 		</div>
-		<div style="display: none;" id="tab_official_news-3">
-							<div style="" class="officialflexslider">
-								
-                            <div style="overflow: hidden; position: relative;" class="officialflex-viewport"><ul style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);" class="officialslides">
-									
-													<li style="width: 380px; float: left; display: block;">
-														<div class="news_title postedDateString">01 Jul 2016, 1000 hours (GMT +8)</div>
-														<div class="news_content_box">
-															<div class="news_portrait">
-																<div style="float:left"><a href="/imindef/press_room/events_and_activities/2016/01jul16_activity.html"><img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/events_and_activities/2016/01jul16_activity/_jcr_content/par0001/Single/image.img.png/1467344137380.png"></a></div>
-																<div><span><a href="/imindef/press_room/events_and_activities/2016/01jul16_activity.html">SAF Military Exercises</a></span></div>
-																<div><p>The Singapore Armed Forces (SAF) will conduct military exercises in Seletar, Marsiling, Jalan Bahar, Neo Tiew, Lim Chu Kang, Jalan Kwok Min, Tuas, Upper Jurong, Hong Kah, Ama Keng, Bedok Jetty, Kranji, Lentor, Simpang, Sembawang, Mandai from 08:00am on Mon, 4 Jul 2016 to 08:00am on Mon, 11 Jul 2016.<br>
-</p>
-</div>
-															</div>
-														</div>
-													</li>
-													
-													<li style="width: 380px; float: left; display: block;">
-														<div class="news_title postedDateString">25 Jun 2016, 1000 hours (GMT +8)</div>
-														<div class="news_content_box">
-															<div class="news_portrait">
-																<div style="float:left"><a href="/imindef/press_room/events_and_activities/2016/25jun16_activity.html"><img title="" alt="" class="cq-dd-image" src="/content/imindef/press_room/events_and_activities/2016/25jun16_activity/_jcr_content/par0001/Single/image.img.png/1466822307296.png"></a></div>
-																<div><span><a href="/imindef/press_room/events_and_activities/2016/25jun16_activity.html">SAF Military Exercises</a></span></div>
-																<div><p>The Singapore Armed Forces (SAF) will conduct military exercises in Seletar, Marsiling, Jalan Bahar, Neo Tiew, Lim Chu Kang, Jalan Kwok Min, Tuas, Upper Jurong, Hong Kah, Ama Keng, Bedok Jetty, Kranji, Lentor, Simpang, Sembawang, Mandai from 08:00am on Mon, 27 Jun 2016 to 08:00am on Mon, 4 Jul 2016.<br>
-</p>
-<p>&nbsp;</p>
-</div>
-															</div>
-														</div>
-													</li>
-													
-                                </ul></div><ol class="officialflex-control-nav officialflex-control-paging"><li><a class="officialflex-active">1</a></li><li><a>2</a></li></ol></div>
-						
-								<div class="button_box1"><a href="/imindef/press_room/events_and_activities/2016/activity_listing.html" class="button_viewall">view all</a></div>
-								
-						
+		<div id="tab_official_news-3" style="display: none;">
+			<div class="officialflexslider" style="">
+				<div class="officialflex-viewport" style="overflow: hidden; position: relative;">
+					<ul class="officialslides" style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"></ul>
+				</div>				
+			</div>
+			<div class="button_box1">
+				<a class="button_viewall" href="/imindef/press_room/events_and_activities/2016/activity_listing.html">view all</a>
+			</div>
 		</div>
+		<script type="text/javascript">
+			var tab1URL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/News%20Releases";
+			var tab2URL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Forum%20Letter%20Replies";		
+			var tab3URL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Activities";			
+			getOfficialReleasesContents("tab1", tab1URL, $('#tab_official_news-1 .officialslides'));
+			getOfficialReleasesContents("tab2", tab2URL, $('#tab_official_news-2 .officialslides'));
+			getOfficialReleasesContents("tab3", tab3URL, $('#tab_official_news-3 .officialslides'));
+			
+			$("#tab_official_news-2").find(".description").dotdotdot({
+				ellipsis	: '...',
+				wrap		: 'letter',
+			});			
+		</script>		
 	</div>
 	</div>
 </div><!-- End box -->
