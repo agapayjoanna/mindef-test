@@ -14,6 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 
 import sg.gov.mindef.XMLtoXML;
 import sg.gov.mindef.dto.NewsContentDTO;
@@ -48,6 +49,7 @@ import com.ibm.workplace.wcm.api.Taxonomy;
 import com.ibm.workplace.wcm.api.UserProfile;
 import com.ibm.workplace.wcm.api.WCM_API;
 import com.ibm.workplace.wcm.api.Workflow;
+import com.ibm.workplace.wcm.api.WorkflowedDocument;
 import com.ibm.workplace.wcm.api.Workspace;
 import com.ibm.workplace.wcm.api.exceptions.AuthorizationException;
 import com.ibm.workplace.wcm.api.exceptions.ComponentNotFoundException;
@@ -226,15 +228,7 @@ public class AccessUtil {
 				
 				DocumentId<Document> authoringTemplateId = getAuthoringTemplate();
 				DocumentId<Document> workflowId = getWorkflowId("Default Workflow");
-				AuthoringTemplate authTemplate = (AuthoringTemplate) designWorkspace.getById(authoringTemplateId, true);
-				System.out.println("authoring template id -----------" + authoringTemplateId.getId());
 				
-				authTemplate.setWorkflowId(workflowId);
-				authTemplate.setGeneralDateOne(officialDate);
-				designWorkspace.unlock(authoringTemplateId);
-				workspaceSave(designWorkspace, authTemplate);
-				String generalDate =  authTemplate.getGeneralDateOne().toString();
-				System.out.println("Workflow Date-------" +generalDate);
 				Content content = workspace.createContent(authoringTemplateId,
 						monthDocumentId, null, ChildPosition.END);
 				
@@ -323,7 +317,18 @@ public class AccessUtil {
 						content.setComponent("image_path_alt", imgPathAltText);
 					}
 				}
-				content.setWorkflowId(workflowId, true);
+//				AuthoringTemplate authTemplate = (AuthoringTemplate) designWorkspace.getById(authoringTemplateId, true);
+//				System.out.println("authoring template id -----------" + authoringTemplateId.getId());
+//				Calendar generalCalendar = Calendar.getInstance();
+//				generalCalendar.setTime(officialDate);
+//				generalCalendar.setTimeZone(TimeZone.getTimeZone("Etc/GMT+8"));
+//				authTemplate.setGeneralDateOne(generalCalendar.getTime());
+//				authTemplate.setGeneralDateTwo(officialDate);
+//				authTemplate.setExpiryDate(officialDate);
+//				authTemplate.setEffectiveDate(officialDate);
+				content.setGeneralDateOne(officialDate);
+		
+		
 				workspaceSave(workspace, content);
 
 				System.out.println("Content Created");
@@ -352,10 +357,7 @@ public class AccessUtil {
 		} catch (DuplicateComponentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (PropertyRetrievalException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+		}
 
 	}
 
