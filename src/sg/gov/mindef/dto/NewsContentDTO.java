@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
 public class NewsContentDTO {
 
 	private String guid;
@@ -12,7 +14,7 @@ public class NewsContentDTO {
 	private Date postedDate;
 	private String newsType;
 	private String category;
-
+	private NewsImageDTO topImage;
 	private List<NewsImageDTO> images;
 
 	public String getGuid() {
@@ -72,6 +74,14 @@ public class NewsContentDTO {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public NewsImageDTO getTopImage() {
+		return topImage;
+	}
+
+	public void setTopImage(NewsImageDTO topImage) {
+		this.topImage = topImage;
 	}
 
 }
