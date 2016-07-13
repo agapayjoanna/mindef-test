@@ -498,7 +498,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		});
 
 		// Get Main Carousel Content via x
-		var magazineURL = "http://192.168.2.32:10039/nsp/wcm/myconnect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntname=iMindef%20Design/Homepage/Magazine/Magazine&source=library";			
+		var magazineURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntname=iMindef%20Design/Homepage/Magazine/Magazine&source=library";			
 		$.ajax({
 			url : magazineURL,
 			dataType : 'html',
@@ -628,7 +628,14 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		}else{
 			runFlexslider();
 		}
-
+		
+		var isVisited = false;
+		$('.tab_new_2 > a').click(function(){
+			if(!isVisited) {
+				isVisited = true;
+				concatContentText();
+			}
+		});
 	});
 	function runFlexslider(){
 		$('#tab_official_news .officialflexslider').each(function(){
@@ -686,7 +693,8 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		  var m=$(".tab_content_title", this).height();
 		  var g=128-j-m;
 		  var f=Math.floor(g/16);
-		  var l=f*92;
+		  var l=f*63;
+		  console.log("Text length: " + l);
 		  var k=$(".tab_content_description", this).html();
 		  if(k!=null&&k.length>l){
 		    k=k.substring(0,l);
@@ -723,8 +731,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 									container.append(entry);
 								}
 							}
-						}
-						concatContentText();
+						}						
 					}
 				} else {
 					container.html(data);
