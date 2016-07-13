@@ -483,13 +483,9 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
         }
 		$(".item").show();
 		
-<<<<<<< HEAD
-		// Get Main Carousel Content via x
-		var highlightURL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Highlights/Highlights";			
-=======
 		// Get Main Carousel Content via ajax
 		var highlightURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Highlights/Highlights";			
->>>>>>> 386aba1386cbe2d9985ad1d6aa1cd2d807ac8190
+
 		$.ajax({
 			url : highlightURL,
 			dataType : 'html',
@@ -684,6 +680,25 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		$('#tab_official_news-3 .officialflexslider').flexslider("pause");*/
 	}
 	
+	function concatContentText() {
+		$('.officialslides > li > div').each(function(){
+		  var j=$(".news_title", this).height()+10;
+		  var m=$(".tab_content_title", this).height();
+		  var g=128-j-m;
+		  var f=Math.floor(g/16);
+		  var l=f*92;
+		  var k=$(".tab_content_description", this).html();
+		  if(k!=null&&k.length>l){
+		    k=k.substring(0,l);
+		    var h=k.lastIndexOf(" ");
+		    if(h!=-1){k=k.substring(0,h)}k+="...";
+		  }
+		  if(k==null){k=""}
+		  $(".tab_content_description", this).html(k);
+		  $(".tab_content_description", this).css("height",g);  
+		});
+	}
+	
 	function getOfficialReleasesContents(tab_num, url, container) {
 		// Get Official Releases Carousel Content via ajax
 		$.ajax({
@@ -709,6 +724,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 								}
 							}
 						}
+						concatContentText();
 					}
 				} else {
 					container.html(data);
