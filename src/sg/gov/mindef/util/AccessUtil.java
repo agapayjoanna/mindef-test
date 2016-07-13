@@ -1,6 +1,11 @@
 package sg.gov.mindef.util;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,7 +14,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 
+import sg.gov.mindef.XMLtoXML;
 import sg.gov.mindef.dto.NewsContentDTO;
 import sg.gov.mindef.dto.NewsImageDTO;
 
@@ -41,6 +48,8 @@ import com.ibm.workplace.wcm.api.SiteAreaTemplate;
 import com.ibm.workplace.wcm.api.Taxonomy;
 import com.ibm.workplace.wcm.api.UserProfile;
 import com.ibm.workplace.wcm.api.WCM_API;
+import com.ibm.workplace.wcm.api.Workflow;
+import com.ibm.workplace.wcm.api.WorkflowedDocument;
 import com.ibm.workplace.wcm.api.Workspace;
 import com.ibm.workplace.wcm.api.exceptions.AuthorizationException;
 import com.ibm.workplace.wcm.api.exceptions.ComponentNotFoundException;
@@ -52,6 +61,7 @@ import com.ibm.workplace.wcm.api.exceptions.DuplicateComponentException;
 import com.ibm.workplace.wcm.api.exceptions.IllegalDocumentTypeException;
 import com.ibm.workplace.wcm.api.exceptions.IllegalTypeChangeException;
 import com.ibm.workplace.wcm.api.exceptions.OperationFailedException;
+import com.ibm.workplace.wcm.api.exceptions.PropertyRetrievalException;
 import com.ibm.workplace.wcm.api.exceptions.ServiceNotAvailableException;
 import com.ibm.ws.natv.util.LibraryLoader;
 
@@ -119,6 +129,26 @@ public class AccessUtil {
 		}
 		return siteAreaId;
 	}
+	
+	public DocumentId<Document> getWorkflowId(String workflowName){
+		DocumentId<Document> workflowId = null;
+		Workspace workspace;
+		try {
+			workspace = getDesignWorkspace();
+			DocumentIdIterator<Document> itr = workspace.findByName(DocumentTypes.Workflow, workflowName);
+			while(itr.hasNext()){
+				workflowId = itr.next();
+				break;
+			}
+		} catch (ServiceNotAvailableException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (OperationFailedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return workflowId;
+	}
 
 	public void createContent(NewsContentDTO dto) throws ParseException,
 			DocumentRetrievalException, ServiceNotAvailableException,
@@ -169,14 +199,14 @@ public class AccessUtil {
 				// monthDocumentId = documentId;
 				// }
 				// }
-				String path = "iMindef Content/Official Release/Press Room/"
+				String path = "iMindef Content/iMindef/Official Release/Press Room/"
 						+ year + "/" + monthName;
 				DocumentIdIterator<Document> itr = findSiteAreaByPath(
 						workspace, path);
 				DocumentId<Document> siteAreaIdyear = findSiteAreaByYear(year);
 				if (itr.hasNext()) {
 					monthDocumentId = itr.next();
-					System.out.println(monthDocumentId.getName() +"has been fetch successfully");
+					System.out.println(monthDocumentId.getName() +" has been fetch successfully");
 				} else {
 					SiteArea siteAreaMonth = workspace.createSiteArea(
 							siteAreaIdyear, null, ChildPosition.END);
@@ -190,14 +220,21 @@ public class AccessUtil {
 
 			}
 			if(!isContentExists(year, monthName, dto.getTitle())){
-				Content content = workspace.createContent(getAuthoringTemplate(),
-						monthDocumentId, null, ChildPosition.END);
-				content.setName(dto.getTitle().replaceAll("[^a-zA-Z0-9]", " "));
+				DateFormat postedDate = new SimpleDateFormat(
+						"EEE, d MMMMM yyyy HH:mm:ss z");
+				String strPostedDate = postedDate.format(dto.getPostedDate());
+				Date officialDate = postedDate.parse(strPostedDate);
+				Workspace designWorkspace = getDesignWorkspace();
 				
+				DocumentId<Document> authoringTemplateId = getAuthoringTemplate();
+				DocumentId<Document> workflowId = getWorkflowId("Default Workflow");
+				
+				Content content = workspace.createContent(authoringTemplateId,
+						monthDocumentId, null, ChildPosition.END);
+				
+				content.setName(dto.getTitle().replaceAll("[^a-zA-Z0-9]", " "));
+				content.setAuthoringTemplateID(authoringTemplateId);
 				content.setTitle(dto.getTitle());
-				// content.createComponent("Content",
-				// DocumentTypes.RichTextComponent);
-				// Title(ShortText) component
 				ShortTextComponent stc = (ShortTextComponent) content
 						.getComponent("Title");
 				stc.setText(dto.getTitle());
@@ -205,14 +242,54 @@ public class AccessUtil {
 				// DateComponent
 				DateComponent dateCmpt = (DateComponent) content
 						.getComponent("Date");
-				DateFormat postedDate = new SimpleDateFormat(
-						"EEE, d MMMMM yyyy HH:mm:ss z");
-				String strPostedDate = postedDate.format(dto.getPostedDate());
-				dateCmpt.setDate(postedDate.parse(strPostedDate));
-				// RTE Component
+				dateCmpt.setDate(officialDate);
+				
+				System.out.println("Workflow has been saved");
+				List<NewsImageDTO> list = dto.getImages();
+				StringBuffer contentRTE = new StringBuffer();
+				contentRTE.append(dto.getContent());
+				System.out.println("image size-------"+ list.size());
+				if(!list.isEmpty()){
+					System.out.println("image is not empty"+ list.size());
+					for(NewsImageDTO img : list){
+						StringBuffer sb = new StringBuffer();
+						sb.append("<div class='image section'>");
+						sb.append("<div class=\"image\">");
+						sb.append("<div class=\"big_pic_box\" style=\"float:none;;\">");
+						sb.append("<div class=\"big_pic\">");
+						sb.append("<img height=\"419px\" width=\"600px\" class=\"cq-dd-image\" src='"
+								+"https://www.mindef.gov.sg"+ img.getSrc()+ "' />");
+						sb.append("</div></div></div></div>");
+						sb.append("<script type=\"text/javascript\">$(function() {"+ 
+							      "  if (typeof window.imageFlag==\"undefined\") {"+
+							        "    window.imageFlag=\"loaded\";"+
+							        "      $(\".image\").each(function(){"+
+							        "       var image = $(\".big_pic_box .big_pic\", this).find('img')[0];"+
+							        "       var image1 = $(\".big_pic_box .big_pic div.imageSrc\", this)[0];"+
+							        "       var image_url = $(image1).html();"+
+							        "        $(\".big_pic a.fancybox\", this).fancybox({istablet: false}, image_url);"+
+							        "       $(image).css(\"margin\", \"0px\");"+
+							        "       if (image!=null && image1!=null) {"+
+							        "           var imageHeight = $(image).height();"+
+							        "           var imageWidth = $(image).width();"+
+							        "           $(\".big_pic_box .big_pic\", this).css(\"height\", imageHeight);"+
+							        "           $(\".big_pic_box\", this).css(\"width\", imageWidth);"+
+							        "           var height = $(\".big_pic_box\", this).height();"+
+							        "           var divHeight = height + 16;"+
+							        "           $(this).css(\"height\", divHeight);   "+
+							        "       }"+
+							        "    });   "+  
+							        "    }"+
+							        "    });"+
+							        "    </script>");
+						contentRTE.append(sb);
+						System.out.println("Content Image has been process successfully");
+						
+					}
+				}
 				RichTextComponent rte = (RichTextComponent) content
 						.getComponent("Content");
-				rte.setRichText(dto.getContent());
+				rte.setRichText(contentRTE.toString());
 				System.out.println("Title------"+ dto.getTitle());
 				System.out.println("Content---------"+ dto.getContent());
 				OptionSelectionComponent osc = (OptionSelectionComponent) content.getComponent("Category");
@@ -220,27 +297,39 @@ public class AccessUtil {
 				osc.setOptionType(OptionType.USE_TAXONOMY);
 				DocumentId[] categories = new DocumentId[] {findByCategory(dto.getCategory())};
 				osc.setCategorySelections(categories);
-//				List<NewsImageDTO> list = dto.getImages();
-//				if(!list.isEmpty()){
-//					ImageComponent imgCmpt=null;
-//					for(NewsImageDTO img: list){
-//						System.out.println("Image Name----- " +img.getName());
-//						if(!content.hasComponent(img.getName())){
-//							imgCmpt = content.createComponent(img.getName(), DocumentTypes.ImageComponent);
-//						} else {
-//							imgCmpt = (ImageComponent) content.getComponent(img.getName());
-//						}
-//						imgCmpt.setNameTag(img.getName()+".jpg");
-//						imgCmpt.setResource(img.getName()+".jpg", new File(img.getSrc()));
-//						content.setComponent(img.getName(), imgCmpt);
-//					}
-//				}
 				content.setComponent("Title", stc);
 				content.setComponent("Date", dateCmpt);
 				content.setComponent("Content", rte);
 				content.setComponent("Category", osc);
+				if(dto.getTopImage() !=null){
+					NewsImageDTO img = dto.getTopImage();
+					boolean isGallery = img.isGallery();
+					String componentName= "image_path";
+					if(isGallery){
+						componentName ="image_gallery_path";
+					}
+					ShortTextComponent imgPath = content.createComponent(componentName, DocumentTypes.ShortTextComponent);
+					imgPath.setText(img.getSrc());
+					content.setComponent(componentName, imgPath);
+					if(img.getAltText() != null){
+						ShortTextComponent imgPathAltText = content.createComponent("image_path_alt", DocumentTypes.ShortTextComponent);
+						imgPathAltText.setText(img.getAltText());
+						content.setComponent("image_path_alt", imgPathAltText);
+					}
+				}
+//				AuthoringTemplate authTemplate = (AuthoringTemplate) designWorkspace.getById(authoringTemplateId, true);
+//				System.out.println("authoring template id -----------" + authoringTemplateId.getId());
+//				Calendar generalCalendar = Calendar.getInstance();
+//				generalCalendar.setTime(officialDate);
+//				generalCalendar.setTimeZone(TimeZone.getTimeZone("Etc/GMT+8"));
+//				authTemplate.setGeneralDateOne(generalCalendar.getTime());
+//				authTemplate.setGeneralDateTwo(officialDate);
+//				authTemplate.setExpiryDate(officialDate);
+//				authTemplate.setEffectiveDate(officialDate);
+				content.setGeneralDateOne(officialDate);
+		
+		
 				workspaceSave(workspace, content);
-				
 
 				System.out.println("Content Created");
 			}
@@ -265,6 +354,9 @@ public class AccessUtil {
 		} catch (IllegalTypeChangeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (DuplicateComponentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}
@@ -272,7 +364,7 @@ public class AccessUtil {
 	@SuppressWarnings("unchecked")
 	public boolean isContentExists(String year, String month, String title)
 			throws ServiceNotAvailableException, OperationFailedException {
-		String path = "iMindef Content/Official Release/Press Room/"
+		String path = "iMindef Content/iMindef/Official Release/Press Room/"
 				+ year + "/" + month;
 		boolean contentExists = false;
 		Workspace workspace = getContentWorkspace();

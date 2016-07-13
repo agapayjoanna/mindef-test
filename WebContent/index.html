@@ -65,6 +65,7 @@
 
 
 <script type="text/javascript" src="assets/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.migrate.js"></script>
 <script type="text/javascript" src="assets/jquery.cookie.js"></script>
 <script type="text/javascript" src="assets/select-min.js"></script>
 
@@ -267,6 +268,7 @@ function escapeKeyword(keyword) {
         return escapedKeyword;
     }
 </script>
+
 <script
 	src="http://localhost:4502/libs/wcm/stats/tracker.js?path=/content/imindef/press_room/official_releases"></script>
 </head>
@@ -1069,7 +1071,7 @@ $(document).ready(function() {
 	<script type="text/javascript">
 	$(function(){
 		//populate news via ajax
-		var newsURL = "http://192.168.2.32:10039/nsp/wcm/connect/imindef%20content/official%20release/press%20room/2015/april/?srv=cmpnt&cmpntid=85691b74-0b99-4f95-9e09-839cd8bfb1e9&source=library";
+		var newsURL = "http://192.168.2.32:10039/nsp/wcm/connect/imindef%20content/imindef/official%20release/press%20room/2015/april/?srv=cmpnt&cmpntid=85691b74-0b99-4f95-9e09-839cd8bfb1e9&source=library";
 		$.get(newsURL, function(data){
 			console.log("news has been added");			
 			$('.detail_content_box_tab_content').append(data);

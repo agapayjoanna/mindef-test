@@ -132,6 +132,8 @@ public class XMLtoXML {
 				if (hasNodes(contentListNode)) {
 					Element contentNode = (Element) contentListNode.item(0);
 					Element content = null;
+					Element newsImage = null;
+					Element image = null;
 					if (hasNodes(contentNode.getElementsByTagName("Single"))) {
 						content = (Element) contentNode.getElementsByTagName(
 								"Single").item(0);
@@ -143,16 +145,13 @@ public class XMLtoXML {
 							System.out.println("rich edit");
 							content = (Element) rte.getElementsByTagName("richedit").item(0);
 						}
+						
 					}
-					Element newsImage = null;
-					Element image = null;
-					if (hasNodes(element.getElementsByTagName("newsimage"))) {
-						newsImage = (Element) element.getElementsByTagName(
-								"newsimage").item(0);
-						image = (Element) newsImage.getElementsByTagName(
-								"image").item(0);
-					}
+					
 					if (content != null) {
+						String contentTemplateTextStart = "<table width=\"100%\" border=\"0\"><tbody><tr><td><table border=\"0\" align=\"right\" cellpadding=\"0\"cellspacing=\"1\" width=\"1%\" style=\"margin-left:15px\">"+
+													"<tbody><tr> <td><div class=\"parsys imindefParsSub\"></div></td></tr> </tbody> </table><div class=\"richedit Single\"><div class=\"richedit2 fontResizable\"><div>";
+						String contentTemplateTextEnd = "</div></div>    </div> </td> </tr>  </tbody></table>";
 						Element postedDate = (Element) element
 								.getElementsByTagName("posteddate").item(0);
 						System.out.println(element
@@ -167,27 +166,76 @@ public class XMLtoXML {
 						sdf.setTimeZone(TimeZone.getTimeZone("Asia/Singapore"));
 						System.out.println("formatted date---"
 								+ sdf.format(dateObj));
-						String contentStr = null;
+						StringBuffer contentStr = new StringBuffer();
 						String title = element.getAttribute("pageTitle");
 						if(content.hasAttribute("text")){
-							contentStr = content.getAttribute("text");
-						} else if(hasNodes(element.getElementsByTagName("leftpartop"))) {
+							contentStr.append(contentTemplateTextStart + content.getAttribute("text") + contentTemplateTextEnd) ;
+						} 
+						if(hasNodes(element.getElementsByTagName("leftpartop"))) {
 							System.out.println("LEFT par top");
 							NodeList contentRTE = element.getElementsByTagName("leftpartop");
 							Element rte = (Element) contentRTE.item(0);
 							if(hasNodes(rte.getElementsByTagName("richedit"))){
 								System.out.println("rich edit");
 								content = (Element) rte.getElementsByTagName("richedit").item(0);
-								contentStr = content.getAttribute("text");
+								contentStr.append(contentTemplateTextStart + content.getAttribute("text") + contentTemplateTextEnd) ;
+							}
+							if(hasNodes(rte.getElementsByTagName("image"))){
+								newsImage =(Element) rte.getElementsByTagName("image").item(0);
+							} else if(hasNodes(rte.getElementsByTagName("imagegallery"))){
+								System.out.println("Image Gallery Element");
+								newsImage = (Element) rte.getElementsByTagName("imagegallery").item(0);
+							}
+							
+						}
+						NewsContentDTO contentDTO = new NewsContentDTO();
+						if(newsImage !=null){
+							System.out.println("has image gallery --------" + newsImage.getLocalName());
+							NewsImageDTO imageDTO = new NewsImageDTO();
+							if(newsImage.hasAttribute("fileReference")){
+								System.out.println("file Reference ----- "  + newsImage.getAttribute("fileReference"));
+								imageDTO.setSrc(newsImage.getAttribute("fileReference"));
+								imageDTO.setAltText(newsImage.getAttribute("jcr:description"));
+								contentDTO.setTopImage(imageDTO);
+							} else {
+								if(newsImage.hasAttribute("galleryPath")){
+									System.out.println("Gallery path ----- "  + newsImage.getAttribute("galleryPath"));
+									imageDTO.setGallery(true);
+									imageDTO.setSrc(newsImage.getAttribute("galleryPath"));
+									contentDTO.setTopImage(imageDTO);
+								}
+							}
+							
+						}
+						//get and process content image
+						if(hasNodes(element.getElementsByTagName("imindefPars"))){
+							NodeList mindefNode = element.getElementsByTagName("imindefPars");
+							Element mindefElem = (Element) mindefNode.item(0);
+							if(hasNodes(mindefElem.getElementsByTagName("image"))){
+								Element imageElem = (Element) mindefElem.getElementsByTagName("image").item(0);
+								NewsImageDTO newImage = new NewsImageDTO();
+								if(imageElem.hasAttribute("fileReference")){
+									newImage.setSrc(imageElem.getAttribute("fileReference"));
+									contentDTO.getImages().add(newImage);
+								}
 							}
 						}
-						String imageStr = image != null ? image
-								.getAttribute("fileReference") : null;
-						NewsContentDTO contentDTO = new NewsContentDTO();
+						if(hasNodes(element.getElementsByTagName("newsimage"))){
+							NodeList mindefNode = element.getElementsByTagName("newsimage");
+							Element mindefElem  = (Element) mindefNode.item(0);
+							if(hasNodes(mindefElem.getElementsByTagName("image"))){
+								Element imageElem = (Element) mindefElem.getElementsByTagName("image").item(0);
+								NewsImageDTO newImage = new NewsImageDTO();
+								if(imageElem.hasAttribute("fileReference")){
+									newImage.setSrc(imageElem.getAttribute("fileReference"));
+									contentDTO.getImages().add(newImage);
+								}
+							}
+						}
 						contentDTO.setTitle(title);
 						contentDTO.setGuid(element.getAttribute("jcr:uuid"));
 						contentDTO.setPostedDate(dateObj);
-						contentDTO.setContent(contentStr);
+						contentDTO.setContent(contentStr.toString());
 						contentDTO.setCategory(getCategory(fileDirectory));
 						AccessUtil util = new AccessUtil();
 						int count = 0;

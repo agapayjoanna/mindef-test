@@ -21,6 +21,7 @@ import org.apache.commons.fileupload.FileItem;
 import com.ibm.workplace.wcm.api.exceptions.DocumentRetrievalException;
 
 import sg.gov.mindef.XMLtoXML;
+import sg.gov.mindef.util.Utility;
 
 public class FileServlet extends HttpServlet {
 
@@ -34,7 +35,7 @@ public class FileServlet extends HttpServlet {
 		if (fileDirectory != null && !fileDirectory.isEmpty()) {
 			File file = new File(fileDirectory);
 			System.out.println("Get Files");
-			getFiles(file.listFiles());
+			Utility.getFiles(file.listFiles(),"xml");
 		}
 		// boolean multipart = ServletFileUpload.isMultipartContent(request);
 		// if(multipart){
@@ -61,41 +62,6 @@ public class FileServlet extends HttpServlet {
 		// }
 	}
 
-	public static void getFiles(File[] listFiles) {
-		for (File file : listFiles) {
-			if (file.isDirectory()) {
-				System.out.println("Directory path -----------"
-						+ file.getPath());
-				getFiles(file.listFiles());
-			} else {
-				System.out.println("File Name:" + file.getName());
-
-				InputStream inputStream;
-				try {
-					if(getFileExtensionName(file).indexOf("xml") != -1){
-						
-						inputStream = new FileInputStream(file);
-						XMLtoXML.readFromXML(inputStream,file.getAbsolutePath());
-					}
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (DocumentRetrievalException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
-		}
-	}
-
-	public static String getFileExtensionName(File f) {
-		if (f.getName().indexOf(".") == -1) {
-			return "";
-		} else {
-			return f.getName().substring(f.getName().length() - 3,
-					f.getName().length());
-		}
-	}
+	
 
 }
