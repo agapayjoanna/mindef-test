@@ -473,6 +473,12 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
     	highlight.appendChild(selectors);
     	$('.highlight').append(highlight);
     }
+	
+	function constructMagazine(data){
+	var magazine = document.createElement('DIV')
+	magazine.innerHTML = data;
+	$('.magazineContent').append(magazine);
+	}
 
     $(document).ready(function() {
     
@@ -483,7 +489,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
         }
 		$(".item").show();
 		
-		// Get Main Carousel Content via ajax
+		// Get Main Carousel Content via x
 		var highlightURL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Highlights/Highlights";			
 		$.ajax({
 			url : highlightURL,
@@ -492,6 +498,19 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			success : function(data) {	
 				// $('.highlight .slider').append(data);
 				constructHighlight(data);
+			}, 
+			error : function(err) { }
+		});
+
+		// Get Main Carousel Content via x
+		var magazineURL = "http://192.168.2.32:10039/nsp/wcm/myconnect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntname=iMindef%20Design/Homepage/Magazine/Magazine&source=library";			
+		$.ajax({
+			url : magazineURL,
+			dataType : 'html',
+			async:false,
+			success : function(data) {	
+				// $('.highlight .slider').append(data);
+				constructMagazine(data);
 			}, 
 			error : function(err) { }
 		});		
@@ -1137,9 +1156,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 <div id="magazine_box">
     <div class="h5_box"><h5>PIONEER MAGAZINE</h5></div>
     <div class="magazineContent">
-        <a href="/imindef/resourcelibrary/cyberpioneer/magazine.html"><img src="/content/imindef/resourcelibrary/cyberpioneer/magazine/2016/jul/_jcr_content/cover/image.img.jpg/1467356669271.jpg"></a>
-        <span>INSIDE!</span>
-        <p></p><p>A Stronger NS</p><br><p>Working together for regional stability</p><br><p></p>
+        
     </div>
     <div class="button_box"><a href="/imindef/resourcelibrary/cyberpioneer/pnr_mobile.html" target="_blank" class="button_iphone">Available on iPad</a><a href="/imindef/resourcelibrary/cyberpioneer/magazine.html" target="_blank" class="button_viewall">view all</a></div>
 </div>
