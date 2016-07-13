@@ -48,7 +48,6 @@
 	<script type="text/javascript" src="assets/jquery.js"></script>
 	<script type="text/javascript" src="assets/jquery.cookie.js"></script>
 	<script type="text/javascript" src="assets/select-min.js"></script>
-	<script type="text/javascript" src="assets/jquery.dotdotdot.min.js"></script>
 	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
 	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/favicon.ico" rel="icon">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -451,24 +450,19 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
     	var slider = document.createElement('DIV');
     	slider.setAttribute('class', 'slider');
     	slider.setAttribute('style', 'position: relative; cursor: default; width: 685px; overflow: hidden; left: 0px;');
-    	slider.innerHTML = data;
+    	slider.innerHTML = data;    	
     	
     	var selectors = document.createElement('DIV');
     	selectors.setAttribute('class', 'selectors');
+    	var selectorLength = (($(data).length > 3) ? 3 : $(data).length);
     	
-    	var selector1 = document.createElement('DIV');
-    	selector1.setAttribute('class', 'selector');
-    	selector1.setAttribute('style', 'cursor: pointer;');
-    	var selector2 = document.createElement('DIV');
-    	selector2.setAttribute('class', 'selector');
-    	selector2.setAttribute('style', 'cursor: pointer;');
-    	var selector3 = document.createElement('DIV');
-    	selector3.setAttribute('class', 'selector');
-    	selector3.setAttribute('style', 'cursor: pointer;');
-    	    	    	
-    	selectors.appendChild(selector1);
-    	selectors.appendChild(selector2);
-    	selectors.appendChild(selector3);
+    	for(var i=0; i < selectorLength; i++) {
+	    	var selector = document.createElement('DIV');
+	    	selector.setAttribute('class', 'selector');
+	    	selector.setAttribute('style', 'cursor: pointer;');
+	    	selectors.appendChild(selector);    		
+    	}
+    	    	    	    	
     	highlight.appendChild(slider);
     	highlight.appendChild(selectors);
     	$('.highlight').append(highlight);
@@ -489,8 +483,13 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
         }
 		$(".item").show();
 		
+<<<<<<< HEAD
 		// Get Main Carousel Content via x
 		var highlightURL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Highlights/Highlights";			
+=======
+		// Get Main Carousel Content via ajax
+		var highlightURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Highlights/Highlights";			
+>>>>>>> 386aba1386cbe2d9985ad1d6aa1cd2d807ac8190
 		$.ajax({
 			url : highlightURL,
 			dataType : 'html',
@@ -695,9 +694,8 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 				if(tab_num == "tab2") {
 					var contents = $(data);
 					if((contents !== undefined) && (contents !== null)) {
-						var innerNode = null;
 						var entry = entry = document.createElement('LI'); 
-						entry.setAttribute('style', 'width: 380px; float: left; display: block;')
+						entry.setAttribute('style', 'width: 380px; float: left; display: block;');
 						for (var i = 0; i < contents.length; i++) {
 							var content = contents[i];
 							if (content.nodeType == 1 && content.tagName == 'DIV') {
@@ -706,6 +704,8 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 									container.append(entry);
 									entry = document.createElement('LI');
 									entry.setAttribute('style', 'width: 380px; float: left; display: block;');	
+								} else if((i+1) == contents.length) {
+									container.append(entry);
 								}
 							}
 						}
@@ -763,17 +763,12 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			</div>
 		</div>
 		<script type="text/javascript">
-			var tab1URL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/News%20Releases";
-			var tab2URL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Forum%20Letter%20Replies";		
-			var tab3URL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Activities";			
+			var tab1URL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/News%20Releases";
+			var tab2URL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Forum%20Letter%20Replies";		
+			var tab3URL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Activities";			
 			getOfficialReleasesContents("tab1", tab1URL, $('#tab_official_news-1 .officialslides'));
 			getOfficialReleasesContents("tab2", tab2URL, $('#tab_official_news-2 .officialslides'));
-			getOfficialReleasesContents("tab3", tab3URL, $('#tab_official_news-3 .officialslides'));
-			
-			$("#tab_official_news-2").find(".description").dotdotdot({
-				ellipsis	: '...',
-				wrap		: 'letter',
-			});			
+			getOfficialReleasesContents("tab3", tab3URL, $('#tab_official_news-3 .officialslides'));		
 		</script>		
 	</div>
 	</div>
@@ -936,223 +931,151 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
     </div>
     <div class="content_right">
         <div class="box">
-            <div class="cyberpioneerlatest">
-
-
-
-
-				 
-
-
-
-
-
-<script type="text/javascript" src="assets/cyberpioneerlatest-min.js"></script>
-<script type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
+<div class="cyberpioneerlatest">
 
 <div class="cyberpioneerlatest box">
     <div class="h3_box">
-        <h3 style="float: left;">
-		
+        <h3 style="float: left;">		
 			<a href="/imindef/resourcelibrary/cyberpioneer/index.html" target="_blank" style="color: inherit; text-decoration: none;">
 				cyberpioneer
 			</a>
-
 		</h3>
         <span>
-
             <a href="/imindef/rss/cyberpioneer_rss.html" class="button_rss">&nbsp;</a>
-
         </span>
         <div class="clear"></div>
-    </div>
+    </div>	
     <div class="menu_cyberpioneer">
-        <a class="left_arr"></a>
-        <a class="right_arr"></a>
-        <div class="hidden_div">
-        <ul style="width: 1261px;">
-            <li class="hover" id="latest"><a class="current">Latest</a></li>
-
-            <li id="ops_training"><a>ops &amp; training</a></li>
-
-            <li id="diplomacy"><a>diplomacy</a></li>
-
-            <li id="people"><a>people</a></li>
-
-            <li id="technology"><a>technology</a></li>
-
-            <li id="national_service"><a>national service</a></li>
-
-            <li id="3rd_gen_saf"><a>3rd Gen SAF</a></li>
-
-            <li id="parades_ceremonies"><a>parades &amp; ceremonies</a></li>
-
-            <li id="public_events"><a>public events</a></li>
-
-            <li id="ndp"><a>ndp</a></li>
-
-            <li id="total_defence"><a>total defence</a></li>
-
-        </ul>
+    	<a class="left_arr"></a>
+		<a class="right_arr"></a>
+		<div class="hidden_div">
+			<ul>
+				
+			</ul>
+		</div>
     </div>
-    </div>
-    <div class="cyberpioneer_content_box">
-        <div id="" class="flexslider">
-            <div class="flex-control-nav">
-                <ul>
-                    <li style="cursor: pointer;"><a class="current"></a></li>
-                    <li style="cursor: pointer;"><a></a></li>
-                    <li style="cursor: pointer;"><a></a></li>
-                </ul>
-            </div>
-
-
-            <div style="position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 470px; height: 261px;" class="slides latest">
-                <div style="position: relative; cursor: move; width: 1410px; overflow: hidden; left: 0px;">
-
-                    <div style="height: 261px; float: left; width: 470px;">
-                        <div class="list_box">
-                            <div class="pageImage" style="height: 126px;">
-                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/04jul16_news.html" target="_blank">
-<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/04jul16_news/_jcr_content/newsimage/image.img.jpg/1467623134669.jpg">
-                                </a>
-                            </div>
-                            <div class="date postedDate">04 Jul 2016, 1700 hours (GMT +8)</div>
-                            <div class="viceTitle">
-                                <p>
-                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/04jul16_news.html" target="_blank">
-                                        <span>ops &amp; training / </span>
-                                        From dropout to valedictorian
-                                    </a>
-                                </p>
-                            </div>
-                            <div style="height: 59px;" class="briefDesc">He dropped out of secondary school almost 40 years ago. Today, however, 2nd Warrant Officer...</div>
-                        </div>
-                  
-                        <div class="list_box">
-                            <div class="pageImage" style="height: 126px;">
-                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/features/2016/jul16_cs.html" target="_blank">
-<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/features/2016/jul16_cs/_jcr_content/newsimage/image.img.jpg/1467596326942.jpg">
-                                </a>
-                            </div>
-                            <div class="date postedDate">04 Jul 2016, 0920 hours (GMT +8)</div>
-                            <div class="viceTitle">
-                                <p>
-                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/features/2016/jul16_cs.html" target="_blank">
-                                        <span>national service / </span>
-                                        A Stronger NS
-                                    </a>
-                                </p>
-                            </div>
-                            <div style="height: 59px;" class="briefDesc">It's been two years since the Committee to Strengthen National Service (CSNS) recommendations...</div>
-                        </div>
-                    </div>
-
-                    <div style="height: 261px; float: left; width: 470px;">
-                        <div class="list_box">
-                            <div class="pageImage" style="height: 126px;">
-                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/02jul16_news.html" target="_blank">
-<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/02jul16_news/_jcr_content/newsimage/image.img.jpg/1467520398697.jpg">
-                                </a>
-                            </div>
-                            <div class="date postedDate">02 Jul 2016, 2130 hours (GMT +8)</div>
-                            <div class="viceTitle">
-                                <p>
-                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/02jul16_news.html" target="_blank">
-                                        <span>ndp / </span>
-                                        Dr Maliki visits, sends well-wishes to participants at NDP rehearsal
-                                    </a>
-                                </p>
-                            </div>
-                            <div style="height: 37px;" class="briefDesc">Senior Minister of State for Defence Dr Mohamad Maliki bin...</div>
-                        </div>
-                  
-                        <div class="list_box">
-                            <div class="pageImage" style="height: 126px;">
-                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news2.html" target="_blank">
-<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news2/_jcr_content/newsimage/image.img.jpg/1467366769044.jpg">
-                                </a>
-                            </div>
-                            <div class="date postedDate">01 Jul 2016, 1800 hours (GMT +8)</div>
-                            <div class="viceTitle">
-                                <p>
-                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news2.html" target="_blank">
-                                        <span>3rd Gen SAF / </span>
-                                        SAF ready to defend S'pore: MG Ong 
-                                    </a>
-                                </p>
-                            </div>
-                            <div style="height: 59px;" class="briefDesc">If a Paris-style attack happens in Singapore and multiple sites are targeted, the Singapore...</div>
-                        </div>
-                    </div>
-
-                    <div style="height: 261px; float: left; width: 470px;">
-                        <div class="list_box">
-                            <div class="pageImage" style="height: 126px;">
-                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news.html" target="_blank">
-<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news/_jcr_content/newsimage/image.img.jpg/1467358691298.jpg">
-                                </a>
-                            </div>
-                            <div class="date postedDate">01 Jul 2016, 1500 hours (GMT +8)</div>
-                            <div class="viceTitle">
-                                <p>
-                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jul/01jul16_news.html" target="_blank">
-                                        <span>parades &amp; ceremonies / </span>
-                                        Reaffirming commitment to defending S'pore
-                                    </a>
-                                </p>
-                            </div>
-                            <div style="height: 37px;" class="briefDesc">Every year on 1 Jul, Operationally Ready National Servicemen...</div>
-                        </div>
-                  
-                        <div class="list_box">
-                            <div class="pageImage" style="height: 126px;">
-                                <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jun/30jun16_news2.html" target="_blank">
-<img style="width: 215px;" title="" alt="" class="cq-dd-image" src="/content/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jun/30jun16_news2/_jcr_content/newsimage/image.img.jpg/1467348149054.jpg">
-                                </a>
-                            </div>
-                            <div class="date postedDate">30 Jun 2016, 2320 hours (GMT +8)</div>
-                            <div class="viceTitle">
-                                <p>
-                                    <a href="/imindef/resourcelibrary/cyberpioneer/topics/articles/news/2016/jun/30jun16_news2.html" target="_blank">
-                                        <span>parades &amp; ceremonies / </span>
-                                        SAF recognises senior leaders in promotion ceremony
-                                    </a>
-                                </p>
-                            </div>
-                            <div style="height: 37px;" class="briefDesc">The phrase growing with your job is usually used as a figure of...</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="button_box1" style="padding-right:20px;"><a href="/imindef/resourcelibrary/cyberpioneer/topics.html" class="button_viewall" target="_blank">view all</a></div>
-            <div class="content_path" style="display:none;"></div>
-            <div class="category_path" style="display:none;">/content/imindef/resourcelibrary/cyberpioneer/topics</div>
-            <div class="node_path" style="display:none;">/content/imindef/home/jcr:content/cyberpioneerlatest.loadtopics</div>
-        </div>
-    </div>
-</div>
+	<div class="cyberpioneer_content_box">
+		<div id="" class="flexslider">
+			<div class="flex-control-nav">
+				<ul></ul>
+			</div>
+			<div class="button_box1" style="padding-right:20px;">
+				<a class="button_viewall" target="_blank" href="/content/imindef/resourcelibrary/cyberpioneer/topics/ops_training.html">view all</a>
+			</div>
+		</div>
+	</div>
 </div>
 
+	<script type="text/javascript">
+	    function doAjaxRequest(url, callback) {
+			$.ajax({
+				url : url,
+				dataType : 'html',
+				async:false,
+				success : function(data) {	
+					callback(data);
+				}, 
+				error : function(err) { }
+			});	    	
+	    }
+	    
+	    function constructSlides(category) {
+			var slidesDivMain = document.createElement('DIV');
+	    	slidesDivMain.setAttribute('class', 'slides ' + category);
+	    	var slidesDiv1 = document.createElement('DIV');
+	    	slidesDivMain.appendChild(slidesDiv1);
+	    	$(slidesDivMain).insertBefore(".cyberpioneer_content_box .button_box1");
+	    }
+	    
+	    function groupContents(contents, container) {
+			if((contents !== undefined) && (contents !== null)) {
+				var entry = document.createElement('DIV');
+				for(var contentIndex = 0; contentIndex < contents.length; contentIndex++) {				
+					var content = contents[contentIndex];						
+					if (content.nodeType == 1 && content.tagName == 'DIV') {
+						var catContainer = $(content).find('.viceTitle span');
+						var catText = catContainer.text().split('_')[1];
+						catContainer.html(catText);
+						entry.appendChild(content);
+						if(((contentIndex+1)%2) == 0) {
+							$($(container)[0]).append(entry);
+							entry = document.createElement('DIV');
+						} else if((contentIndex+1) == contents.length) {
+							$($(container)[0]).append(entry);
+						}							
+					}
+				}
+			}	    
+	    }
+	    
+	    function constructNav(data){
+			var navLength = ((data.length > 6) ? 3 : Math.ceil(data.length / 2));
+			$(".cyberpioneerlatest .flex-control-nav ul").html("");
+			for(var i=0; i < navLength; i++) {
+		    	var nav = document.createElement('LI');
+		    	var navLink = document.createElement('A');
+		    	nav.appendChild(navLink);		    	
+		    	$(".cyberpioneerlatest .flex-control-nav ul").append(nav);
+			}
+	    }
+	    
+	    function retrieveContents(category) {
+			var cyberpioneerTabsURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Cyberpioneer/Cyberpioneer%20List";
+			var element = '.cyberpioneerlatest .cyberpioneer_content_box .slides.' + category + ' div';
+			if(category != "") {
+				cyberpioneerTabsURL +=  "&category" + category;
+			}			
+			doAjaxRequest(cyberpioneerTabsURL, function(data) {
+				var tabContents = $(data);	
+				groupContents(tabContents, element);
+				constructNav(tabContents);
+			});		    
+	    }
+	    
+		$(function(){
+			// Append tabs
+			var cyberpioneerTabsURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Cyberpioneer/Cyberpioneer%20Tabs";
+			doAjaxRequest(cyberpioneerTabsURL, function(data) {
+				var tabs = $(data);
+				var newTabList = [];
+
+				for(var tabIndex = 0; tabIndex < tabs.length; tabIndex++) {				
+					var tab = tabs[tabIndex].children[0];
+					var currTabText = tab.textContent || tab.innerText;
+					var tabTextArr = currTabText.split('_');
+					var replaceTabPos = tabTextArr[0];
+				  	var replaceTabText = tabTextArr[1];  
+					if(tabTextArr.length == 1) {
+						replaceTabPos = 0;
+				    	replaceTabText = tabTextArr[0];
+					}  	
+					
+				  if(tab.textContent == undefined) {
+						tab.innerText = replaceTabText;
+					} else {
+						tab.textContent = replaceTabText;
+					}
+					newTabList[replaceTabPos] = $(tab).parent()[0];
+				}
+				
+				$('.menu_cyberpioneer ul').html(newTabList);
+			});
+			
+			// Append contents
+			constructSlides('latest');
+			retrieveContents('latest');
+		
+		});
+	</script>
+	<script src="assets/cyberpioneerlatest-min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
+</div>
         </div>
         <div class="box">
-            <div class="youtubeplayer cyberpioneertv">
-
-
-
-
-    </div>
-
+            <div class="youtubeplayer cyberpioneertv"></div>
         </div>
         <div style="width:450px;margin-top: 17px;">
             <div style="float:left;width:218px;"><div class="magazinebox">
-
-
-
-
-
 <div id="magazine_box">
     <div class="h5_box"><h5>PIONEER MAGAZINE</h5></div>
     <div class="magazineContent">
