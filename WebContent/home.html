@@ -986,7 +986,6 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 	    
 	    function constructNav(data){
 			var navLength = ((data.length > 6) ? 3 : Math.ceil(data.length / 2));
-			console.log("Nav Length: " + navLength);
 			$(".cyberpioneerlatest .flex-control-nav ul").html("");
 			for(var i=0; i < navLength; i++) {
 		    	var nav = document.createElement('LI');
@@ -1004,7 +1003,6 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			}			
 			doAjaxRequest(cyberpioneerTabsURL, function(data) {
 				var tabContents = $(data);	
-				console.log(tabContents);
 				groupContents(tabContents, element);
 				constructNav(tabContents);
 			});		    
