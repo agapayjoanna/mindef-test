@@ -317,18 +317,7 @@ public class AccessUtil {
 						content.setComponent("image_path_alt", imgPathAltText);
 					}
 				}
-//				AuthoringTemplate authTemplate = (AuthoringTemplate) designWorkspace.getById(authoringTemplateId, true);
-//				System.out.println("authoring template id -----------" + authoringTemplateId.getId());
-//				Calendar generalCalendar = Calendar.getInstance();
-//				generalCalendar.setTime(officialDate);
-//				generalCalendar.setTimeZone(TimeZone.getTimeZone("Etc/GMT+8"));
-//				authTemplate.setGeneralDateOne(generalCalendar.getTime());
-//				authTemplate.setGeneralDateTwo(officialDate);
-//				authTemplate.setExpiryDate(officialDate);
-//				authTemplate.setEffectiveDate(officialDate);
-				content.setGeneralDateOne(officialDate);
-		
-		
+				content.setGeneralDateOne(officialDate);		
 				workspaceSave(workspace, content);
 
 				System.out.println("Content Created");

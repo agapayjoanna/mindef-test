@@ -483,13 +483,9 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
         }
 		$(".item").show();
 		
-<<<<<<< HEAD
-		// Get Main Carousel Content via x
-		var highlightURL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Highlights/Highlights";			
-=======
 		// Get Main Carousel Content via ajax
 		var highlightURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Highlights/Highlights";			
->>>>>>> 386aba1386cbe2d9985ad1d6aa1cd2d807ac8190
+
 		$.ajax({
 			url : highlightURL,
 			dataType : 'html',
@@ -502,7 +498,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		});
 
 		// Get Main Carousel Content via x
-		var magazineURL = "http://192.168.2.32:10039/nsp/wcm/myconnect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntname=iMindef%20Design/Homepage/Magazine/Magazine&source=library";			
+		var magazineURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntname=iMindef%20Design/Homepage/Magazine/Magazine&source=library";			
 		$.ajax({
 			url : magazineURL,
 			dataType : 'html',
@@ -632,7 +628,14 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		}else{
 			runFlexslider();
 		}
-
+		
+		var isVisited = false;
+		$('.tab_new_2 > a').click(function(){
+			if(!isVisited) {
+				isVisited = true;
+				concatContentText();
+			}
+		});
 	});
 	function runFlexslider(){
 		$('#tab_official_news .officialflexslider').each(function(){
@@ -684,6 +687,26 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		$('#tab_official_news-3 .officialflexslider').flexslider("pause");*/
 	}
 	
+	function concatContentText() {
+		$('.officialslides > li > div').each(function(){
+		  var j=$(".news_title", this).height()+10;
+		  var m=$(".tab_content_title", this).height();
+		  var g=128-j-m;
+		  var f=Math.floor(g/16);
+		  var l=f*63;
+		  console.log("Text length: " + l);
+		  var k=$(".tab_content_description", this).html();
+		  if(k!=null&&k.length>l){
+		    k=k.substring(0,l);
+		    var h=k.lastIndexOf(" ");
+		    if(h!=-1){k=k.substring(0,h)}k+="...";
+		  }
+		  if(k==null){k=""}
+		  $(".tab_content_description", this).html(k);
+		  $(".tab_content_description", this).css("height",g);  
+		});
+	}
+	
 	function getOfficialReleasesContents(tab_num, url, container) {
 		// Get Official Releases Carousel Content via ajax
 		$.ajax({
@@ -708,7 +731,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 									container.append(entry);
 								}
 							}
-						}
+						}						
 					}
 				} else {
 					container.html(data);
@@ -788,8 +811,8 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 <div class="box">
 	<div class="h2_box"><h2>Key Topics</h2></div>
 	<div class="key_topics_box">
-		<div style="position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 252px;" class="flexslider">
-			<div style="position: relative; cursor: move; width: 1350px; overflow: hidden; left: 0px;">
+		<div class="flexslider">
+			<!-- <div style="position: relative; cursor: move; width: 1350px; overflow: hidden; left: 0px;">
 				<div style="float: left; width: 450px;"><div class="list_box">
 										<a href="/imindef/key_topics/defence_policy.html"><img src="/content/imindef/key_topics/defence_policy/_jcr_content/par0001/Single/image.img.jpg/1440143323965.jpg" border="0"></a>
 										<p><span><a href="/imindef/key_topics/defence_policy.html">Defence Policy &amp; Diplomacy</a></span>Singapore's defence policy is fundamentally based on the twin pillars of deterrence and diplomacy. <br>
@@ -845,7 +868,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 
 </p>
 										</div><div style="width:4px;height:252px;float:left">&nbsp;</div></div>
-			</div>
+			</div> -->
 		</div>
 		<div>
 			
@@ -863,25 +886,58 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 </div>	
 <script type="text/javascript">
 	$(document).ready(function(){
-		$(".list_box").filter(function(){
-							return $(this).html() == "";
-						}).addClass("list_box_empty");
-	
-		$('.key_topics_box .flexslider').iosSlider({
-			snapToChildren: true,
-			desktopClickDrag: true,
-			navSlideSelector: $('.flex-control-nav_keytopics .selector'),
-			autoSlide: false,
-			autoSlideTimer: 3000,
-			onSlideChange: slideContentChange,
-			onSliderLoaded: slideContentChange
-		});
-		
-		function slideContentChange(args) {
-			/* indicator */
-			$('.flex-control-nav_keytopics .selector').removeClass('selected');
-			$('.flex-control-nav_keytopics .selector:eq(' + args.currentSlideNumber + ')').addClass('selected');
-		}
+		var keyTopicsURL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntid=a1131e56-ad6c-41fb-9968-0ee67e865fad&source=library";					    
+		    function groupTopicContents(contents, container) {
+				if((contents !== undefined) && (contents !== null)) {
+					var entry = document.createElement('DIV');
+					for(var contentIndex = 0; contentIndex < contents.length; contentIndex++) {				
+						var content = contents[contentIndex];						
+						if (content.nodeType == 1 && content.tagName == 'DIV') {
+							entry.appendChild(content);
+							if(((contentIndex+1)%3) == 0) {
+								$($(container)[0]).append(entry);
+								entry = document.createElement('DIV');
+							} else if((contentIndex+1) == contents.length) {
+								$($(container)[0]).append(entry);
+							}							
+						}
+					}
+				}	    
+		    }
+		    
+		    function retrieveKeyTopicContents(category) {
+				//var cyberpioneerTabsURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Cyberpioneer/Cyberpioneer%20List";
+				var element = '.key_topics_box .flexslider div';
+				$.ajax({
+					url: keyTopicsURL,
+					dataType: "html",
+					async: false
+				}).done(function(data){
+					var contents = $(data);
+					groupTopicContents(contents, element)
+					$('.key_topics_box .flexslider').iosSlider({
+						snapToChildren: true,
+						desktopClickDrag: true,
+						navSlideSelector: $('.flex-control-nav_keytopics .selector'),
+						autoSlide: false,
+						autoSlideTimer: 3000,
+						onSlideChange: slideContentChange,
+						onSliderLoaded: slideContentChange
+					});
+				});    
+		    }
+
+			function constructKeyTopics(data) {
+				var div  = document.createElement("div");
+		    	$('.key_topics_box .flexslider').append(div);
+		    }
+			constructKeyTopics();
+			retrieveKeyTopicContents();		
+			function slideContentChange(args) {
+				/* indicator */
+				$('.flex-control-nav_keytopics .selector').removeClass('selected');
+				$('.flex-control-nav_keytopics .selector:eq(' + args.currentSlideNumber + ')').addClass('selected');
+			}
 	});
 </script>
 
