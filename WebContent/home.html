@@ -738,7 +738,17 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			var tab3URL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Activities";			
 			getOfficialReleasesContents("tab1", tab1URL, $('#tab_official_news-1 .officialslides'));
 			getOfficialReleasesContents("tab2", tab2URL, $('#tab_official_news-2 .officialslides'));
-			getOfficialReleasesContents("tab3", tab3URL, $('#tab_official_news-3 .officialslides'));		
+			getOfficialReleasesContents("tab3", tab3URL, $('#tab_official_news-3 .officialslides'));
+			$(document).on('click','#tab_official_news-3 .news_portrait a',function(){
+				var monthNames = [ "January", "February", "March", "April", "May",
+					"June", "July", "August", "September", "October",
+					"November", "December" ];
+				var name = $(this).data('name');
+				var postedDate = $(this).data('date');
+				var dateObj = new Date(postedDate);
+				var date = [monthNames[dateObj.getMonth()], dateObj.getDate() + ',', dateObj.getFullYear()].join(' ');
+				window.location.href="details.html?title="+name+"&date="+date;
+			});			
 		</script>		
 	</div>
 	</div>
