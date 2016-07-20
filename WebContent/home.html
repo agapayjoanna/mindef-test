@@ -48,8 +48,8 @@
 	<script type="text/javascript" src="assets/jquery.js"></script>
 	<script type="text/javascript" src="assets/jquery.cookie.js"></script>
 	<script type="text/javascript" src="assets/select-min.js"></script>
-	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
-	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/favicon.ico" rel="icon">
+	<link href="assets/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
+	<link href="assets/favicon.ico" rel="icon">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 	<meta content="276015381058" property="fb:pages">
 	<meta content="Ministry of Defence, Singapore" name="Title">
@@ -810,14 +810,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		<div class="flexslider"></div>
 		<div>
 			
-			<div class="flex-control-nav_keytopics" style="margin-left:189px">
-				
-						<div style="cursor: pointer;" class="selector selected"></div>
-						
-						<div style="cursor: pointer;" class="selector"></div>
-						
-						<div style="cursor: pointer;" class="selector"></div>
-						
+			<div class="flex-control-nav_keytopics" style="margin-left:189px">						
 			</div>
 		</div>
 	</div>
@@ -829,9 +822,12 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 				if((contents !== undefined) && (contents !== null)) {
 					var entry = document.createElement('DIV');
 					for(var contentIndex = 0; contentIndex < contents.length; contentIndex++) {				
-						var content = contents[contentIndex];						
+						var content = contents[contentIndex];
 						if (content.nodeType == 1 && content.tagName == 'DIV') {
 							entry.appendChild(content);
+							var separator = document.createElement("DIV");
+							separator.setAttribute("style","width:4px;height:252px;float:left");
+							entry.appendChild(separator);							
 							if(((contentIndex+1)%3) == 0) {
 								$($(container)[0]).append(entry);
 								entry = document.createElement('DIV');
@@ -853,15 +849,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 				}).done(function(data){
 					var contents = $(data);
 					groupTopicContents(contents, element)
-					$('.key_topics_box .flexslider').iosSlider({
-						snapToChildren: true,
-						desktopClickDrag: true,
-						navSlideSelector: $('.flex-control-nav_keytopics .selector'),
-						autoSlide: false,
-						autoSlideTimer: 3000,
-						onSlideChange: slideContentChange,
-						onSliderLoaded: slideContentChange
-					});
+					constructKeyTopicsNav(contents);
 				});    
 		    }
 
@@ -876,6 +864,26 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 				$('.flex-control-nav_keytopics .selector').removeClass('selected');
 				$('.flex-control-nav_keytopics .selector:eq(' + args.currentSlideNumber + ')').addClass('selected');
 			}
+			
+			 function constructKeyTopicsNav(data){
+					var navLength = ((data.length > 9) ? 3 : Math.ceil(data.length / 3));
+					$(".flex-control-nav_keytopics").html("");
+					for(var i=0; i < navLength; i++) {
+				    	var nav = document.createElement('DIV');
+				    	nav.setAttribute("class","selector");	
+				    	$(".flex-control-nav_keytopics").append(nav);
+					}
+					
+					$('.key_topics_box .flexslider').iosSlider({
+						snapToChildren: true,
+						desktopClickDrag: true,
+						navSlideSelector: $('.flex-control-nav_keytopics .selector'),
+						autoSlide: false,
+						autoSlideTimer: 3000,
+						onSlideChange: slideContentChange,
+						onSliderLoaded: slideContentChange
+					});					
+			   }
 	});
 </script>
 
