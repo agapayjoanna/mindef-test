@@ -48,8 +48,8 @@
 	<script type="text/javascript" src="assets/jquery.js"></script>
 	<script type="text/javascript" src="assets/jquery.cookie.js"></script>
 	<script type="text/javascript" src="assets/select-min.js"></script>
-	<link href="assets/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
-	<link href="assets/favicon.ico" rel="icon">
+	<link href="https://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
+	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/favicon.ico" rel="icon">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 	<meta content="276015381058" property="fb:pages">
 	<meta content="Ministry of Defence, Singapore" name="Title">
@@ -232,7 +232,7 @@
 
 <!--top bar-->
 
-<div style="width: 1349px; margin: 0px auto;" id="top_content_div">
+<div style="margin: 0px auto;" id="top_content_div">
 
 
 
@@ -243,7 +243,6 @@
                 <a href="/imindef/header/contact_info.html" class="icon_telephone" target="_self" title="Contact Us"></a>
                 <a href="/imindef/header/feedback.html" class="icon_feedback" target="_self" title="Provide Feedback"></a>
                 <a href="/imindef/header/sitemap.html" class="icon_sitemap" target="_self" title="Sitemap"></a>
-                <a href="/imindef/mobile/home.html?siteversion=mobile" class="icon_mobile" target="_self" title="Mobile"></a>       
           </div>
 <!--TODO: add Google Search-->
           <div class="top_bar_search_box">
@@ -532,58 +531,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 </div>
 
 <div class="announcement">
-
-
-
-
-			<div class="annoucement_box">
-				<span class="title">ANNOUNCEMENT</span>
-			<span class="detail">
-			<div class="marqueebox1" id="marqueebox0"> 
-				<div style="margin-top: -1.69968px;" id="marqueeboxAnn">
-			
-				<p>for any queries.</p><p>Access to NS Portal will be unavailable on Wed 06 Jul, 12am-2am due to a scheduled maintenance. Please email contact@ns.sg </p></div>
-			</div>
-			</span>
-			</div>
-			
-				<script type="text/javascript">
-				(function($){
-				$.fn.extend({
-						AnnScroll:function(opt,callback){
-								if(!opt) var opt={};
-								var _this=$("#marqueeboxAnn");
-								var     lineH=_this.find("p:first").height(), 
-										line=opt.line?parseInt(opt.line,10):parseInt(this.height()/lineH,10), 
-										speed=opt.speed?parseInt(opt.speed,10):500, 
-										timer=opt.timer?parseInt(opt.timer,10):10000; 
-								if(line==0) line=1;
-								var upHeight=0-lineH;
-								scrollUp=function(){
-										_this.animate({
-												marginTop:upHeight
-										},speed,function(){
-												 _this.find("p:first").appendTo(_this);
-											   
-												_this.css({marginTop:0});
-										});
-								}
-								_this.hover(function(){
-										clearInterval(timerID);
-								},function(){
-										timerID=setInterval("scrollUp()",timer);
-								}).mouseout();
-						}        
-				})
-				})(jQuery);
-
-				$(document).ready(function(){
-						$("#marqueeboxAnn").AnnScroll({speed:1000,timer:5000});
-				});
-				</script>
-				
-			
-			
+	<div class="annoucement_box_null"></div>
 </div>
 
 <div class="content_box">
@@ -745,7 +693,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 
 
 		<div class="officialbox">
-	<div class="h1_box"><table style="width:100%"><tbody><tr><td><h1>official releases</h1></td><td align="right"><span><a href="/imindef/rss/official_release.html" class="button_rss">&nbsp;</a></span></td></tr></tbody></table></div>
+	<div class="h1_box"><table style="width:100%"><tbody><tr><td><h1>official releases</h1></td><td align="right"><span></span></td></tr></tbody></table></div>
 	<div class="official_news_box">
 	<div id="tab_official_news" class="tab_official_news">
 		<ul>
@@ -942,9 +890,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 				cyberpioneer
 			</a>
 		</h3>
-        <span>
-            <a href="/imindef/rss/cyberpioneer_rss.html" class="button_rss">&nbsp;</a>
-        </span>
+        <span></span>
         <div class="clear"></div>
     </div>	
     <div class="menu_cyberpioneer">
@@ -1113,30 +1059,31 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 
         <div class="title">STAY CONNECTED</div>
         <div class="social" style="width:464px">
-        <ul><li><img src="assets/1457313597772.png"><p><a href="http://www.youtube.com/user/cyberpioneertv" target="_blank">cyberpioneer<br>
-TV</a><br>
-</p>
-</li><li><img src="assets/1349870265274.png"><p><a href="http://www.flickr.com/photos/cyberpioneer" target="_blank">cyberpioneer<br>
-Flickr</a><br>
-</p>
-</li><li><img src="assets/1349870260001.png"><p><span class="small"><a class="whitetextlink" href="http://www.facebook.com/cyberpioneer.connect" target="_blank">cyberpioneer<br>
-Facebook</a></span></p>
-</li><li><img src="assets/1446167139421.png"><p><span class="small"><a href="http://www.facebook.com/ngenghen" target="_blank">Defence <br>
-Minister's<br>
-Facebook</a></span></p>
-</li><li class="last"><img src="assets/1349870263641.png"><p><a href="http://twitter.com/cybpioneer" target="_blank">cyberpioneer<br>
-Twitter</a><br>
-</p>
-</li><li><img src="assets/1349870266300.png"><p><a target="_blank" href="/imindef/rss.html">RSS<br>
-Feeds</a><br>
-</p>
-</li><li><img src="assets/1349870264671.png"><p><a href="/imindef/resourcelibrary/podcasts.html" target="_blank">Podcasts</a><br>
-</p>
-</li><li><img src="assets/1349870258205.png"><p><a href="/imindef/resourcelibrary/e-newsletter.html" target="_blank">e-Newsletter</a><br>
-</p>
-</li><li><img src="assets/1392688665795.png"><p><a href="http://instagram.com/cybpioneer">cyberpioneer<br>
-Instagram</a></p>
-</li></ul>
+        <ul>
+        	<li>
+        		<img src="assets/1457313597772.png"><p><a href="http://www.youtube.com/user/cyberpioneertv" target="_blank">cyberpioneer<br>TV</a><br></p>
+        	</li>
+        	<li>
+        		<img src="assets/1349870265274.png"><p><a href="http://www.flickr.com/photos/cyberpioneer" target="_blank">cyberpioneer<br>Flickr</a><br></p>
+        	</li>
+        	<li>
+        		<img src="assets/1349870260001.png"><p><span class="small"><a class="whitetextlink" href="http://www.facebook.com/cyberpioneer.connect" target="_blank">cyberpioneer<br>Facebook</a></span></p>
+        	</li>
+        	<li>
+        		<img src="assets/1446167139421.png"><p><span class="small"><a href="http://www.facebook.com/ngenghen" target="_blank">Defence <br>Minister's<br>Facebook</a></span></p></li>
+        	<li class="last">
+        		<img src="assets/1349870263641.png"><p><a href="http://twitter.com/cybpioneer" target="_blank">cyberpioneer<br>Twitter</a><br></p>
+        	</li>
+        	<li>
+        		<img src="assets/1349870264671.png"><p><a href="/imindef/resourcelibrary/podcasts.html" target="_blank">Podcasts</a><br></p>
+        	</li>
+        	<li>
+        		<img src="assets/1349870258205.png"><p><a href="/imindef/resourcelibrary/e-newsletter.html" target="_blank">e-Newsletter</a><br></p>
+        	</li>
+        	<li>
+        		<img src="assets/1392688665795.png"><p><a href="http://instagram.com/cybpioneer">cyberpioneer<br>Instagram</a></p>
+        	</li>
+        </ul>
         </div>
 
  <!--moving banner-->
@@ -1173,8 +1120,6 @@ Instagram</a></p>
     if (screenWidth!=null) {
         if (navigator.appName == 'Microsoft Internet Explorer') {
             $("#top_content_div").css("width", screenWidth-21);
-        } else {
-            $("#top_content_div").css("width", screenWidth-17);
         }
     }
     $("#top_content_div").css("margin", "0 auto");
