@@ -69,6 +69,7 @@ public class AccessUtil {
 	
 	private static final String CURRENT_CONTENT_LIBRARY = "iMindef Content";
 	private static final String CURRENT_DESIGN_LIBRARY = "iMindef Design";
+	private static final String DEFAULT_PATH = "iMindef Content/iMindef/Official Release/Press Room/";
 
 	public static Workspace getContentWorkspace()
 			throws ServiceNotAvailableException, OperationFailedException {
@@ -199,7 +200,7 @@ public class AccessUtil {
 				// monthDocumentId = documentId;
 				// }
 				// }
-				String path = "iMindef Content/iMindef/Official Release/Press Room/"
+				String path = DEFAULT_PATH
 						+ year + "/" + monthName;
 				DocumentIdIterator<Document> itr = findSiteAreaByPath(
 						workspace, path);
@@ -243,8 +244,6 @@ public class AccessUtil {
 				DateComponent dateCmpt = (DateComponent) content
 						.getComponent("Date");
 				dateCmpt.setDate(officialDate);
-				
-				System.out.println("Workflow has been saved");
 				List<NewsImageDTO> list = dto.getImages();
 				StringBuffer contentRTE = new StringBuffer();
 				contentRTE.append(dto.getContent());
@@ -353,7 +352,7 @@ public class AccessUtil {
 	@SuppressWarnings("unchecked")
 	public boolean isContentExists(String year, String month, String title)
 			throws ServiceNotAvailableException, OperationFailedException {
-		String path = "iMindef Content/iMindef/Official Release/Press Room/"
+		String path = DEFAULT_PATH
 				+ year + "/" + month;
 		boolean contentExists = false;
 		Workspace workspace = getContentWorkspace();
@@ -381,12 +380,13 @@ public class AccessUtil {
 		return contentExists;
 	}
 
+	@SuppressWarnings("deprecation")
 	public DocumentId<Document> findSiteAreaByYear(Object name)
 			throws ServiceNotAvailableException, OperationFailedException {
 		DocumentId<Document> id = null;
 		Workspace workspace = getContentWorkspace();
-		DocumentIdIterator<Document> itr = workspace.findByName(
-				DocumentTypes.SiteArea, name.toString());
+		String path = DEFAULT_PATH + name.toString();
+		DocumentIdIterator<Document> itr = workspace.findByPath(path, Workspace.WORKFLOWSTATUS_ALL);
 		if (itr.hasNext()) {
 			id = itr.next();
 		}
