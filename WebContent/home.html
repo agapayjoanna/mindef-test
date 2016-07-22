@@ -770,9 +770,6 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 						var content = contents[contentIndex];
 						if (content.nodeType == 1 && content.tagName == 'DIV') {
 							entry.appendChild(content);
-							var separator = document.createElement("DIV");
-							separator.setAttribute("style","width:4px;height:252px;float:left");
-							entry.appendChild(separator);							
 							if(((contentIndex+1)%3) == 0) {
 								$($(container)[0]).append(entry);
 								entry = document.createElement('DIV');

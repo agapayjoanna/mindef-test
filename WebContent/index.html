@@ -9,35 +9,6 @@
 
 
 
-<script type="text/javascript">
-    {
-        var asynchronousJSLoad = function(src){
-            var doubleDelegate = function(func1, func2) {
-                return function() {
-            var args = Array.prototype.slice.call(arguments, 0);
-            if (func1) {
-                window.setTimeout(function() {
-                    func1.apply(this, args);
-                },1);
-            }
-            if (func2) {
-                window.setTimeout(function() {
-                    func2.apply(this, args);
-                },1);
-            }
-        };
-            };
-            window.onload = doubleDelegate(window.onload,function() {
-                var script = document.createElement("script");
-                script.src = src;
-                document.getElementsByTagName('head')[0].appendChild(script);
-            });
-        };
-
-        asynchronousJSLoad("http://localhost:4502/libs/wcm/stats/tracker.js?path=/content/imindef/press_room/official_releases");
-    }
-    </script>
-
 <script type="text/javascript">function trackMVTImpression() {
     
         if (window.randomBannerList) {
@@ -65,7 +36,6 @@
 
 
 <script type="text/javascript" src="assets/jquery.js"></script>
-<script type="text/javascript" src="js/jquery.migrate.js"></script>
 <script type="text/javascript" src="assets/jquery.cookie.js"></script>
 <script type="text/javascript" src="assets/select-min.js"></script>
 
@@ -266,9 +236,6 @@ function escapeKeyword(keyword) {
         return escapedKeyword;
     }
 </script>
-
-<script
-	src="http://localhost:4502/libs/wcm/stats/tracker.js?path=/content/imindef/press_room/official_releases"></script>
 </head>
 <body>
 	<!--top bar-->
@@ -742,7 +709,7 @@ $(document).ready(function() {
 		<!--Quicklink end-->
 
 		<div id="background" class="background"
-			style="background-image: url(/content/dam/imindef_media_library/imindef2012/bgimage/about_us.jpg);; text-align: center; position: relative; top: -32px; z-index: -50;"></div>
+			style="background-image: url(assets/images/about_us.jpg);; text-align: center; position: relative; top: -32px; z-index: -50;"></div>
 		<!--Page Content-->
 		<table align="center" width="940px" border="0px"
 			style="position: relative; top: -538px; margin: 0 auto; margin-bottom: -523px;">
@@ -896,7 +863,9 @@ $(document).ready(function() {
 									<div class="detail_content_box_tab_content">
 										<div class="round_left"></div>
 										<div class="round_right"></div>
+										<img class="ad-loader" src="assets/loader.gif">
 										<!-- 					News Content -->
+										<div class="content_box_detail"></div>
 									</div>
 								</div>
 							</div>
@@ -1069,8 +1038,8 @@ $(document).ready(function() {
 		//populate news via ajax
 		var newsURL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntid=85691b74-0b99-4f95-9e09-839cd8bfb1e9&source=library";
 		$.get(newsURL, function(data){
-			console.log("news has been added");			
-			$('.detail_content_box_tab_content').append(data);
+			$(".ad-loader").hide();	
+			$('.content_box_detail').append(data);
 		});
 		$(document).on('click','.tabular_box a',function(){
 			var title = $(this).data('title');
@@ -1082,17 +1051,17 @@ $(document).ready(function() {
 		    e.preventDefault();
 			var $this= $(this);
 			var href = $this.attr('href');
-			console.log(href);
 			if(href !="" && href != "undefined"){
 				$.get(href, function(data){
-				    $('.detail_content_box_tab_content').empty();			
-					$('.detail_content_box_tab_content').append(data);
+				    $('.content_box_detail').empty();			
+					$('.content_box_detail').append(data);
 				});
 			}
 		});
 		
 		$('.news-category a').click(function(e){
-			$('.detail_content_box_tab_content').empty();
+			$('.content_box_detail').empty();
+			$(".ad-loader").show();
 			e.preventDefault();
 			$('.news-category li').removeClass('current');
 			$(this).parent("li").addClass("current");
@@ -1102,8 +1071,8 @@ $(document).ready(function() {
 	// 				var url = $(this).attr('src');
 	// 				$(this).attr('src',domain + url)
 	// 			})
-				
-				$('.detail_content_box_tab_content').append(data);
+				$(".ad-loader").hide();
+				$('.content_box_detail').append(data);
 			});
 		
 		});

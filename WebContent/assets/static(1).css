@@ -1159,6 +1159,7 @@ div.personal_info_record tr td{
     background:#565656;
     margin-right:0px;
 	overflow:hidden;
+	margin-right: 4px;
 }
 .key_topics_box .last{
 
@@ -3703,6 +3704,12 @@ input[type=text]{
 	padding:22px 30px;
 	position:relative;
 	*display:inline-block;
+}
+
+.detail_content_box_tab_content .ad-loader {
+	position: absolute;
+    top: 5%;
+    left: 48%;
 }
 .detail_content_box_tab_content .round_left{
 	position:absolute;
