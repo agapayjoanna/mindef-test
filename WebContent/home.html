@@ -792,6 +792,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 					var contents = $(data);
 					groupTopicContents(contents, element)
 					constructKeyTopicsNav(contents);
+					applyDotDotDot();
 				});    
 		    }
 			function constructKeyTopics(data) {
@@ -825,6 +826,17 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 						onSliderLoaded: slideContentChange
 					});					
 			   }
+			 
+			 function applyDotDotDot(){
+				 $('.key_topics_box .list_box').find('p.title span').dotdotdot({
+						ellipsis	: '...',
+						wrap		: 'letter'
+				});
+				$('.key_topics_box .list_box').find('.discription').dotdotdot({
+					ellipsis	: '...',
+					wrap		: 'letter'
+				});
+			 }
 	});
 </script>
 

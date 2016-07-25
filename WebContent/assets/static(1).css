@@ -1168,9 +1168,16 @@ div.personal_info_record tr td{
 	background:#373737;
 }
 .key_topics_box .list_box p{
-    padding:10px 10px;
+    padding:10px 10px 0 10px;
     font-size:13px;
     color:#bebebe;
+}
+.key_topics_box .list_box p.title span {
+	max-height: 35px;
+}
+.key_topics_box .list_box .discription {
+	max-height: 105px;
+	padding: 0 10px 10px 10px;
 }
 .key_topics_box .list_box p span{
     margin-bottom:8px;
