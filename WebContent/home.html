@@ -48,6 +48,7 @@
 	<script type="text/javascript" src="assets/jquery.js"></script>
 	<script type="text/javascript" src="assets/jquery.cookie.js"></script>
 	<script type="text/javascript" src="assets/select-min.js"></script>
+	<script type="text/javascript" src="assets/jquery.dotdotdot.min.js"></script>
 	<link href="https://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
 	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/favicon.ico" rel="icon">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -456,6 +457,16 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
     	highlight.appendChild(slider);
     	highlight.appendChild(selectors);
     	$('.highlight').append(highlight);
+		
+		$(".highlight").find(".textItem > h3").dotdotdot({
+			ellipsis	: '...',
+			wrap		: 'letter',
+		});
+		
+		$(".highlight").find(".textItem > p").dotdotdot({
+			ellipsis	: '...',
+			wrap		: 'letter',
+		});		
     }
 	
 	function constructMagazine(data){
@@ -562,15 +573,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			}, 1000);  
 		}else{
 			runFlexslider();
-		}
-		
-		var isVisited = false;
-		$('.tab_new_2 > a').click(function(){
-			if(!isVisited) {
-				isVisited = true;
-				concatContentText();
-			}
-		});
+		}		
 	});
 	function runFlexslider(){
 		$('#tab_official_news .officialflexslider').each(function(){
@@ -622,26 +625,6 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		$('#tab_official_news-3 .officialflexslider').flexslider("pause");*/
 	}
 	
-	function concatContentText() {
-		$('.officialslides > li > div').each(function(){
-		  var j=$(".news_title", this).height()+10;
-		  var m=$(".tab_content_title", this).height();
-		  var g=128-j-m;
-		  var f=Math.floor(g/16);
-		  var l=f*63;
-		  console.log("Text length: " + l);
-		  var k=$(".tab_content_description", this).html();
-		  if(k!=null&&k.length>l){
-		    k=k.substring(0,l);
-		    var h=k.lastIndexOf(" ");
-		    if(h!=-1){k=k.substring(0,h)}k+="...";
-		  }
-		  if(k==null){k=""}
-		  $(".tab_content_description", this).html(k);
-		  $(".tab_content_description", this).css("height",g);  
-		});
-	}
-	
 	function getOfficialReleasesContents(tab_num, url, container) {
 		// Get Official Releases Carousel Content via ajax
 		$.ajax({
@@ -671,7 +654,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 				}
 			} else {
 				container.html(data);
-			}			
+			}		
 		});		
 	}
 	</script>
@@ -699,7 +682,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 				<a class="button_viewall" href="/imindef/press_room/official_releases/nr.html">view all</a>
 			</div>
 		</div>
-		<div id="tab_official_news-2" style="display: none;">
+		<div id="tab_official_news-2">
 			<div class="officialflexslider" style="">
 				<div class="officialflex-viewport" style="overflow: hidden; position: relative;">
 					<ul class="officialslides" style="width: 600%; transition-duration: 0s; transform: translate3d(-390px, 0px, 0px);"></ul>
@@ -709,7 +692,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 				<a class="button_viewall" href="/imindef/press_room/official_releases/fl.html">view all</a>
 			</div>
 		</div>
-		<div id="tab_official_news-3" style="display: none;">
+		<div id="tab_official_news-3">
 			<div class="officialflexslider" style="">
 				<div class="officialflex-viewport" style="overflow: hidden; position: relative;">
 					<ul class="officialslides" style="width: 400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"></ul>
@@ -725,7 +708,39 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			var tab3URL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Activities";			
 			getOfficialReleasesContents("tab1", tab1URL, $('#tab_official_news-1 .officialslides'));
 			getOfficialReleasesContents("tab2", tab2URL, $('#tab_official_news-2 .officialslides'));
-			getOfficialReleasesContents("tab3", tab3URL, $('#tab_official_news-3 .officialslides'));		
+			getOfficialReleasesContents("tab3", tab3URL, $('#tab_official_news-3 .officialslides'));
+			$('#tab_official_news-1 .officialslides').find(".news_pic_text").dotdotdot({
+				ellipsis	: '...',
+				wrap		: 'letter',
+			});
+			$('#tab_official_news-2 .officialslides').find(".tab_content_title").dotdotdot({
+				ellipsis	: '...',
+				wrap		: 'letter',
+			});
+			$('#tab_official_news-2 .officialslides').find(".tab_content_description").dotdotdot({
+				ellipsis	: '...',
+				wrap		: 'letter',
+			});
+			$('#tab_official_news-3 .officialslides').find(".activities-title").dotdotdot({
+				ellipsis	: '...',
+				wrap		: 'letter',
+			});
+			$('#tab_official_news-3 .officialslides').find(".activities-desc").dotdotdot({
+				ellipsis	: '...',
+				wrap		: 'letter',
+			});
+			$('#tab_official_news-2').attr('style', 'display: none;');
+			$('#tab_official_news-3').attr('style', 'display: none;');
+			$(document).on('click','#tab_official_news-1 .officialslides a',function(){
+				var title = $(this).data('title');
+				var date = $(this).data('date');
+				window.location.href="details.html?title="+title+"&date="+date;
+			});
+			$(document).on('click','#tab_official_news-2 .officialslides a',function(){
+				var title = $(this).data('title');
+				var date = $(this).data('date');
+				window.location.href="details.html?title="+title+"&date="+date;
+			});			
 		</script>		
 	</div>
 	</div>
@@ -760,9 +775,6 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 						var content = contents[contentIndex];
 						if (content.nodeType == 1 && content.tagName == 'DIV') {
 							entry.appendChild(content);
-							var separator = document.createElement("DIV");
-							separator.setAttribute("style","width:4px;height:252px;float:left");
-							entry.appendChild(separator);							
 							if(((contentIndex+1)%3) == 0) {
 								$($(container)[0]).append(entry);
 								entry = document.createElement('DIV');
@@ -785,6 +797,14 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 					var contents = $(data);
 					groupTopicContents(contents, element)
 					constructKeyTopicsNav(contents);
+					$('.key_topics_box .list_box').find('p.title span').dotdotdot({
+						ellipsis	: '...',
+						wrap		: 'letter'
+					});
+					$('.key_topics_box .list_box').find('.discription').dotdotdot({
+						ellipsis	: '...',
+						wrap		: 'letter'
+					});
 				});    
 		    }
 			function constructKeyTopics(data) {
@@ -996,7 +1016,14 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			// Append contents
 			constructSlides('latest');
 			retrieveContents('latest');
-		
+			$(".cyberpioneerlatest").find(".viceTitle").dotdotdot({
+				ellipsis	: '...',
+				wrap		: 'letter',
+			});
+			$(".cyberpioneerlatest").find(".briefDesc").dotdotdot({
+				ellipsis	: '...',
+				wrap		: 'letter',
+			});
 		});
 	</script>
 	<script src="assets/cyberpioneerlatest-min.js" type="text/javascript"></script>
@@ -1107,7 +1134,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
             $("#top_content_div").css("width", screenWidth-21);
         }
     }
-    $("#top_content_div").css("margin", "0 auto");
+    $("#top_content_div").css("margin", "0 auto");    
 </script>
 </body>
 </html>

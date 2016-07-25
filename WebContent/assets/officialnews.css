@@ -238,6 +238,7 @@ html[xmlns] .officialslides {display: block;}
 	bottom:15px;
 	left:0px;
 	width: 100%;
+	max-height: 46px;
 }
 .news_pic_text div{
 	padding:2px 10px;
@@ -654,4 +655,20 @@ html[xmlns] .officialslides {display: block;}
 }
 .news_content_box .parsys_column .richedit2 ul > li{
 	margin-bottom: 0;
+}
+
+.tab_content_title {
+	max-height: 46px;
+}
+
+.tab_content_description {
+	max-height: 42px;
+}
+
+.activities-title {
+	max-height: 46px;
+}
+
+.activities-desc {
+	max-height: 34px;
 }
