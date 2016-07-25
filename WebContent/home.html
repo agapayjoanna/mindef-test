@@ -506,7 +506,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			}, 
 			error : function(err) { }
 		});
-		// Get Main Carousel Content via x
+		// Get Main Carousel Content via ajax
 		var magazineURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntname=iMindef%20Design/Homepage/Magazine/Magazine&source=library";			
 		$.ajax({
 			url : magazineURL,
@@ -778,7 +778,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-		var keyTopicsURL = "http://192.168.2.32:10039/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntid=a1131e56-ad6c-41fb-9968-0ee67e865fad&source=library";					    
+		var keyTopicsURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntid=a1131e56-ad6c-41fb-9968-0ee67e865fad&source=library";					    
 		    function groupTopicContents(contents, container) {
 				if((contents !== undefined) && (contents !== null)) {
 					var entry = document.createElement('DIV');
