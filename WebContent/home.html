@@ -48,7 +48,6 @@
 	<script type="text/javascript" src="assets/jquery.js"></script>
 	<script type="text/javascript" src="assets/jquery.cookie.js"></script>
 	<script type="text/javascript" src="assets/select-min.js"></script>
-	<script style="position: relative; cursor: default; width: 0px; overflow: hidden;" type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
 	<script type="text/javascript" src="assets/jquery.dotdotdot.min.js"></script>
 	<link href="https://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
 	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/favicon.ico" rel="icon">
@@ -405,7 +404,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 
 
 
-
+<script style="position: relative; cursor: default; width: 0px; overflow: hidden;" type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
 <script type="text/javascript">
     var highlight_clickPoint = { down: { x: 0, y: 0 }, up: { x: 0, y: 0 } };
     function highlight_isClick() {
@@ -467,14 +466,25 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		$(".highlight").find(".textItem > p").dotdotdot({
 			ellipsis	: '...',
 			wrap		: 'letter',
-		});		
+		});
     }
 	
 	function constructMagazine(data){
-	var magazine = document.createElement('DIV')
-	magazine.innerHTML = data;
-	$('.magazineContent').append(magazine);
+		var magazine = document.createElement('DIV')
+		magazine.innerHTML = data;
+		$('.magazineContent').append(magazine);
+		
+		$(".magazinebox").find(".magazine-title").dotdotdot({
+			ellipsis	: '...',
+			wrap		: 'letter',
+		});
+		
+		$(".magazinebox").find(".magazine-desc").dotdotdot({
+			ellipsis	: '...',
+			wrap		: 'letter',
+		});		
 	}
+	
     $(document).ready(function() {
     
         if (typeof window.highlightFlag != "undefined") {
@@ -752,6 +762,9 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 <div class="box">
 <div class="keytopics">
 
+
+<script type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
+
 <div class="box">
 	<div class="h2_box"><h2>Key Topics</h2></div>
 	<div class="key_topics_box">
@@ -836,17 +849,6 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 						onSliderLoaded: slideContentChange
 					});					
 			   }
-			 
-			 function applyDotDotDot(){
-				 $('.key_topics_box .list_box').find('p.title span').dotdotdot({
-						ellipsis	: '...',
-						wrap		: 'letter'
-				});
-				$('.key_topics_box .list_box').find('.discription').dotdotdot({
-					ellipsis	: '...',
-					wrap		: 'letter'
-				});
-			 }
 	});
 </script>
 
@@ -1036,7 +1038,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		});
 	</script>
 	<script src="assets/cyberpioneerlatest-min.js" type="text/javascript"></script>
-
+	<script type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
 </div>
         </div>
         <div class="box">

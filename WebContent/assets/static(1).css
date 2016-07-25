@@ -4804,3 +4804,11 @@ div.cq-colctrl-lt56-c3 { width: 25%; }
     background-repeat: no-repeat;
     display: inline-block;
 }
+
+.magazine-title {
+	max-height: 34px;
+}
+
+.magazine-desc {
+	max-height: 34px;
+}
