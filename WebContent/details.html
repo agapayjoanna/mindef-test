@@ -3540,7 +3540,7 @@ a.at-branding-logo:visited {
 
 				});
 		$(function() {
-			var title = getUrlParameter("title");
+			var name = getUrlParameter("name");
 			var datePosted = getUrlParameter("date");
 			var date = new Date(datePosted);
 			var monthNames = [ "January", "February", "March", "April", "May",
@@ -3551,13 +3551,13 @@ a.at-branding-logo:visited {
 					+ "/"
 					+ monthNames[date.getMonth()]
 					+ "/";
-			if (title != "" && title != "undefined") {
+			if (name != "" && name != "undefined") {
 				$('.lastUpdatedDate').text("Last updated on " + datePosted);
 				$.ajax({
-					url : encodeURI(newsDetailURL + decodeURI(title))
+					url : encodeURI(newsDetailURL + decodeURI(name))
 				}).done(function(response, textStatus) {
 					if (textStatus == "success") {
-						document.title =title;
+						document.title =name;
 						$(".fontResizable").each(function() {
 				            var fontSizeOrigin = parseInt($(this).css("fontSize"));
 				            var lineHeightOrigin = parseInt($(this).css("lineHeight"));

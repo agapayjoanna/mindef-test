@@ -1041,11 +1041,6 @@ $(document).ready(function() {
 			$(".ad-loader").hide();	
 			$('.content_box_detail').append(data);
 		});
-		$(document).on('click','.tabular_box a',function(){
-			var title = $(this).data('title');
-			var date = $(this).data('date');
-			window.location.href="details.html?title="+title+"&date="+date;
-		});
 		
 		$(document).on('click','.centerUl li a', function(e){
 		    e.preventDefault();
@@ -1064,15 +1059,30 @@ $(document).ready(function() {
 			$(".ad-loader").show();
 			e.preventDefault();
 			$('.news-category li').removeClass('current');
-			$(this).parent("li").addClass("current");
-			$.get(newsURL+"&category="+ $(this).data("target"), function(data){
-	// 			var domain = 'http://192.168.2.32:10039'
+			var category = $(this).data("target");
+			$.get(newsURL+"&category="+ category, function(data){
+				// 			var domain = 'http://192.168.2.32:10039'
 	// 			var html = $(data).find('img').each(function(){
 	// 				var url = $(this).attr('src');
 	// 				$(this).attr('src',domain + url)
 	// 			})
+				window.category = category;
 				$(".ad-loader").hide();
 				$('.content_box_detail').append(data);
+				console.log(category);
+				if(category === "News Releases"){
+					$('.content_box_detail .news-release').show();
+				} else if(category==="Speeches"){
+					$('.content_box_detail .speeches-release').show();
+				} else if(category==="Parliamentary Statements"){
+					$('.content_box_detail .ps-release').show();
+				} else if(category==="Forum Letter Replies"){
+					$('.content_box_detail .flr-release').show();
+				} else if(category==="Replies to Media Queries"){
+					$('.content_box_detail .rmq-release').show();
+				} else{
+					$('.content_box_detail .all-release').show();
+				}
 			});
 		
 		});
