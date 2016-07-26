@@ -1,236 +1,233 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-	<meta content="" http-equiv="keywords">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="keywords" content="">   
+    <script type="text/javascript">
+    {
+        var asynchronousJSLoad = function(src){
+            var doubleDelegate = function(func1, func2) {
+                return function() {
+            var args = Array.prototype.slice.call(arguments, 0);
+            if (func1) {
+                window.setTimeout(function() {
+                    func1.apply(this, args);
+                },1);
+            }
+            if (func2) {
+                window.setTimeout(function() {
+                    func2.apply(this, args);
+                },1);
+            }
+        };
+            };
+            window.onload = doubleDelegate(window.onload,function() {
+                var script = document.createElement("script");
+                script.src = src;
+                document.getElementsByTagName('head')[0].appendChild(script);
+            });
+        };
+
+        //asynchronousJSLoad("http://localhost:4502/libs/wcm/stats/tracker.js?path=/content/imindef/home");
+    }
+    </script>
 	<script type="text/javascript">
-		{
-		    var asynchronousJSLoad = function(src){
-		        var doubleDelegate = function(func1, func2) {
-		            return function() {
-		        var args = Array.prototype.slice.call(arguments, 0);
-		        if (func1) {
-		            window.setTimeout(function() {
-		                func1.apply(this, args);
-		            },1);
-		        }
-		        if (func2) {
-		            window.setTimeout(function() {
-		                func2.apply(this, args);
-		            },1);
-		        }
-		    };
-		        };
-		        window.onload = doubleDelegate(window.onload,function() {
-		            var script = document.createElement("script");
-		            script.src = src;
-		            document.getElementsByTagName('head')[0].appendChild(script);
-		        });
-		    };
-		
-		    asynchronousJSLoad("http://localhost:4502/libs/wcm/stats/tracker.js?path=/content/imindef/home");
-		}			
-		</script>
-		<script type="text/javascript">
-		function trackMVTImpression() {
-		    
-		        if (window.randomBannerList) {
-		            var trackImg = new Image();
-		            trackImg.src = 'http://localhost:4502/libs/wcm/mvt/tracker/view?path=' + encodeURIComponent('/content/imindef/home') + '&vars=' + encodeURIComponent(window.randomBannerList);
-		        }
-		    
-		}		
+	function trackMVTImpression() {    
+        if (window.randomBannerList) {
+            var trackImg = new Image();
+            trackImg.src = /*'http://localhost:4502/libs/wcm/mvt/tracker/view?path=' + */ encodeURIComponent('/content/imindef/home') + '&vars=' + encodeURIComponent(window.randomBannerList);
+        }
+    
+    }
 	</script>
-	<link href="assets/static.css" rel="stylesheet" type="text/css">
+    <link href="assets/static.css" rel="stylesheet" type="text/css">
 	<link href="assets/imindef_style.css" rel="stylesheet" type="text/css">
-	<title>MINDEF Singapore </title>
-	<link href="assets/static(1).css" rel="stylesheet" type="text/css">
+    <title>MINDEF Singapore </title>
+	<!--%@ include file="site_profile.jsp" %-->
+    <link href="assets/static(1).css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="assets/jquery.js"></script>
 	<script type="text/javascript" src="assets/jquery.cookie.js"></script>
 	<script type="text/javascript" src="assets/select-min.js"></script>
 	<script type="text/javascript" src="assets/jquery.dotdotdot.min.js"></script>
-	<link href="https://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/mobile_imindef_80x80_home_icon.png" rel="apple-touch-icon">
+	<script type="text/javascript" src="js/homepage.js"></script>
+	<link rel="apple-touch-icon" href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/mobile_imindef_80x80_home_icon.png"/>
 	<link href="http://www.mindef.gov.sg/content/dam/imindef_media_library/imindef2012/site_profile/favicon.ico" rel="icon">
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<meta content="276015381058" property="fb:pages">
-	<meta content="Ministry of Defence, Singapore" name="Title">
-	<meta content="Ministry of Defence, Singapore" name="Subject">
-	<meta content="Ministry of Defence, Singapore" name="Description">
-	<meta content="/content/imindef/home" name="Identifier">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta property="fb:pages" content="276015381058" />
+	<META NAME="Title" CONTENT="Ministry of Defence, Singapore"><META NAME="Subject" CONTENT="Ministry of Defence, Singapore"><META NAME="Description" CONTENT="Ministry of Defence, Singapore"><META NAME="Identifier" CONTENT="/content/imindef/home">
 	<script type="text/javascript">
-		//----------------------------Same logic as the check in constants.jsp. Added for Web Server Cache will return cached page directly without execute jsp.
-		var isMobileBrowser = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
-		var searchQuery = window.location.search;
-		var siteversion = "";
-		if(searchQuery != ""){
-		    if(searchQuery.indexOf("siteversion=") > -1){
-		        siteversion = searchQuery.substring(searchQuery.indexOf("siteversion=")+12);
-		    }
+	//----------------------------Same logic as the check in constants.jsp. Added for Web Server Cache will return cached page directly without execute jsp.
+	var isMobileBrowser = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
+	var searchQuery = window.location.search;
+	var siteversion = "";
+	if(searchQuery != ""){
+		if(searchQuery.indexOf("siteversion=") > -1){
+			siteversion = searchQuery.substring(searchQuery.indexOf("siteversion=")+12);
 		}
-		if(siteversion == ""){
-		    siteversion = $.cookie('siteversion');
+	}
+	if(siteversion == ""){
+		siteversion = $.cookie('siteversion');
+	}
+	if(siteversion == 'pc' || siteversion == 'mobile')
+		$.cookie('siteversion', siteversion, { path: '/' });
+	var mobile_link = "/content/imindef/mobile/home";
+	var hasMobileSite = (mobile_link!="");
+	var isMobilePath = false; 
+	var mobilePaths = ["/content/imindef/header/contact_info", "/content/imindef/footer/privacy_statement", "/content/imindef/footer/terms_of_use", "/content/imindef/mobile", "/content/imindef/resourcelibrary/cyberpioneer/mobile", "content/imindef/press_room/official_releases","/content/imindef/resourcelibrary/cyberpioneer/topics"];
+	var pathCount = 0;
+	for(pathCount = 0 ; pathCount < mobilePaths.length ; pathCount++){
+		if("/content/imindef/home".indexOf(mobilePaths[pathCount]) > -1){
+			isMobilePath = true;
+			break;
 		}
-		if(siteversion == 'pc' || siteversion == 'mobile')
-		    $.cookie('siteversion', siteversion, { path: '/' });
-		var mobile_link = "/content/imindef/mobile/home";
-		var hasMobileSite = (mobile_link!="");
-		var isMobilePath = false; 
-		var mobilePaths = ["/content/imindef/header/contact_info", "/content/imindef/footer/privacy_statement", "/content/imindef/footer/terms_of_use", "/content/imindef/mobile", "/content/imindef/resourcelibrary/cyberpioneer/mobile", "content/imindef/press_room/official_releases","/content/imindef/resourcelibrary/cyberpioneer/topics"];
-		var pathCount = 0;
-		for(pathCount = 0 ; pathCount < mobilePaths.length ; pathCount++){
-		    if("/content/imindef/home".indexOf(mobilePaths[pathCount]) > -1){
-		        isMobilePath = true;
-		        break;
-		    }
+	}
+	var displayMobileSite = (isMobileBrowser && "pc"!=siteversion || !isMobileBrowser && "mobile"==siteversion) && hasMobileSite && isMobilePath;
+	if("/content/imindef/home".indexOf("/content/imindef/mobile") > -1 || "/content/imindef/home".indexOf("/content/imindef/resourcelibrary/cyberpioneer/mobile") > -1){
+		//displayMobileSite = true;
+	}
+	//----------------------------Same logic as the check in constants.jsp. Added for Web Server Cache will return cached page directly without execute jsp.
+	var srcHref = window.location.href;
+	if(displayMobileSite){
+		if (srcHref.indexOf('.m.html')>-1) 
+		{
+		} else {
+			var addr = srcHref.replace(/.html/i,'.m.html');
+			//window.location.href = addr;
 		}
-		var displayMobileSite = (isMobileBrowser && "pc"!=siteversion || !isMobileBrowser && "mobile"==siteversion) && hasMobileSite && isMobilePath;
-		if("/content/imindef/home".indexOf("/content/imindef/mobile") > -1 || "/content/imindef/home".indexOf("/content/imindef/resourcelibrary/cyberpioneer/mobile") > -1){
-		    displayMobileSite = true;
+	}else{
+		if (srcHref.indexOf('.m.html')>-1) 
+		{
+			var addr = srcHref.replace(/.m.html/i,'.html');
+			//window.location.href = addr;
 		}
-		//----------------------------Same logic as the check in constants.jsp. Added for Web Server Cache will return cached page directly without execute jsp.
-		var srcHref = window.location.href;
-		if(displayMobileSite){
-		    if (srcHref.indexOf('.m.html')>-1) 
-		    {
-		    } else {
-		        var addr = srcHref.replace(/.html/i,'.m.html');
-		        window.location.href = addr;
-		    }
-		}else{
-		    if (srcHref.indexOf('.m.html')>-1) 
-		    {
-		        var addr = srcHref.replace(/.m.html/i,'.html');
-		        window.location.href = addr;
-		    }
-		}
-		
-		$('body').ready(function(){
-		    var defaultVal = "Search MINDEF";
-		    $("#q").focus(function() {
-		        if($(this).val() == defaultVal){
-		            $(this).val("");
-		        }
-		    });
-		    $("#q").blur(function() {
-		        if($(this).val() == ''){
-		            $(this).val(defaultVal);
-		        }
-		    });
+	}
+
+	$('body').ready(function(){
+		var defaultVal = "Search MINDEF";
+		$("#q").focus(function() {
+			if($(this).val() == defaultVal){
+				$(this).val("");
+			}
 		});
+		$("#q").blur(function() {
+			if($(this).val() == ''){
+				$(this).val(defaultVal);
+			}
+		});
+	});
+
+	function stripXSS(s, isNameField) {
+			var str = "";
+			var len = s.length;
+			for (var i = 0; i < len; i++) {
+				var ch = s.charAt(i);
+				switch (ch) {
+					case '<': {
+					  break;
+					}
+					case '>': {            
+					  break;
+					}
+					case '(': {
+					  break;
+					}
+					case ')': {
+					  break;
+					}
+					case '#': {
+					  break;
+					}
+					case '&': {       
+					  break;
+					}
+					case '"': {       
+					  break;
+					}
+					case '\'': {      
+					  break;
+					}
+					case '{': {       
+					  break;
+					}
+					case '}': {       
+					  break;
+					}
+					case ';': {       
+					  if(isNameField) {
+						 break;
+					  }
+					}
+					case ':': {       
+					  if(isNameField) {
+						 break;
+					  }
+					}
+					case ',': {       
+					  if(isNameField) {
+						 break;
+					  }
+					}
+					default: {
+						  str = str.concat(ch);
+					}
+				}
+			} 
+			return str;
+		}
 		
-		function stripXSS(s, isNameField) {
-		        var str = "";
-		        var len = s.length;
-		        for (var i = 0; i < len; i++) {
-		            var ch = s.charAt(i);
-		            switch (ch) {
-		                case '<': {
-		                  break;
-		                }
-		                case '>': {            
-		                  break;
-		                }
-		                case '(': {
-		                  break;
-		                }
-		                case ')': {
-		                  break;
-		                }
-		                case '#': {
-		                  break;
-		                }
-		                case '&': {       
-		                  break;
-		                }
-		                case '"': {       
-		                  break;
-		                }
-		                case '\'': {      
-		                  break;
-		                }
-		                case '{': {       
-		                  break;
-		                }
-		                case '}': {       
-		                  break;
-		                }
-		                case ';': {       
-		                  if(isNameField) {
-		                     break;
-		                  }
-		                }
-		                case ':': {       
-		                  if(isNameField) {
-		                     break;
-		                  }
-		                }
-		                case ',': {       
-		                  if(isNameField) {
-		                     break;
-		                  }
-		                }
-		                default: {
-		                      str = str.concat(ch);
-		                }
-		            }
-		        } 
-		        return str;
-		    }
-		    
-		function submitGoogleSearch(){
-		    var keyword = $("#q").val().replace(/(^\s*)|(\s*$)/g, "");
-		    if (keyword==""){
-		        return false;
-		    }
-		   $("#q").val(stripXSS(keyword, false));
-		   document.googlesearch.submit(); 
-		  
-		    
+	function submitGoogleSearch(){
+		var keyword = $("#q").val().replace(/(^\s*)|(\s*$)/g, "");
+		if (keyword==""){
+			return false;
 		}
-		function submitMobileSearch(){
-		    var keyword = $("#q").val().replace(/(^\s*)|(\s*$)/g, "");
-		    if (keyword==""||keyword=="Search Official Releases"||keyword=="Search cyberpioneer"){
-		        return false;
-		    }
-		        
-		        window.location.href =  "/content/imindef/press_room/official_releases/result"+".s." +escapeKeyword(stripXSS(keyword, true))+".html";
-		        
+	   $("#q").val(stripXSS(keyword, false));
+	   document.googlesearch.submit(); 
+	  
+		
+	}
+	function submitMobileSearch(){
+		var keyword = $("#q").val().replace(/(^\s*)|(\s*$)/g, "");
+		if (keyword==""||keyword=="Search Official Releases"||keyword=="Search cyberpioneer"){
+			return false;
 		}
-		function mobileSearchUrl(){
-		    var keyword = $("#q").val().replace(/(^\s*)|(\s*$)/g, "");
-		    if (keyword==""){
-		        return false;
-		    }
-		        
-		            document.googlesearch.action =  "/content/imindef/press_room/official_releases/result"+".s." +escapeKeyword(stripXSS(keyword, true))+".html";
-		        
+			
+			window.location.href =  "/content/imindef/press_room/official_releases/result"+".s." +escapeKeyword(stripXSS(keyword, true))+".html";
+			
+	}
+	function mobileSearchUrl(){
+		var keyword = $("#q").val().replace(/(^\s*)|(\s*$)/g, "");
+		if (keyword==""){
+			return false;
 		}
-		function escapeKeyword(keyword) {
-		        var escapedKeyword = "";
-		        for (var i=0; i<keyword.length; i++) {
-		            var cc = keyword.charCodeAt(i); 
-		            if ((cc>=65 && cc<=90) || (cc>=97 && cc<=122)) {
-		                escapedKeyword += keyword.charAt(i);
-		            } else {
-		                if (cc==47) {
-		                    escapedKeyword += "";
-		                } else {
-		                    var cc16 = cc.toString(16);
-		                    if (cc16.length==2) {
-		                        escapedKeyword += "%"+cc16;
-		                    } else {
-		                        escapedKeyword += "";
-		                    }
-		                }
-		            }
-		        }
-		        return escapedKeyword;
+			
+				document.googlesearch.action =  "/content/imindef/press_room/official_releases/result"+".s." +escapeKeyword(stripXSS(keyword, true))+".html";
+			
+	}
+	function escapeKeyword(keyword) {
+			var escapedKeyword = "";
+			for (var i=0; i<keyword.length; i++) {
+				var cc = keyword.charCodeAt(i); 
+				if ((cc>=65 && cc<=90) || (cc>=97 && cc<=122)) {
+					escapedKeyword += keyword.charAt(i);
+				} else {
+					if (cc==47) {
+						escapedKeyword += "";
+					} else {
+						var cc16 = cc.toString(16);
+						if (cc16.length==2) {
+							escapedKeyword += "%"+cc16;
+						} else {
+							escapedKeyword += "";
+						}
+					}
+				}
+			}
+			return escapedKeyword;
 		}
 	</script>
-	<script src="http://localhost:4502/libs/wcm/stats/tracker.js?path=/content/imindef/home"></script>
 </head>
 <body>
-
+<!--#include file="menu.html"-->
 <!--top bar-->
 
 <div style="margin: 0px auto;" id="top_content_div">
@@ -361,18 +358,16 @@ $(document).ready(function() {
 
 <!--<div id="background<!%=index+1%>" class="background" style="display:block;background-image: <!%=defaultbg%>;text-align:center; position:relative; z-index: -50;"></div>-->
 
-<div id="background1" class="background" style="display: none; background-image: url(&quot;assets/bg_hm_army.jpg&quot;); text-align: center; position: relative; z-index: -50; opacity: 1;"></div>
-
-<div id="background2" class="background" style="background-image: url(&quot;assets/bg_hm_navy.jpg&quot;); text-align: center; position: relative; z-index: -50; opacity: 1; display: block;"></div>
-
-<div id="background3" class="background" style="background-image: url(&quot;assets/bg_hm_af.jpg&quot;); text-align: center; position: relative; z-index: -50; opacity: 1; display: none;"></div>
-
+<div id="background1" class="background" style="display:block;background-image: url(assets/bg_hm_army.jpg);text-align:center; position:relative; z-index: -50;"></div>
+<div id="background2" class="background" style="display:none;background-image: url(assets/bg_hm_navy.jpg);text-align:center; position:relative; z-index: -50;"></div>
+<div id="background3" class="background" style="display:none;background-image: url(assets/bg_hm_af.jpg);text-align:center; position:relative; z-index: -50;"></div>
 </div>
 <script type="text/javascript" src="assets/animation-min.js"></script>
 <script type="text/javascript">
 $(window).load(function(){
 var firstTime = true;
 //var arr = ["url(/content/dam/imindef_media_library/bgimages/hm_bg1.jpg)", "url(/content/dam/imindef_media_library/bgimages/hm_bg2.jpg)", "url(/content/dam/imindef_media_library/bgimages/hm_bg3.jpg)"];
+
 var arr = [];
 for(var i = 1 ; i <= $("div.background").length ; i++){
 	arr.push("background" + i);
@@ -394,26 +389,21 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 });
 </script>
 <!--Page Content-->
-<table style="position:relative; top:-540px; margin:0 auto;margin-bottom: -540px;z-index: 80" width="940px" align="center" border="0px"><tbody><tr><td>
-<div style="position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 700px; height: 234px;" class="highlight">
-
-
-
-
-
-
-
-
+<table align="center" width="940px" border="0px" style="position:relative; top:-540px; margin:0 auto;margin-bottom: -540px;z-index: 80"><tr><td>
+<div class="highlight">
 <script style="position: relative; cursor: default; width: 0px; overflow: hidden;" type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
 <script type="text/javascript">
     var highlight_clickPoint = { down: { x: 0, y: 0 }, up: { x: 0, y: 0 } };
+
     function highlight_isClick() {
         return highlight_clickPoint.down.x == highlight_clickPoint.up.x && highlight_clickPoint.down.y == highlight_clickPoint.up.y;
     }
+
     function highlight_mousedownProc(event) {
         highlight_clickPoint.down.x = event.clientX;
         highlight_clickPoint.down.y = event.clientY;
     }
+
     function highlight_mouseupProc(event) {
         highlight_clickPoint.up.x = event.clientX;
         highlight_clickPoint.up.y = event.clientY;
@@ -424,66 +414,16 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
             window.open(url, target);
         }
     }
+
     function highlight_slideContentChange(args) {
         /* indicator */
         $(args.sliderObject).parent().find(".selectors .selector").removeClass("selected");
         $(args.sliderObject).parent().find(".selectors .selector:eq(" + args.currentSlideNumber + ")").addClass("selected");
     }
+
     function highlight_slideContentLoaded(args) {
         highlight_slideContentChange(args);
     }
-    
-    function constructHighlight(data) {
-    	var highlight = document.createElement('DIV');
-    	highlight.setAttribute('class', 'highlight');
-    	highlight.setAttribute('style', 'position: relative; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 685px; height: 234px;');
-    	
-    	var slider = document.createElement('DIV');
-    	slider.setAttribute('class', 'slider');
-    	slider.setAttribute('style', 'position: relative; cursor: default; width: 685px; overflow: hidden; left: 0px;');
-    	slider.innerHTML = data;    	
-    	
-    	var selectors = document.createElement('DIV');
-    	selectors.setAttribute('class', 'selectors');
-    	var selectorLength = (($(data).length > 3) ? 3 : $(data).length);
-    	
-    	for(var i=0; i < selectorLength; i++) {
-	    	var selector = document.createElement('DIV');
-	    	selector.setAttribute('class', 'selector');
-	    	selector.setAttribute('style', 'cursor: pointer;');
-	    	selectors.appendChild(selector);    		
-    	}
-    	    	    	    	
-    	highlight.appendChild(slider);
-    	highlight.appendChild(selectors);
-    	$('.highlight').append(highlight);
-		
-		$(".highlight").find(".textItem > h3").dotdotdot({
-			ellipsis	: '...',
-			wrap		: 'letter',
-		});
-		
-		$(".highlight").find(".textItem > p").dotdotdot({
-			ellipsis	: '...',
-			wrap		: 'letter',
-		});
-    }
-	
-	function constructMagazine(data){
-		var magazine = document.createElement('DIV')
-		magazine.innerHTML = data;
-		$('.magazineContent').append(magazine);
-		
-		$(".magazinebox").find(".magazine-title").dotdotdot({
-			ellipsis	: '...',
-			wrap		: 'letter',
-		});
-		
-		$(".magazinebox").find(".magazine-desc").dotdotdot({
-			ellipsis	: '...',
-			wrap		: 'letter',
-		});		
-	}
 	
     $(document).ready(function() {
     
@@ -495,28 +435,10 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		$(".item").show();
 		
 		// Get Main Carousel Content via ajax
-		var highlightURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Highlights/Highlights";			
-		$.ajax({
-			url : highlightURL,
-			dataType : 'html',
-			async:false,
-			success : function(data) {	
-				// $('.highlight .slider').append(data);
-				constructHighlight(data);
-			}, 
-			error : function(err) { }
-		});
-		// Get Main Carousel Content via ajax
-		var magazineURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntname=iMindef%20Design/Homepage/Magazine/Magazine&source=library";			
-		$.ajax({
-			url : magazineURL,
-			dataType : 'html',
-			async:false,
-			error : function(err) { }
-		}).done(function(data,txtStatus){
-			constructMagazine(data);
-		});		
+		getMainCarousel();
 		
+		// Get Magazine Content via ajax
+		getMagazine();	
 		
         //disable words selection
         $(".highlight").bind("selectstart", function() { return false; });
@@ -529,9 +451,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
             snapToChildren: true,
             infiniteSlider: true,
             navSlideSelector: $(".highlight .selectors .selector"),
-            desktopClickDrag: true, 
-            autoSlide: true, 
-            autoSlideTimer: 8000, 
+            desktopClickDrag: true, autoSlide: true, autoSlideTimer: 8000, 
             onSlideChange: highlight_slideContentChange,
             onSliderLoaded: highlight_slideContentLoaded
         });
@@ -541,8 +461,34 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 </div>
 
 <div class="announcement">
-	<div class="annoucement_box_null"></div>
+
+
+
+<div class="annoucement_box_null"></div>
 </div>
+
+
+
+<!--
+
+<div class="announcement">
+
+
+            <div class="annoucement_box">
+                <span class="title">ANNOUNCEMENT</span>
+            <span class="detail">
+            <div class="marqueebox1" id="marqueebox0"> 
+                <div id="marqueeboxAnn">
+            <p>MINDEF website and NS Portal will be inaccessible for 48 hours from 16 July 2016 0000hrs to 17 July 2016 2359hrs. This is </p><p>to faciliate system upgrading. Visit ns.sg for more information.</p>
+                </div>
+            </div>
+            </span>
+            </div>
+
+
+-->
+
+
 
 <div class="content_box">
     <div class="content_left">
@@ -557,6 +503,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 
     <script type="text/javascript">
 	$(document).ready(function(){
+
 		$('#tab_official_news > div').hide();
 		
 		$('#tab_official_news > div:first').show();
@@ -584,7 +531,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			}, 1000);  
 		}else{
 			runFlexslider();
-		}		
+		}	
 	});
 	function runFlexslider(){
 		$('#tab_official_news .officialflexslider').each(function(){
@@ -634,55 +581,22 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 		/*$('#tab_official_news-1 .officialflexslider').flexslider("pause");
 		$('#tab_official_news-2 .officialflexslider').flexslider("pause");
 		$('#tab_official_news-3 .officialflexslider').flexslider("pause");*/
-	}
-	
-	function getOfficialReleasesContents(tab_num, url, container) {
-		// Get Official Releases Carousel Content via ajax
-		$.ajax({
-			url : url,
-			dataType : 'html',
-			async:false,
-			error : function(err) { }
-		}).done(function(data,txtStatus){
-			if(tab_num == "tab2") {
-				var contents = $(data);
-				if((contents !== undefined) && (contents !== null)) {
-					var entry = entry = document.createElement('LI'); 
-					entry.setAttribute('style', 'width: 380px; float: left; display: block;');
-					for (var i = 0; i < contents.length; i++) {
-						var content = contents[i];
-						if (content.nodeType == 1 && content.tagName == 'DIV') {
-							entry.appendChild(content);
-							if(((i+1)%2) == 0) {
-								container.append(entry);
-								entry = document.createElement('LI');
-								entry.setAttribute('style', 'width: 380px; float: left; display: block;');	
-							} else if((i+1) == contents.length) {
-								container.append(entry);
-							}
-						}
-					}						
-				}
-			} else {
-				container.html(data);
-			}		
-		});		
-	}
+	}	
 	</script>
 
 
 
 
-		<div class="officialbox">
-	<div class="h1_box"><table style="width:100%"><tbody><tr><td><h1>official releases</h1></td><td align="right"><span></span></td></tr></tbody></table></div>
+	<div class="officialbox">
+	<div class="h1_box"><table style="width:100%"><tr><td><h1>official releases</h1></td><td align="right"><span></span></td></tr></table></div>
 	<div class="official_news_box">
 	<div id="tab_official_news" class="tab_official_news">
 		<ul>
-			<li class="tab_new_1 active"><a href="#tab_official_news-1" class="tab1">NEWS RELEASES</a></li>
+			<li class="tab_new_1"><a href="#tab_official_news-1" class="tab1">NEWS RELEASES</a></li>
 			<li class="tab_new_2"><a href="#tab_official_news-2" class="tab2">FORUM LETTER REPLIES</a></li>
 			<li class="tab_new_3"><a href="#tab_official_news-3" class="tab3">ACTIVITIES</a></li>
 		</ul>
-		<div id="tab_official_news-1" style="display: block;">
+		<div id="tab_official_news-1">
 			<!--tab1-->
 			<div class="officialflexslider">
 				<div class="officialflex-viewport" style="overflow: hidden; position: relative;">
@@ -713,46 +627,11 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 				<a class="button_viewall" href="/imindef/press_room/events_and_activities/2016/activity_listing.html">view all</a>
 			</div>
 		</div>
-		<script type="text/javascript">
-			var tab1URL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/News%20Releases";
-			var tab2URL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Forum%20Letter%20Replies";		
-			var tab3URL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Official%20Releases/Activities";			
-			getOfficialReleasesContents("tab1", tab1URL, $('#tab_official_news-1 .officialslides'));
-			getOfficialReleasesContents("tab2", tab2URL, $('#tab_official_news-2 .officialslides'));
-			getOfficialReleasesContents("tab3", tab3URL, $('#tab_official_news-3 .officialslides'));
-			$('#tab_official_news-1 .officialslides').find(".news_pic_text").dotdotdot({
-				ellipsis	: '...',
-				wrap		: 'letter',
-			});
-			$('#tab_official_news-2 .officialslides').find(".tab_content_title").dotdotdot({
-				ellipsis	: '...',
-				wrap		: 'letter',
-			});
-			$('#tab_official_news-2 .officialslides').find(".tab_content_description").dotdotdot({
-				ellipsis	: '...',
-				wrap		: 'letter',
-			});
-			$('#tab_official_news-3 .officialslides').find(".activities-title").dotdotdot({
-				ellipsis	: '...',
-				wrap		: 'letter',
-			});
-			$('#tab_official_news-3 .officialslides').find(".activities-desc").dotdotdot({
-				ellipsis	: '...',
-				wrap		: 'letter',
-			});
-			$('#tab_official_news-2').attr('style', 'display: none;');
-			$('#tab_official_news-3').attr('style', 'display: none;');
-			$(document).on('click','#tab_official_news-1 .officialslides a',function(){
-				var title = $(this).data('title');
-				var date = $(this).data('date');
-				window.location.href="details.html?title="+title+"&date="+date;
-			});
-			$(document).on('click','#tab_official_news-2 .officialslides a',function(){
-				var title = $(this).data('title');
-				var date = $(this).data('date');
-				window.location.href="details.html?title="+title+"&date="+date;
-			});			
-		</script>		
+		<script type="text/javascript">			
+			getOfficialReleasesContents("tab1", $('#tab_official_news-1 .officialslides'));
+			getOfficialReleasesContents("tab2", $('#tab_official_news-2 .officialslides'));
+			getOfficialReleasesContents("tab3", $('#tab_official_news-3 .officialslides'));			
+		</script>			
 	</div>
 	</div>
 </div><!-- End box -->
@@ -761,9 +640,6 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 
 <div class="box">
 <div class="keytopics">
-
-
-<script type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
 
 <div class="box">
 	<div class="h2_box"><h2>Key Topics</h2></div>
@@ -775,82 +651,33 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 			</div>
 		</div>
 	</div>
-</div>
+</div>	
 <script type="text/javascript">
-	$(document).ready(function(){
-		var keyTopicsURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&cmpntid=a1131e56-ad6c-41fb-9968-0ee67e865fad&source=library";					    
-		    function groupTopicContents(contents, container) {
-				if((contents !== undefined) && (contents !== null)) {
-					var entry = document.createElement('DIV');
-					for(var contentIndex = 0; contentIndex < contents.length; contentIndex++) {				
-						var content = contents[contentIndex];
-						if (content.nodeType == 1 && content.tagName == 'DIV') {
-							entry.appendChild(content);
-							if(((contentIndex+1)%3) == 0) {
-								$($(container)[0]).append(entry);
-								entry = document.createElement('DIV');
-							} else if((contentIndex+1) == contents.length) {
-								$($(container)[0]).append(entry);
-							}							
-						}
-					}
-				}	    
-		    }
-		    
-		    function retrieveKeyTopicContents(category) {
-				//var cyberpioneerTabsURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Cyberpioneer/Cyberpioneer%20List";
-				var element = '.key_topics_box .flexslider div';
-				$.ajax({
-					url: keyTopicsURL,
-					dataType: "html",
-					async: false
-				}).done(function(data){
-					var contents = $(data);
-					groupTopicContents(contents, element)
-					constructKeyTopicsNav(contents);
-					$('.key_topics_box .list_box').find('p.title span').dotdotdot({
-						ellipsis	: '...',
-						wrap		: 'letter'
-					});
-					$('.key_topics_box .list_box').find('.discription').dotdotdot({
-						ellipsis	: '...',
-						wrap		: 'letter'
-					});
-				});    
-		    }
-			function constructKeyTopics(data) {
-				var div  = document.createElement("div");
-		    	$('.key_topics_box .flexslider').append(div);
-		    }
-			constructKeyTopics();
-			retrieveKeyTopicContents();		
-			function slideContentChange(args) {
-				/* indicator */
-				$('.flex-control-nav_keytopics .selector').removeClass('selected');
-				$('.flex-control-nav_keytopics .selector:eq(' + args.currentSlideNumber + ')').addClass('selected');
-			}
-			
-			 function constructKeyTopicsNav(data){
-					var navLength = ((data.length > 9) ? 3 : Math.ceil(data.length / 3));
-					$(".flex-control-nav_keytopics").html("");
-					for(var i=0; i < navLength; i++) {
-				    	var nav = document.createElement('DIV');
-				    	nav.setAttribute("class","selector");	
-				    	$(".flex-control-nav_keytopics").append(nav);
-					}
-					
-					$('.key_topics_box .flexslider').iosSlider({
-						snapToChildren: true,
-						desktopClickDrag: true,
-						navSlideSelector: $('.flex-control-nav_keytopics .selector'),
-						autoSlide: false,
-						autoSlideTimer: 3000,
-						onSlideChange: slideContentChange,
-						onSliderLoaded: slideContentChange
-					});					
-			   }
+	$(document).ready(function(){				
+		function slideContentChange(args) {
+			/* indicator */
+			$('.flex-control-nav_keytopics .selector').removeClass('selected');
+			$('.flex-control-nav_keytopics .selector:eq(' + args.currentSlideNumber + ')').addClass('selected');
+		}	
+		constructKeyTopics();
+		retrieveKeyTopicContents(function() {
+			$(".list_box").filter(function(){
+				return $(this).html() == "";
+			}).addClass("list_box_empty");
+		
+			$('.key_topics_box .flexslider').iosSlider({
+				snapToChildren: true,
+				desktopClickDrag: true,
+				navSlideSelector: $('.flex-control-nav_keytopics .selector'),
+				autoSlide: false,
+				autoSlideTimer: 3000,
+				onSlideChange: slideContentChange,
+				onSliderLoaded: slideContentChange
+			});		
+		});
 	});
 </script>
+
 
 </div>
 
@@ -902,145 +729,45 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 
 <div class="cyberpioneerlatest box">
     <div class="h3_box">
-        <h3 style="float: left;">		
+        <h3 style="float: left;">
 			<a href="/imindef/resourcelibrary/cyberpioneer/index.html" target="_blank" style="color: inherit; text-decoration: none;">
 				cyberpioneer
 			</a>
 		</h3>
         <span></span>
         <div class="clear"></div>
-    </div>	
+    </div>
     <div class="menu_cyberpioneer">
-    	<a class="left_arr"></a>
-		<a class="right_arr"></a>
-		<div class="hidden_div">
-			<ul>
-				
-			</ul>
+        <a class="left_arr"></a>
+        <a class="right_arr"></a>
+        <div class="hidden_div">
+			<ul></ul>
 		</div>
     </div>
-	<div class="cyberpioneer_content_box">
-		<div id="" class="flexslider">
-			<div class="flex-control-nav">
-				<ul></ul>
-			</div>
+    <div class="cyberpioneer_content_box">
+        <div id="" class="flexslider">
+            <div class="flex-control-nav">
+                <ul></ul>
+            </div>
 			<div class="button_box1" style="padding-right:20px;">
 				<a class="button_viewall" target="_blank" href="/content/imindef/resourcelibrary/cyberpioneer/topics/ops_training.html">view all</a>
 			</div>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
-	<script type="text/javascript">
-	    function doAjaxRequest(url, callback) {
-			$.ajax({
-				url : url,
-				dataType : 'html',
-				async:false,
-				error : function(err) { }
-			}).done(function(data,txtStatus){
-				callback(data);
-			});	    	
-	    }
-	    
-	    function constructSlides(category) {
-			var slidesDivMain = document.createElement('DIV');
-	    	slidesDivMain.setAttribute('class', 'slides ' + category);
-	    	var slidesDiv1 = document.createElement('DIV');
-	    	slidesDivMain.appendChild(slidesDiv1);
-	    	$(slidesDivMain).insertBefore(".cyberpioneer_content_box .button_box1");
-	    }
-	    
-	    function groupContents(contents, container) {
-			if((contents !== undefined) && (contents !== null)) {
-				var entry = document.createElement('DIV');
-				for(var contentIndex = 0; contentIndex < contents.length; contentIndex++) {				
-					var content = contents[contentIndex];						
-					if (content.nodeType == 1 && content.tagName == 'DIV') {
-						var catContainer = $(content).find('.viceTitle span');
-						var catText = catContainer.text().split('_')[1];
-						catContainer.html(catText);
-						entry.appendChild(content);
-						if(((contentIndex+1)%2) == 0) {
-							$($(container)[0]).append(entry);
-							entry = document.createElement('DIV');
-						} else if((contentIndex+1) == contents.length) {
-							$($(container)[0]).append(entry);
-						}							
-					}
-				}
-			}	    
-	    }
-	    
-	    function constructNav(data){
-			var navLength = ((data.length > 6) ? 3 : Math.ceil(data.length / 2));
-			$(".cyberpioneerlatest .flex-control-nav ul").html("");
-			for(var i=0; i < navLength; i++) {
-		    	var nav = document.createElement('LI');
-		    	var navLink = document.createElement('A');
-		    	nav.appendChild(navLink);		    	
-		    	$(".cyberpioneerlatest .flex-control-nav ul").append(nav);
-			}
-	    }
-	    
-	    function retrieveContents(category) {
-			var cyberpioneerTabsURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Cyberpioneer/Cyberpioneer%20List";
-			var element = '.cyberpioneerlatest .cyberpioneer_content_box .slides.' + category + ' div';
-			if(category != "") {
-				cyberpioneerTabsURL +=  "&category" + category;
-			}			
-			doAjaxRequest(cyberpioneerTabsURL, function(data) {
-				var tabContents = $(data);	
-				groupContents(tabContents, element);
-				constructNav(tabContents);
-			});		    
-	    }
-	    
-		$(function(){
-			// Append tabs
-			var cyberpioneerTabsURL = "/nsp/wcm/connect/iMindef%20Content/iMindef/Homepage/Homepage?srv=cmpnt&source=library&cmpntname=iMindef%20Design/Homepage/Cyberpioneer/Cyberpioneer%20Tabs";
-			doAjaxRequest(cyberpioneerTabsURL, function(data) {
-				var tabs = $(data);
-				var newTabList = [];
-				for(var tabIndex = 0; tabIndex < tabs.length; tabIndex++) {				
-					var tab = tabs[tabIndex].children[0];
-					var currTabText = tab.textContent || tab.innerText;
-					var tabTextArr = currTabText.split('_');
-					var replaceTabPos = tabTextArr[0];
-				  	var replaceTabText = tabTextArr[1];  
-					if(tabTextArr.length == 1) {
-						replaceTabPos = 0;
-				    	replaceTabText = tabTextArr[0];
-					}  	
-					
-				  if(tab.textContent == undefined) {
-						tab.innerText = replaceTabText;
-					} else {
-						tab.textContent = replaceTabText;
-					}
-					newTabList[replaceTabPos] = $(tab).parent()[0];
-				}
-				
-				$('.menu_cyberpioneer ul').html(newTabList);
-			});
-			
-			// Append contents
-			constructSlides('latest');
-			retrieveContents('latest');
-			$(".cyberpioneerlatest").find(".viceTitle").dotdotdot({
-				ellipsis	: '...',
-				wrap		: 'letter',
-			});
-			$(".cyberpioneerlatest").find(".briefDesc").dotdotdot({
-				ellipsis	: '...',
-				wrap		: 'letter',
-			});
-		});
-	</script>
-	<script src="assets/cyberpioneerlatest-min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="assets/jquery.iosslider-min.js"></script>
+<script type="text/javascript">
+$(function(){
+	// Append tabs
+	generateCyberpioneerTabs();
+	
+	// Append contents
+	constructSlides('latest');
+	retrieveContents('latest');
+});
+</script>
 </div>
-        </div>
+</div>
         <div class="box">
             <div class="youtubeplayer cyberpioneertv"></div>
         </div>
@@ -1060,7 +787,7 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 <div class="h5_box">
 <h5 style="white-space:nowrap">Facebook</h5>
 </div>
-<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcyberpioneer.connect&amp;width=220&amp;height=220&amp;colorscheme=dark&amp;show_faces=true&amp;border_color=%236C6C6C&amp;stream=false&amp;header=false" scrolling="no" style="border:none; overflow:hidden; width:220px; height:220px;" allowtransparency="true" frameborder="0"></iframe>
+<iframe src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcyberpioneer.connect&amp;width=220&amp;height=220&amp;colorscheme=dark&amp;show_faces=true&amp;border_color=%236C6C6C&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:220px;" allowTransparency="true"></iframe>
 </div>
 </div>
 </div>
@@ -1070,13 +797,14 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 
 
 
-</div></div></td></tr>
-</tbody></table>
+</td></tr>
+</table>
 
 
 
 
 
+<!--#include file="/imindef/footer.html"-->
 <div class="footer_box">
     <div class="footer2012">
 
@@ -1138,14 +866,17 @@ for(var i = 1 ; i <= $("div.background").length ; i++){
 </div>
 
 </div>
+<script src="js/custom.js" type="text/javascript"></script>
+<script src="assets/cyberpioneerlatest-min.js" type="text/javascript"></script>
 <script type="text/javascript">
     var screenWidth = screen.width;
     if (screenWidth!=null) {
         if (navigator.appName == 'Microsoft Internet Explorer') {
             $("#top_content_div").css("width", screenWidth-21);
-        }
+        } 
     }
-    $("#top_content_div").css("margin", "0 auto");    
+    $("#top_content_div").css("margin", "0 auto");
 </script>
+
 </body>
 </html>
