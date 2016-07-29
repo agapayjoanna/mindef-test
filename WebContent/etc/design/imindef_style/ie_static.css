@@ -1,0 +1,3748 @@
+.AutopopulatePublicationTypeFont {
+    color:#CC0000;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+}
+.imindefPars .textimage .floatingclassleft {
+    float:left;
+    font-size: 3px;
+}
+.imindefPars .textimage .floatingclassright {
+    float:right;
+}
+
+.imindefPars .textimage img.cq-dd-image {
+    /*
+    padding:0px;
+    text-align:left;
+    max-width:700px;
+    max-width:100%; IE7 problem
+    max-width: 582px;
+    */
+    margin-right:3px; /*=vspace*/
+}
+.imindefParsSub .image img.cq-dd-image {
+    width: 200px;
+    margin: 5px 0 5px 0;
+}
+.imindefPars .Html span.titulo {
+background:none repeat scroll 0 0 #B3CADC;
+border-bottom:1px dotted #1F2F4E;
+border-top:1px solid #1F2F4E;
+color:#FFFFFF;
+font:bold 1.2em/1.2 helvetica,Arial,sans-serif;
+margin:5px 0 10px;
+padding:5px;
+text-transform:none;
+width:100%;
+}
+
+.MTLink {
+color:#0000FF;
+font-family:Verdana;
+font-size:11px;
+font-weight:bold;
+text-decoration:underline;
+}
+a.MTLink:link, a.MTLink:active, a.MTLink:visited, a.MTLink:hover   {
+text-decoration:underline;
+}
+
+.imindefParstextimageTitle {
+color:#CC0000;
+font-family:Arial;              
+font-size:15px;
+font-weight:bold;
+}
+
+font.Title {
+padding-top:2px;
+color:#CC0000;
+font-family:Arial;
+font-size:15px;
+font-weight:bold;
+}
+.imindefParsimageTitle
+{
+    font-family:Arial; 
+    font-size:15px; 
+    color:#000000; 
+    font-weight:bold; 
+}
+
+.imindefParstextimageText, .imindefPars .pageNavigation a.imindefParstextimageText {
+color:#000000;
+font-family:Arial;
+font-size:12px;
+font-style:normal;
+font-weight:normal;
+text-decoration:normal;
+
+}
+a.imindefParstextimageText:link, .imindefPars .pageNavigation a.imindefParstextimageText:link  {
+color:#0000FF;
+text-decoration:underline;
+}
+a.imindefParstextimageText:active, .imindefPars .pageNavigation a.imindefParstextimageText:active {
+text-decoration:none;
+}
+
+a.imindefParstextimageText:visited, .imindefPars .pageNavigation a.imindefParstextimageText:visited {
+color:#663399;
+text-decoration:underline;
+}
+
+a.imindefParstextimageText:hover, .imindefPars .pageNavigation a.imindefParstextimageText:hover  {
+color:#CC0000;
+text-decoration:none;
+}
+font.imindefParstextimageText font {
+    color:#ffffff;
+}
+.imindefParsLeft .textimage .imindefParstextimageText
+{
+color:#FFFFFF;
+font-family:Verdana;
+font-size:11px;
+font-weight:bold;
+text-decoration:none;
+}
+.imindefParsLeft .textimage a.imindefParstextimageText:link  {
+text-decoration:underline;
+}
+.imindefParsLeft .textimage a.imindefParstextimageText:active {
+text-decoration:none;
+}
+.imindefParsLeft .textimage a.imindefParstextimageText:visited {
+text-decoration:underline;
+}
+.imindefParsLeft .textimage a.imindefParstextimageText:hover  {
+text-decoration:none;
+}
+.imindefParsRight .textimage .imindefParstextimageText
+{
+color:#000000;
+font-family:Verdana;
+font-size:11px;
+font-weight:bold;
+text-decoration:none;
+}
+.imindefParsRight .textimage a.imindefParstextimageText:link  {
+text-decoration:underline;
+}
+.imindefParsRight .textimage a.imindefParstextimageText:active {
+text-decoration:none;
+}
+.imindefParsRight .textimage a.imindefParstextimageText:visited {
+text-decoration:underline;
+}
+.imindefParsRight .textimage a.imindefParstextimageText:hover  {
+text-decoration:none;
+}
+
+.imindefParsSub .textimage .imindefParstextimageText
+{
+color:#666666;
+font-family:Verdana;
+font-size:11px;
+font-weight:normal;
+text-decoration:none;
+}
+.imindefParsSub .textimage .imindefParstextimageText a:link  {
+font-weight: normal;
+text-decoration:underline;
+}
+.imindefParsSub .textimage .imindefParstextimageText a:active {
+font-weight: normal;
+text-decoration:none;
+}
+.imindefParsSub .textimage .imindefParstextimageText a:visited {
+color: #663399;
+font-weight: normal;
+text-decoration:underline;
+}
+.imindefParsSub .textimage .imindefParstextimageText a:hover  {
+font-weight: normal;
+color: #CC0000;
+text-decoration:none;
+}
+
+
+.imindefParsLefttextimageText {
+color:#FFFFFF;
+font-family:Verdana;
+font-size:11px;
+font-weight:bold;
+text-decoration:none;
+}
+.RichEdit font {
+/*color: #000000;*/
+font-family:Arial;
+font-size:12px;
+font-style:normal;
+font-weight:normal;
+}
+
+.RichEdit font.imindefParsRichEditTitle {
+font-size:15px;
+font-weight:bold;
+color:#CC0000;
+}
+
+a.imindefParsLefttextimageText:link {
+text-decoration:underline;
+}
+a.imindefParsLefttextimageText:active {
+text-decoration:none; 
+}
+a.imindefParsLefttextimageText:visited {
+text-decoration:underline;
+}
+a.imindefParsLefttextimageText:hover {
+text-decoration:none;
+}
+
+.imindefParsRighttextimageText {
+color:#000000;
+font-family:Verdana;
+font-size:11px;
+font-weight:bold;
+text-decoration:none;
+}
+a.imindefParsRighttextimageText:link {
+text-decoration:underline;
+}
+a.imindefParsRighttextimageText:active {
+text-decoration:none;
+}
+a.imindefParsRighttextimageText:visited {
+text-decoration:underline;
+}
+a.imindefParsRighttextimageText:hover {
+text-decoration:none;
+}
+
+.imindefParsAutoPopulateAutoRichTextFont {
+color:#000000;
+font-family:Arial;
+font-size:12px;
+font-style:normal;
+font-weight:normal;
+}
+a.imindefParsAutoPopulateAutoRichTextFont:link {
+color:#0000FF;
+text-decoration:underline;
+}
+a.imindefParsAutoPopulateAutoRichTextFont:active {
+color:#CC0000;
+text-decoration:none;
+}
+a.imindefParsAutoPopulateAutoRichTextFont:visited {
+color:#663399;
+text-decoration:underline;
+}
+a.imindefParsAutoPopulateAutoRichTextFont:hover {
+color:#CC0000;
+text-decoration:none;
+}
+.imindefParsLeft {  
+    color:#000000; 
+    /*overflow:auto;*/ /*extra scrollbar at homepage in ie*/
+}
+.imindefParsLeft .textimage {  
+    color:#000000; 
+    font-size:3px;
+}
+
+.imindefParsLeft .textimage small{
+    color:#FFF;
+    font-size:10px;
+    font-weight:bold;
+    text-decoration:none;
+    font-family:verdana;
+}
+
+.imindefParsLeft .textimage .Legend {  
+    font-family:Verdana; 
+    font-size:10px; 
+    color:#FFFFFF; 
+    font-style:normal; 
+    font-weight:bold; 
+    text-decoration:none; 
+}                         
+.imindefParsLeft .textimage .Title {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FF9900; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .textimage a.Title:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .textimage a.Title:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .textimage a.Title:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft a.textimageTitle:visited {  
+    text-decoration:underline; 
+}                     
+.imindefParsLeft .textimage .Text {  
+    color:#FFFFFF;
+    font-family:Verdana; 
+    font-size:11px; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .textimage .Title {
+    color:#FF9900; 
+    font-family:Verdana; 
+    font-size:11px; 
+    font-weight:bold; 
+    text-decoration:none; 
+}
+.imindefParsLeft .PopulateNews .TextFont {  
+    font-family:Arial; 
+    font-size:8px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+}
+.imindefParsRight .PopulateNews .TextFont {  
+    font-family:Arial; 
+    font-size:8px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+}
+
+.textimage small {
+/* color:#666666;
+font-size:11px;
+*/
+
+color:#666666;
+font-size:10px;
+text-decoration:none;
+font-family:verdana;
+
+}
+.imindefParsLeft .textimage a.Text:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .textimage a.Text:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .textimage a.Text:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .textimage a.Text:visited {  
+    text-decoration:underline; 
+}             
+.hyperlinkTextFont {
+    color:#000000;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+}   
+a.hyperlinkTextFont:link{
+    color: #0000FF;
+    text-decoration:underline; 
+}
+a.hyperlinkTextFont:active, a.hyperlinkTextFont:hover{
+    color:#CC0000;
+    text-decoration:none;
+}
+a.hyperlinkTextFont:visited{
+    color: #663399;
+    text-decoration:underline; 
+}
+.imindefParsLeft .Hyperlink {  
+    color:#000000; 
+}
+.imindefParsLeft .Hyperlink .hyperlinkTextFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FFFFFF; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .Hyperlink a.hyperlinkTextFont:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .Hyperlink a.hyperlinkTextFont:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft a.HyperlinkhyperlinkTextFont:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .Hyperlink a.hyperlinkTextFont:visited {  
+    text-decoration:underline; 
+}           
+.imindefParsLeft .separator {  
+    color:#000000; 
+}
+.imindefParsLeft .PopulateNews {  
+    color:#000000; 
+}
+.imindefParsLeft .PopulateNews .populateNewsTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FF9900; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .PopulateNews a.populateNewsTitleFont:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .PopulateNews a.populateNewsTitleFont:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .PopulateNews a.populateNewsTitleFont:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .PopulateNews a.populateNewsTitleFont:visited {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .PopulateNews .populateNewsTextFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FFFFFF; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .PopulateNews a.populateNewsTextFont:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .PopulateNews a.populateNewsTextFont:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .PopulateNews a.populateNewsTextFont:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .PopulateNews a.populateNewsTextFont:visited {  
+    text-decoration:underline; 
+}
+.imindefParsLeft .reference {  
+    color:#000000; 
+    margin-bottom:5px;
+}
+.imindefParsLeft .columncontrol {  
+    color:#000000; 
+}
+.imindefParsLeft .image {  
+    color:#000000; 
+    font-size:0;
+}
+.imindefParsLeft .Anchor {  
+    color:#000000; 
+}
+.imindefParsLeft .RichEdit {  
+    color:#000000; 
+}
+.imindefParsLeft .listchildren {  
+    color:#000000; 
+}
+.imindefParsLeft .webtitle {  
+    color:#000000; 
+}
+.imindefParsLeft .pageNavigation {  
+    color:#000000; 
+}
+.imindefParsLeft .ParagraphSystem {  
+    color:#000000; 
+}
+.imindefParsLeft .SearchInPath {  
+    color:#000000; 
+}
+.imindefParsLeft .SearchInPath .SearchTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FFFFFF; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .SearchInPath a.SearchTitleFont:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .SearchInPath a.SearchTitleFont:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .SearchInPath a.SearchTitleFont:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .SearchInPath a.SearchTitleFont:visited {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .SearchInPath .SearchResultFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefParsLeft .SearchInPath a.SearchResultFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefParsLeft .SearchInPath a.SearchResultFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .SearchInPath a.SearchResultFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .SearchInPath a.SearchResultFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+} 
+.imindefParsLeft .search {  
+    color:#000000; 
+}
+.imindefParsLeft .searchbox {  
+    color:#000000; 
+}
+.imindefParsLeft .list {  
+    background-color:#1F5285; 
+    color:#000000; 
+}
+.imindefParsLeft .list .More {  
+    font-family:Verdana; 
+    color:#FFFFFF; 
+    font-style:normal; 
+    font-weight:bold; 
+    text-decoration:none; 
+}
+.imindefParsLeft .list .Subtitle {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FFFFFF; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .list a.Subtitle:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .list a.Subtitle:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .list a.Subtitle:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .list a.Subtitle:visited {  
+    text-decoration:underline; 
+}
+.imindefParsLeft .list .Title {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FFFFFF; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .list a.Title:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .list a.Title:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .list a.Title:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .list a.Title:visited {  
+    text-decoration:underline; 
+}
+.imindefParsLeft .list .Text {  
+    font-family:Verdana; 
+    font-size:10px; 
+    color:#FFFFFF; 
+    font-style:normal; 
+    font-weight:bold; 
+    text-decoration:none; 
+}
+.imindefParsLeft .AutoPopulate {  
+    color:#000000; 
+}
+.imindefParsLeft .Poll {  
+    color:#000000; 
+}
+.imindefParsLeft .Poll .PollQuestion {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FFFFFF; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .Poll a.PollQuestion:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .Poll a.PollQuestion:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .Poll a.PollQuestion:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .Poll a.PollQuestion:visited {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .Poll .PollOption {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FFFFFF; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .Poll a.PollOption:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .Poll a.PollOption:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .Poll a.PollOption:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .Poll a.PollOption:visited {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .Poll .PollLinks {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#FFFFFF; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsLeft .Poll a.PollLinks:link {  
+    text-decoration:underline; 
+} 
+.imindefParsLeft .Poll a.PollLinks:active {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .Poll a.PollLinks:hover {  
+    text-decoration:none; 
+} 
+.imindefParsLeft .Poll a.PollLinks:visited {  
+    text-decoration:underline; 
+}
+.imindefParsLeft .CQSearchInPath {  
+    color:#000000; 
+}
+.imindefParsLeft .origreference {  
+    color:#000000; 
+}
+.imindefParsLeft .Html {  
+    color:#000000; 
+}
+.imindefParsSub{  
+    color:#000000; 
+}
+.imindefParsSub .textimage {  
+    color:#000000; 
+}
+.imindefParsSub .textimage .Legend {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefParsSub .textimage a.Legend:link {  
+    color:#0000FF; 
+} 
+.imindefParsSub .textimage a.Legend:active {  
+    color:#CC0000; 
+} 
+.imindefParsSub .textimage a.Legend:hover {  
+    color:#CC0000; 
+}
+.imindefParsSub .textimage .Title {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefParsSub .textimage a.Title {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefParsSub .textimage a.Title:link {  
+    text-decoration:underline; 
+} 
+.imindefParsSub .textimage a.Title:active {  
+    text-decoration:none; 
+} 
+.imindefParsSub .textimage a.Title:hover {  
+    text-decoration:none; 
+} 
+.imindefParsSub .textimage a.Title:visited {  
+    text-decoration:underline; 
+}
+.imindefParsSub .textimage .Text {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefParsSub .textimage a.Text:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefParsSub .textimage a.Text:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsSub .textimage a.Text:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsSub .textimage a.Text:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars {  
+    color:#000000;
+}
+.imindefPars .textimage {  
+    color:#000000; 
+    padding-bottom:3px;
+    padding-left:2px;
+}
+.imindefPars .textimage .Legend {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .textimage a.Legend:link {  
+    color:#0000FF; 
+} 
+.imindefPars .textimage a.Legend:active {  
+    color:#CC0000; 
+} 
+.imindefPars .textimage a.Legend:hover {  
+    color:#CC0000; 
+}
+.imindefPars .textimage .Title {  
+    font-family:Arial; 
+    font-size:15px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefPars .textimage a.Title {  
+    font-family:Arial; 
+    font-size:15px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefPars .textimage a.Title:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .textimage a.Title:active {  
+    text-decoration:none; 
+} 
+.imindefPars .textimage a.Title:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .textimage a.Title:visited {  
+    text-decoration:underline; 
+}
+.imindefPars .textimage .Text {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .textimage a.Text:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .textimage a.Text:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .textimage a.Text:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .textimage a.Text:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .AutoPopulate {  
+    color:#000000; 
+}
+.imindefPars .AutoPopulate .publicationTypeTextFont {  
+    font-family:Arial; 
+    font-size:15px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefPars .AutoPopulate a.publicationTypeTextFont:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate a.publicationTypeTextFont:active {  
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.publicationTypeTextFont:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.publicationTypeTextFont:visited {  
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate .AutoWebTitleFont {  
+    font-family:Arial; 
+    font-size:22px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:bold; 
+} 
+.imindefPars .AutoPopulate a.AutoWebTitleFont:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate a.AutoWebTitleFont:active {  
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoWebTitleFont:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoWebTitleFont:visited {
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate .AutoDatePostedFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+}
+.imindefPars .AutoPopulate a.AutoDatePostedFont:link {  
+    color:#0000FF; 
+} 
+.imindefPars .AutoPopulate a.AutoDatePostedFont:active {  
+    color:#CC0000; 
+} 
+.imindefPars .AutoPopulate a.AutoDatePostedFont:hover {  
+    color:#CC0000; 
+}  
+.imindefPars .AutoPopulate .AutoReportsByFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .AutoPopulate a.AutoReportsByFont:link {  
+    color:#0000FF; 
+} 
+.imindefPars .AutoPopulate a.AutoReportsByFont:active {  
+    color:#CC0000; 
+} 
+.imindefPars .AutoPopulate a.AutoReportsByFont:hover {  
+    color:#CC0000; 
+}  
+.imindefPars .AutoPopulate .AutoPhotosByFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .AutoPopulate a.AutoPhotosByFont:link {  
+    color:#0000FF; 
+} 
+.imindefPars .AutoPopulate a.AutoPhotosByFont:active {  
+    color:#CC0000; 
+} 
+.imindefPars .AutoPopulate a.AutoPhotosByFont:hover {  
+    color:#CC0000; 
+}  
+.imindefPars .AutoPopulate .AutoRichTextFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .AutoPopulate a.AutoRichTextFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate a.AutoRichTextFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoRichTextFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoRichTextFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate .AutoRichTitleFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .AutoPopulate a.AutoRichTitleFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate a.AutoRichTitleFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoRichTitleFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoRichTitleFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate .AutoImageCaptionFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .AutoPopulate a.AutoImageCaptionFont:link {  
+    color:#0000FF; 
+} 
+.imindefPars .AutoPopulate a.AutoImageCaptionFont:active {  
+    color:#CC0000; 
+} 
+.imindefPars .AutoPopulate a.AutoImageCaptionFont:hover {  
+    color:#CC0000; 
+}  
+.imindefPars .AutoPopulate .AutoListChildrenTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#000000; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenTitleFont:link {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenTitleFont:active {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenTitleFont:hover {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenTitleFont:visited {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate .AutoListChildrenChildTitleFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenChildTitleFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenChildTitleFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenChildTitleFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenChildTitleFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+} 
+.imindefPars .AutoPopulate .AutoListChildrenChildDescriptionFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenChildDescriptionFont:link {  
+    color:#0000FF; 
+} 
+.imindefParsAutoPopulate a.AutoListChildrenChildDescriptionFont:active {  
+    color:#CC0000; 
+} 
+.imindefPars .AutoPopulate a.AutoListChildrenChildDescriptionFont:hover {  
+    color:#CC0000; 
+}
+.imindefPars .separator {  
+    color:#000000; 
+}
+.imindefPars .PopulateNews {  
+    color:#000000; 
+}
+.imindefPars .PopulateNews .populateNewsTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefPars .PopulateNews a.populateNewsTitleFont:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .PopulateNews a.populateNewsTitleFont:active {  
+    text-decoration:none; 
+} 
+.imindefPars .PopulateNews a.populateNewsTitleFont:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .PopulateNews a.populateNewsTitleFont:visited {  
+    text-decoration:underline; 
+} 
+.imindefPars .PopulateNews .populateNewsTextFont, .imindefParsSub .PopulateNews .populateNewsTextFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .PopulateNews a.populateNewsTextFont:link, .imindefParsSub .PopulateNews a.populateNewsTextFont:link  {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .PopulateNews a.populateNewsTextFont:active, .imindefParsSub .PopulateNews a.populateNewsTextFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .PopulateNews a.populateNewsTextFont:hover, .imindefParsSub .PopulateNews a.populateNewsTextFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .PopulateNews a.populateNewsTextFont:visited, .imindefParsSub .PopulateNews a.populateNewsTextFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}                                               
+.imindefPars .columncontrol {  
+    color:#000000; 
+}
+.imindefPars .pageNavigation {  
+    color:#000000; 
+    font-family:Arial;
+    font-size:12px;
+    font-style:normal;
+    font-weight:normal;
+}
+.imindefPars .pageNavigation a {
+color:#CC0000;
+font-family:verdana;
+font-size:11px;
+font-weight:bold;
+}
+.imindefPars .pageNavigation a:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .pageNavigation a:active {  
+    text-decoration:none; 
+} 
+.imindefPars .pageNavigation a:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .pageNavigation .PageNavigationFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .pageNavigation a.PageNavigationFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .pageNavigation a.PageNavigationFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .pageNavigation a.PageNavigationFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .pageNavigation a.PageNavigationFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .LastPageUpdate {
+    margin-top:20px;
+    color:#000000; 
+}
+.imindefPars .LastPageUpdate .LastupdateFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .LastPageUpdate a.LastupdateFont:link {  
+    color:#0000FF; 
+} 
+.imindefPars .LastPageUpdate a.LastupdateFont:active {  
+    color:#CC0000; 
+} 
+.imindefPars .LastPageUpdate a.LastupdateFont:hover {  
+    color:#CC0000; 
+}
+.imindefPars .webtitle {  
+    color:#000000; 
+}
+.imindefPars .webtitle .Title {  
+    font-family:Arial; 
+    font-size:16px; 
+    font-style:bold; 
+}
+.imindefPars .Anchor {  
+    color:#000000; 
+    font-family:Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight:normal;
+}
+/*
+.imindefPars .Anchor:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+*/
+.imindefPars .Anchor .AnchorFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .Anchor a.AnchorFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .Anchor a.AnchorFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .Anchor a.AnchorFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .Anchor a.AnchorFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .RichEdit {  
+    color:#000000; 
+}
+.imindefPars .RichEdit .RichTitleFont {  
+    font-family:Arial; 
+    font-size:15px; 
+    color:#000000; 
+    font-weight:bold; 
+} 
+.imindefPars .RichEdit a.RichTitleFont:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .RichEdit a.RichTitleFont:active {  
+    text-decoration:none; 
+} 
+.imindefPars .RichEdit a.RichTitleFont:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .RichEdit a.RichTitleFont:visited {  
+    text-decoration:underline; 
+} 
+.imindefPars .RichEdit .RichTextFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .RichEdit a.RichTextFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .RichEdit a.RichTextFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .RichEdit a.RichTextFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .RichEdit a.RichTextFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .table {  
+    color:#000000; 
+}
+.imindefPars .table .Header {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .table a.Header:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .table a.Header:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .table a.Header:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .table a.Header:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .table .Title {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .table a.Title:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .table a.Title:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .table a.Title:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .table a.Title:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .table .Text {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .table a.Text:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .table a.Text:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .table a.Text:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .table a.Text:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}                
+.imindefPars .Flash {  
+    color:#000000; 
+    font-size:0;
+}
+.imindefPars .SearchInPath {  
+    color:#000000;
+}
+.imindefPars .SearchInPath .SearchTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#000000; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefPars .SearchInPath a.SearchTitleFont:link {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefPars .SearchInPath a.SearchTitleFont:active {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefPars .SearchInPath a.SearchTitleFont:hover {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefPars .SearchInPath a.SearchTitleFont:visited {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefPars .SearchInPath .SearchResultFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .SearchInPath a.SearchResultFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .SearchInPath a.SearchResultFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .SearchInPath a.SearchResultFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .SearchInPath a.SearchResultFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+} 
+.imindefPars .forms {  
+    width:400; 
+    color:#000000; 
+}
+.imindefPars .forms .Title {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+}
+.imindefPars .forms a.Title:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .forms a.Title:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars.forms a.Title:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .forms a.Title:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .forms .InputText {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .forms a.InputText:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .forms a.InputText:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .forms a.InputText:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .forms a.InputText:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .forms .Text {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .forms a.Text:link {  
+    color:#0000FF; 
+} 
+.imindefPars .forms a.Text:active {  
+    color:#CC0000; 
+} 
+.imindefPars .forms a.Text:hover {  
+    color:#CC0000; 
+}
+.imindefPars .reference {  
+    color:#000000; 
+}
+.imindefPars .Hyperlink {  
+    color:#000000; 
+}
+.imindefPars .Hyperlink .hyperlinkTextFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .Hyperlink a.hyperlinkTextFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .Hyperlink a.hyperlinkTextFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .Hyperlink a.hyperlinkTextFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .Hyperlink a.hyperlinkTextFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}/*
+.Hyperlink .hyperlinkTextFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.Hyperlink a.hyperlinkTextFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.Hyperlink a.hyperlinkTextFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.Hyperlink a.hyperlinkTextFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.Hyperlink a.hyperlinkTextFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}*/
+.imindefPars .sitemap {  
+    padding:2px; 
+    color:#000000; 
+}
+.imindefPars .sitemap .Title {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefPars .sitemap a.Title:link {  
+    text-decoration:underline; 
+} 
+.imindefPars sitemap a.Title:active {  
+    text-decoration:none; 
+} 
+.imindefPars .sitemap a.Title:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .sitemap a.Title:visited {  
+    text-decoration:underline; 
+}
+.imindefPars .sitemap .Text {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .sitemap a.Text:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .sitemap a.Text:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .sitemap a.Text:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .sitemap a.Text:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .barchart {  
+    color:#000000; 
+}
+.imindefPars .candlechart {  
+    color:#000000; 
+}
+.imindefPars .download {  
+    color:#000000; 
+}
+
+.imindefPars .download .Title {  
+    font-family:Verdana; 
+    font-size:11px; 
+    font-weight:bold; 
+    color:#CC0000;
+} 
+.imindefPars .download a.Title:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .download a.Title:active {  
+    text-decoration:none; 
+} 
+.imindefPars .download a.Title:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .download a.Title:visited {  
+    text-decoration:underline; 
+}
+
+.imindefPars .download span.Title a:link {  
+    color:#CC0000;
+    text-decoration:underline; 
+} 
+.imindefPars .download span.Title a:active {  
+    text-decoration:none; 
+} 
+.imindefPars .download span.Title a:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .download span.Title a:visited {  
+    color:#800080;
+    text-decoration:underline; 
+}
+
+.imindefPars .download .Text {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .download a.Text:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .download a.Text:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .download a.Text:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .download a.Text:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .download .Text {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .download .tablealign {
+    padding-right:3px; 
+    vertical-align:top
+}
+.imindefPars .DatePosted {  
+    color:#000000; 
+}
+.DatePosted .DatePostedFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .DatePosted .DatePostedFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .DatePosted a.DatePostedFont:link {  
+    color:#0000FF; 
+} 
+.imindefPars .DatePosted a.DatePostedFont:active {  
+    color:#CC0000; 
+} 
+.imindefPars .DatePosted a.DatePostedFont:hover {  
+    color:#CC0000; 
+}
+.imindefPars .linechart {  
+    color:#000000; 
+}
+.imindefPars .listchildren {  
+    color:#000000; 
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+}
+.imindefPars .listchildren .Subtitle {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .listchildren a.Subtitle:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .listchildren a.Subtitle:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .listchildren a.Subtitle:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .listchildren a.Subtitle:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.listchildren .Subtitle {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.listchildren a.Subtitle:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.listchildren a.Subtitle:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.listchildren a.Subtitle:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.listchildren a.Subtitle:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.imindefPars .listchildren .Title {  
+    font-family:Arial; 
+    font-size:15px; 
+    color:#000000; 
+    font-weight:bold; 
+} 
+.imindefPars .listchildren a.Title:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .listchildren a.Title:active {  
+    text-decoration:none; 
+} 
+.imindefPars .listchildren a.Title:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .listchildren a.Title:visited {  
+    text-decoration:underline; 
+}
+.imindefPars .listchildren .Text {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+    font-weight:normal;
+} 
+.imindefPars .listchildren a.Text:link {  
+    color:#0000FF; 
+} 
+.imindefPars .listchildren a.Text:active {  
+    color:#CC0000; 
+} 
+.imindefPars .listchildren a.Text:hover {  
+    color:#CC0000; 
+}
+.imindefPars .piechart {  
+    color:#000000; 
+}
+.imindefPars .tilechart {  
+    color:#000000; 
+}
+.ArticleUtility {  
+    color:#000000; 
+}
+.ArticleUtility .PrintFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.ArticleUtility a.PrintFont:link {  
+    color:#0000FF; 
+} 
+.ArticleUtility a.PrintFont:active {  
+    color:#CC0000; 
+} 
+.ArticleUtility a.PrintFont:hover {  
+    color:#CC0000; 
+}  
+.ArticleUtility .EmailFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.ArticleUtility a.EmailFont:link {  
+    color:#0000FF; 
+} 
+.ArticleUtility a.EmailFont:active {  
+    color:#CC0000; 
+} 
+.ArticleUtility a.EmailFont:hover {  
+    color:#CC0000; 
+}  
+.ArticleUtility .ContactFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.ArticleUtility a.ContactFont:link {  
+    color:#0000FF; 
+} 
+.ArticleUtility a.ContactFont:active {  
+    color:#CC0000; 
+} 
+.ArticleUtility a.ContactFont:hover {  
+    color:#CC0000; 
+}
+.imindefPars .ParagraphSystem {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .barchart {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .candlechart {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .columncontrol {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .download {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .forms {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .Anchor {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .DatePosted {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .Hyperlink {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .RichEdit {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .linechart {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .listchildren {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .piechart {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .reference {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .separator {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .sitemap {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .table {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .textimage {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .tilechart {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .webtitle {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .ArticleUtility {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .LastPageUpdate {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .AutoPopulate {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .pageNavigation {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .ParagraphSystem {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .SearchInPath {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .Breadcrumbs {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .PopulateNews {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .search {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .searchbox {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .Poll {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .iparsys {  
+    color:#000000; 
+}
+imindefPars .ParagraphSystem .WebTitle {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .Flash {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .image {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .CQSearchInPath {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .origreference {  
+    color:#000000; 
+}
+.imindefPars .ParagraphSystem .Html {  
+    color:#000000; 
+}
+.imindefPars .Breadcrumbs {  
+    color:#000000; 
+}
+.BreadTextFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+a.BreadTextFont:link {  
+    color:#0000FF; 
+} 
+a.BreadTextFont:active {  
+    color:#CC0000; 
+} 
+a.BreadTextFont:hover {  
+    color:#CC0000; 
+}
+.imindefPars .search {  
+    color:#000000; 
+}
+.imindefPars .searchbox {  
+    color:#000000; 
+}
+.imindefPars .Poll {  
+    color:#000000; 
+}
+.imindefPars .iparsys {  
+    color:#000000; 
+}
+.imindefParsWebTitle {  
+    color:#000000; 
+}
+.imindefPars .WebTitle .WebTitleFont {  
+    font-family:Arial; 
+    font-size:22px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:bold; 
+} 
+.imindefPars .WebTitle a.WebTitleFont:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .WebTitle a.WebTitleFont:active {  
+    text-decoration:none; 
+} 
+.imindefPars .WebTitle a.WebTitleFont:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .WebTitle a.WebTitleFont:visited {  
+    text-decoration:underline; 
+}
+.WebTitleFont {  
+    font-family:Arial; 
+    font-size:22px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:bold; 
+} 
+a.WebTitleFont:link {  
+    text-decoration:underline; 
+} 
+a.WebTitleFont:active {  
+    text-decoration:none; 
+} 
+a.WebTitleFont:hover {  
+    text-decoration:none; 
+} 
+a.WebTitleFont:visited {  
+    text-decoration:underline; 
+}
+.imindefPars .image {  
+    color:#000000; 
+}
+.imindefPars .image small, .imindefParsSub .image small, .imindefParsRight .image small {
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+}
+.imindefPars .image .Legend {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefPars .image a.Legend:link {  
+    color:#0000FF; 
+} 
+.imindefPars .image a.Legend:active {  
+    color:#CC0000; 
+} 
+.imindefPars .image a.Legend:hover {  
+    color:#CC0000; 
+}
+.imindefPars .image .Title {  
+    font-family:Arial; 
+    font-size:15px; 
+    color:#000000; 
+    font-weight:bold; 
+} 
+.imindefPars .image a.Title:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .image a.Title:active {  
+    text-decoration:none; 
+} 
+.imindefPars .image a.Title:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .image a.Title:visited {  
+    text-decoration:underline; 
+}
+.imindefPars .CQSearchInPath {  
+    color:#000000; 
+}
+.imindefPars .CQSearchInPath .SearchTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefPars .CQSearchInPath a.SearchTitleFont:link {  
+    text-decoration:underline; 
+} 
+.imindefPars .CQSearchInPath a.SearchTitleFont:active {  
+    text-decoration:none; 
+} 
+.imindefPars .CQSearchInPath a.SearchTitleFont:hover {  
+    text-decoration:none; 
+} 
+.imindefPars .CQSearchInPath a.SearchTitleFont:visited {  
+    text-decoration:underline; 
+} 
+.imindefPars .CQSearchInPath .SearchResultFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefPars .CQSearchInPath a.SearchResultFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefPars .CQSearchInPath a.SearchResultFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .CQSearchInPath a.SearchResultFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefPars .CQSearchInPath a.SearchResultFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+} 
+.imindefPars .origreference {  
+    color:#000000; 
+}
+.imindefPars .RssItems {  
+    color:#000000; 
+}
+.imindefPars .Html {  
+    color:#000000; 
+}
+/*
+.imindefPars .Html h2  span.Title{  
+    font: bold 1.0em/1 helvetica,Arial,sans-serif;
+}
+*/
+.imindefPars .Html h2 {  
+    font-family:helvetica,arial,sans-serif;
+    /* font: bold 2.2em/1.2 georgia, Times New Roman;*/
+}
+.imindefPars .Html h2.grayHeader {
+    border-bottom: 1px dotted #BBBBAA;
+    border-top: 1px solid #666666;
+    color: #8F8F8F;
+    font: bold 1.4em/1.2 georgia, Times New Roman;
+    margin: 0;
+    padding: 10px 10px 10px 5px;
+    text-transform:uppercase;
+}
+.imindefPars .Html h2.blackHeader {
+    border-bottom: 1px dotted #BBBBAA;
+    border-top: 1px solid #666666;
+    color: #000000;
+    font: bold 1.4em/0.8 helvetica,arial,sans-serif;
+    margin: 0;
+    padding: 10px 10px 10px 5px;
+    text-transform:uppercase;
+}
+.imindefPars .Html h2 span.h2top {
+color:#333333;
+font:0.55em/1 helvetica,Arial,sans-serif;
+margin:0 0 0 1px;
+text-transform:none;
+}
+.imindefPars .Html td span.loginTable-txt{  
+    font: 1em helvetica,Arial,sans-serif;
+}
+.imindefPars span.Title {
+    font: bold 1.0em/1 helvetica,Arial,sans-serif;
+}
+
+.imindefPars .list {  
+    color:#000000; 
+}
+.imindefParsRight {  
+    color:#000000; 
+    /*overflow:auto;*/ /*extra scrollbar at homepage in ie*/
+    
+}
+.imindefParsRight .textimage {  
+    color:#000000;
+    font-size: 2px; /*for image separators*/
+}
+.imindefParsRight .textimage .Legend {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefParsRight .textimage a.Legend:link {  
+    color:#0000FF; 
+} 
+.imindefParsRight .textimage a.Legend:active {  
+    color:#CC0000; 
+} 
+.imindefParsRight .textimage a.Legend:hover {  
+    color:#CC0000; 
+}
+.imindefParsRight .textimage .Title {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefParsRight .textimage a.Title:link {  
+    text-decoration:underline; 
+} 
+.imindefParsRight .textimage a.Title:active {  
+    text-decoration:none; 
+} 
+.imindefParsRight .textimage a.Title:hover {  
+    text-decoration:none; 
+} 
+.imindefParsRight .textimage a.Title:visited {  
+    text-decoration:underline; 
+}
+.imindefParsRight .textimage .Text {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#000000; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsRight .textimage a.Text:link {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .textimage a.Text:active {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .textimage a.Text:hover {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .textimage a.Text:visited {  
+    color:#000000; 
+    text-decoration:underline; 
+}
+.imindefParsRight .PopulateNews {  
+    color:#000000; 
+}
+.imindefParsRight .PopulateNews .populateNewsTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefParsRight .PopulateNews a.populateNewsTitleFont:link {  
+    text-decoration:underline; 
+} 
+.imindefParsRight .PopulateNews a.populateNewsTitleFont:active {  
+    text-decoration:none; 
+} 
+.imindefParsRight .PopulateNews a.populateNewsTitleFont:hover {  
+    text-decoration:none; 
+} 
+.imindefParsRight .PopulateNews a.populateNewsTitleFont:visited {  
+    text-decoration:underline; 
+} 
+.imindefParsRight .PopulateNews .populateNewsTextFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#000000; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsRight .PopulateNews a.populateNewsTextFont:link {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .PopulateNews a.populateNewsTextFont:active {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .PopulateNews a.populateNewsTextFont:hover {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .PopulateNews a.populateNewsTextFont:visited {  
+    color:#000000; 
+    text-decoration:underline; 
+}
+.imindefParsRight .Hyperlink {  
+    color:#000000; 
+}
+.imindefParsRight .Hyperlink .hyperlinkTextFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#000000; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Hyperlink a.hyperlinkTextFont:link {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .Hyperlink a.hyperlinkTextFont:active {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Hyperlink a.hyperlinkTextFont:hover {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Hyperlink a.hyperlinkTextFont:visited {  
+    color:#000000; 
+    text-decoration:underline; 
+}
+.imindefParsRight .separator {  
+    color:#000000; 
+}
+.imindefParsRight .reference {  
+    color:#000000; 
+}
+.imindefParsRight .reference .populateNewsTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#CC0000; 
+    font-weight:bold; 
+} 
+.imindefParsRight .reference a.populateNewsTitleFont:link {  
+    text-decoration:underline; 
+} 
+.imindefParsRight .reference a.populateNewsTitleFont:active {  
+    text-decoration:none; 
+} 
+.imindefParsRight .reference a.populateNewsTitleFont:hover {  
+    text-decoration:none; 
+} 
+.imindefParsRight  .reference a.populateNewsTitleFont:visited {  
+    text-decoration:underline; 
+} 
+.imindefParsRight .reference /populateNewsTextFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#000000; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsRight .reference a.populateNewsTextFont:link {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .reference a.populateNewsTextFont:active {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .reference a.populateNewsTextFont:hover {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .reference a.populateNewsTextFont:visited {  
+    color:#000000; 
+    text-decoration:underline; 
+}
+.imindefParsRight .SearchInPath {  
+    color:#000000; 
+}
+.imindefParsRight .SearchInPath .SearchTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#000000; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsRight .SearchInPath a.SearchTitleFont:link {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .SearchInPath a.SearchTitleFont:active {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .SearchInPath a.SearchTitleFont:hover {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .SearchInPath a.SearchTitleFont:visited {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .SearchInPath .SearchResultFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefParsRight .SearchInPath a.SearchResultFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .SearchInPath a.SearchResultFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .SearchInPath a.SearchResultFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .SearchInPath a.SearchResultFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .barchart {  
+    color:#000000; 
+}
+.imindefParsRight .columncontrol {  
+    color:#000000; 
+}
+.imindefParsRight .forms {  
+    color:#000000; 
+}
+.imindefParsRight .image {  
+    color:#000000; 
+}
+.imindefParsRight .image .Legend {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+} 
+.imindefParsRight .image a.Legend:link {  
+    color:#0000FF; 
+} 
+.imindefParsRight .image a.Legend:active {  
+    color:#CC0000; 
+} 
+.imindefParsRight .image a.Legend:hover {  
+    color:#CC0000; 
+}
+.imindefParsRight .Anchor {  
+    color:#000000; 
+}
+.imindefParsRight .DatePosted {  
+    color:#000000; 
+}
+.imindefParsRight .RichEdit {  
+    color:#000000; 
+}
+.imindefParsRight .listchildren {  
+    color:#000000; 
+}
+.imindefParsRight .sitemap {  
+    color:#000000; 
+}
+.imindefParsRight .webtitle {  
+    color:#000000; 
+}
+.imindefParsRight .ArticleUtility {  
+    color:#000000; 
+}
+.imindefParsRight .AutoPopulate {  
+    color:#000000; 
+}
+.imindefParsRight .Breadcrumbs {  
+    color:#000000; 
+}
+.imindefParsRight .LastPageUpdate {  
+    color:#000000; 
+}
+.imindefParsRight .pageNavigation {  
+    color:#000000; 
+}
+.imindefParsRight .ParagraphSystem {  
+    color:#000000; 
+}
+.imindefParsRight .search {  
+    color:#000000; 
+}
+.imindefParsRight .searchbox {  
+    color:#000000; 
+}
+.imindefParsRight .Poll {  
+    color:#000000; 
+}
+.imindefParsRight .Poll .PollQuestion {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#000000; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Poll a.PollQuestion:link {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .Poll a.PollQuestion:active {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Poll a.PollQuestion:hover {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Poll a.PollQuestion:visited {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .Poll .PollOption {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefParsRight .Poll a.PollOption:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .Poll a.PollOption:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Poll a.PollOption:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Poll a.PollOption:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .Poll PollLinks {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+.imindefParsRight .Poll a.PollLinks:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imindefParsRight .Poll a.PollLinks:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Poll a.PollLinks:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imindefParsRight .Poll a.PollLinks:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}                     
+.imindefParsRight .CQSearchInPath {  
+    color:#000000; 
+}
+.imindefParsRight .origreference {  
+    color:#000000; 
+}
+.imindefParsRight .WebTitle {  
+    color:#000000; 
+}
+.imindefParsRight .Html {  
+    color:#000000; 
+}
+.c0000 {  
+    color:#000000; 
+}
+.myComponent {  
+    color:#000000; 
+}                                                                                                                                                      
+.myComponentSearchTitleFont {  
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#CC0000; 
+    font-weight:bold; 
+    text-decoration:none; 
+} 
+a.myComponentSearchTitleFont:link {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+a.myComponentSearchTitleFont:active {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+a.myComponentSearchTitleFont:visited {  
+    color:#000000; 
+    text-decoration:underline; 
+} 
+a.myComponentSearchTitleFont:hover {  
+    color:#000000; 
+    text-decoration:none; 
+} 
+.myComponentSearchResultFont {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+a.myComponentSearchResultFont:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+a.myComponentSearchResultFont:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+a.myComponentSearchResultFont:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+} 
+a.myComponentSearchResultFont:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+}
+
+
+
+/* general stuff */
+/*
+body  {
+    background: white;
+}
+body, img, a, div, td, th {
+    font:normal 11px Tahoma;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    border: 0;
+}
+body a       {color:#4F960F; }
+body b a     {font:bold 11px Tahoma; color:#4F960F; }
+body a:hover {text-decoration:none;}
+body span    {color:#8F8F8F; font-size:10px}
+body b       {font:bold 11px Tahoma; color:#0D5FA5;}
+body strong  {font:bold 11px Tahoma; color:#0D5FA5;}
+*/
+body {
+    margin: 0;
+}
+div.content {
+    width: 1100px;
+}
+div.left {
+    width: 200px;
+    float: left;
+    display: inline;
+}
+div.center {
+    margin: 0 40px 0 20px;
+    width: 500px;
+    float: left;
+    display: inline;
+}
+div.right {
+    width: 300px;
+    margin-top: 10px;
+    float: left;
+    display: inline;
+}
+
+/* helper div for clearing floats */
+div.clear {
+    padding:0px;
+    /*margin:0 0 5px 0;*/
+    margin:0;
+    height:0px;
+    clear: both;
+}
+
+/* top navigation component */
+div.topnav {
+    background:url(images/tail.jpg) top repeat-x;
+    white-space:nowrap;
+    clear: both;
+}
+
+/* logo component */
+div.logo {
+    height: 100px;
+    background-color:white;
+}
+
+/* news list component */
+div.newslist {
+    color:#E7E7E7 !important;
+    background:url(images/gr_bg.jpg) 0 0 repeat-x #444F55;
+    padding: 14px 8px 20px 8px;
+}
+div.newslist div.item {
+    clear: both;
+    padding: 0 0 6px 0;
+}
+div.newslist a {color:#E7E7E7}
+div.newslist b {color:#FFF;}
+div.newslist span {font:normal 10px Tahoma; color:#BABABA}
+
+/* teaser component */
+img.teaser {
+    float:left;
+    padding:1px;
+    border:1px solid white;
+    margin:5px 7px 0 0
+}
+
+/* breadcrumb component */
+div.breadcrumb {
+    padding: 8px 0 8px 0;
+    font-size: 13px;
+}
+div.breadcrumb A {
+    font-size: 13px;
+}
+
+/* header component */
+div.header {
+    margin: 1px;
+    margin-left: 2px;
+    background: #94bf4a;
+}
+div.headerImg {
+    padding-left: 35px;
+    padding-top: 100px;
+    width:517px;
+    height:98px;
+    background-repeat: no-repeat;
+    color:#FFF;
+}
+
+div.headerText {
+    width: 270px;
+}
+/*div.separator{ 
+    padding-bottom: 8px;
+}*/
+/* Not componentized stuff */
+div.cite {
+    /* disable bg image: background:url(images/0p3.jpg) bottom right no-repeat; */
+    height:150px;
+    padding: 20px 8px 0 8px;
+}
+div.cite b {
+    color: #1164A9
+}
+div.cite span {
+    color:#878787
+}
+div.footer {
+    clear: both;
+    background:#434F55;
+    padding:17px 0 21px 200px;
+    vertical-align:middle;
+    border-top:1px solid #FFF
+}
+div.footer a {
+    color:#FFF;
+    font:normal 11px Tahoma;
+    background:url(images/bullet3.gif) 0 0 no-repeat;
+    padding:0 0 0 17px;
+}
+div.disclaimer {
+    color:#797979;
+    padding:20px 0 25px 0;
+    background: white !important;
+    text-align:center;
+}
+div.disclaimer a {
+    color:#14729E;
+}
+input.textinput {
+    width: 400px;
+}
+
+input.geo, textarea.geo, select.geo {
+    font:normal 11px Tahoma;
+    vertical-align:middle;
+    color:#373737;
+    background:#FFF;
+    margin: 1px 0 5px 0;
+}
+textarea.geo, select.geo {
+    width: 400px;
+}
+textarea.geo {
+    height: 80px;
+}
+input.geos {
+    font:normal 11px Tahoma;
+    vertical-align:middle;
+    color:#373737;
+    background:#FFF;
+    width:100px;
+    margin: 1px 0 5px 0;
+}
+
+/* parsys component */
+div.par {
+    clear: both;
+}
+.parsys_column {
+    /*
+    position:relative;
+    width: 99%;
+    min-width:50px;*/
+    
+    height: 100%;
+    width:100%;
+    
+    /* float: left; */
+    border: 0px solid black;
+    vertical-align:top;
+    
+    padding: 0;
+    margin: 2px 0 2px 0;
+}
+
+div.separator{ 
+    padding-bottom: 8px;
+}
+
+.parbase, div.section{ 
+
+    /* position:relative; */
+    <![if IE6]>
+    margin-bottom:1px;
+    <![else]>
+    margin-bottom:1px;  
+    <![endif]>
+    
+    /* Property added to avoid IE hasLayout issue on paragraphs
+    see #20817 - IE6: div around Drag Components image not big enough
+    */
+    zoom: 1;
+}
+
+div.parsys_column .section {
+    overflow:hidden;
+    width: 100%;
+    height: 100%;
+}
+
+/* column control layouts */
+div.cq-colctrl-cols {width: 100%; float: left; }
+
+div.cq-colctrl-default { width: 100%;}
+
+div.cq-colctrl-lt0 { background:url(images/cq-colctrl-lt0.gif) repeat-y scroll 0 0;}
+div.cq-colctrl-lt0-c0 { width: 48%; padding-right: 14px;}
+div.cq-colctrl-lt0-c1 { width: 49% }
+
+div.cq-colctrl-lt1 { background:url(images/cq-colctrl-lt1.gif) repeat-y scroll 0 0;}
+div.cq-colctrl-lt1-c0 { width: 34%; padding-right: 14px;}
+div.cq-colctrl-lt1-c1 { width: 63%;}
+
+div.cq-colctrl-lt2 { background:url(images/cq-colctrl-lt2.gif) repeat-y scroll 0 0;}
+div.cq-colctrl-lt2-c0 { width: 31%; padding-right: 14px;}
+div.cq-colctrl-lt2-c1 { width: 31%; padding-right: 14px;}
+div.cq-colctrl-lt2-c2 { width: 32%; }
+
+div.cq-colctrl-lt3 { background:url(images/cq-colctrl-lt3.gif) repeat-y scroll 0 0; }
+div.cq-colctrl-lt3-c0 { width: 46%; padding-right: 14px;}
+div.cq-colctrl-lt3-c1 { width: 24%; padding-right: 14px;}
+div.cq-colctrl-lt3-c2 { width: 24%; }
+
+div.cq-colctrl-lt4 { margin:-18px 0pt;}
+div.cq-colctrl-lt4-c0 { width: 38%; padding-right: 4px;}
+div.cq-colctrl-lt4-c1 { width: 58% }
+
+div.cq-colctrl-lt5 {margin:-18px 0pt; }
+div.cq-colctrl-lt5-c0 { width: 24%; padding-right: 10px;}
+div.cq-colctrl-lt5-c1 { width: 24%; padding-right: 10px;}
+div.cq-colctrl-lt5-c2 { width: 24%; padding-right: 10px;}
+div.cq-colctrl-lt5-c3 { width: 24%; }
+
+/* search component */
+div.search {
+    padding:0 1px 0 0;
+}
+
+div.searchRight {
+    border-left: 1px solid #E7E7E7;
+    float: right;
+    width: 150px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+div.searchTrends {
+    text-align: justify;
+}
+
+div.searchRight p {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* text component */
+div.text ul {
+    margin:1em 0 0 0;
+}
+div.text ol {
+    margin:1em 0 0 0;
+}
+div.text ul li {
+    padding:0 0 10px 0;
+    list-style-image:url(images/bullet3.gif);
+    background:url(images/gl3.gif) bottom repeat-x;
+    margin:0 0 5px 0;
+}
+div.text ol li {
+    padding:0 0 10px 0;
+    background:url(images/gl3.gif) bottom repeat-x;
+    margin:0 0 5px 0;
+}
+
+div.text li a {
+    background:url(images/bullet4.gif) 0 0 no-repeat;
+    font:normal 11px Tahoma;
+    color:#4F960F;
+    padding:0 0 0 18px;
+}
+
+div.sitemap div.linkcontainer {
+    margin:1em 0 0 0;
+}
+div.sitemap div.linkcontainer div.linkcontainer {
+    padding-left: 20px
+}
+
+div.sitemap div.link {
+    padding:0 0 10px 10px;
+    background:url(images/bullet3.gif) no-repeat;
+    border-bottom: dotted 1px black;
+    margin:0 0 5px 0;
+}
+
+div.sitemap div.link a {
+    background:url(images/bullet4.gif) 0 0 no-repeat;
+    font:normal 11px Tahoma;
+    color:#4F960F;
+    padding:0 0 10px 18px;
+}
+
+
+/* textimage component */
+div.textimage{
+    position:relative;
+}
+
+div.textimage div.image {
+    float: left;
+    /*margin: 0 8px 8px 0;*/
+}
+
+.image_left {
+    float: left;
+}
+.image_right {
+    float: right !important;
+}
+
+/* image component */
+div.image img {
+    /*margin: 0 8px 8px 0;*/
+}
+/* parabase / title */
+img.title {
+    display: block;
+    border: 0;
+    margin-bottom: 8px;
+}
+
+/* download component */
+div.download div.item {
+    clear: both;
+    margin: 0 0 8px 0;
+}
+div.download span.icon {
+    float: left;
+    width: 32px;
+    height: 100%;
+}
+
+/* table component */
+/*div.table table {
+    border-collapse: collapse;
+}*/
+/*
+div.table table td {
+    padding: 4px;
+    border-bottom: 1px solid black;
+    padding-right: 3em;
+}
+div.table table th {
+    padding: 4px;
+    border-bottom: 1px solid black;
+}
+
+div.table table.style1 td{ 
+    font-style:normal;
+    text-align:left;
+    color:#000000;
+    font-size:12;
+    font-family:Arial;
+    font-weight:normal;
+    vertical-align:middle;
+}*/
+
+/* list component */
+div.list ul,
+div.list ol {
+    margin:1em 0 0 0;
+}
+div.list ul li,
+div.list ol li {
+    background:url(images/gl3.gif) bottom repeat-x;
+    margin:0 0 5px 0;
+}
+div.list ul li {
+    list-style-image:url(images/bullet3.gif);
+}
+div.list ul p,
+div.list ol p {
+    padding:0 0 5px 0;
+}
+/* teaser list */
+div.list .teaser-title {
+font-weight:bold;
+}
+div.list .teaser-description {
+}
+/* news list */
+div.list .news-title {
+    font-weight:bold;
+}
+div.list .news-date {
+    font-weight:bold;
+}
+div.list .news-description {
+}
+
+div.signin_subtitle {
+    font-weight: bold; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+
+div.signin_create {
+    padding-top: 40px; 
+    padding-bottom: 10px;
+}
+
+div.signin_option {
+    clear:left;
+    float:left;
+}
+
+div.signin_element {
+    clear:right;
+    float:right;
+    padding-right:150px;
+}
+
+div.signin_element * input{
+    width:140px;
+}
+div.signin_element * .form_leftcol{
+    width:90px;
+}
+
+/* OLD STUFF - kept for reference */
+.column_1 {width:262px}
+.column_1 .space {padding:22px 36px 29px 35px;}
+.column_2 {width:518px}
+.column_3 {width:100%}
+.column_2 .space {padding:20px 37px 15px 35px;}
+.mpct .space {padding:51px 216px 0 35px;}
+
+.gr {
+    color:#E7E7E7 !important;
+    background:url(images/gr_bg.jpg) 0 0 repeat-x #444F55;
+    height:239px
+}
+.gr a {color:#E7E7E7}
+.gr b {color:#FFF;}
+.gr span {font:normal 10px Tahoma; color:#BABABA}
+
+.bl {color:#FFF;}
+.bl b a {font:bold 11px Tahoma; color:#FFF}
+.bl a {font:normal 11px Tahoma; color:#FFF}
+
+.gl_1 {background:url(images/gl1.gif) bottom repeat-x}
+.gl_2 {background:url(images/gl3.gif) bottom repeat-x}
+
+.bl_bg  {background:url(images/bl_bg.jpg) 0 0 repeat-x #13729D}
+
+.bg3    {background:url(images/bg3.jpg) top repeat-x #E3E3E3; color:#474747}
+
+/*-TEXT-*/
+/*
+a       {font:normal 11px Tahoma; color:#4F960F;}
+b a     {font:bold 11px Tahoma; color:#4F960F;}
+a:hover {text-decoration:none;}
+span    {color:#8F8F8F; font-size:10px}
+b       {font:bold 11px Tahoma; color:#0D5FA5;}
+*/
+.nn a   {text-decoration:none;}
+.nn a:hover {text-decoration:underline;}
+
+/*-FORMS-*/
+.input input, .ta{
+    height:18px;
+    padding:2px 0 0 0;
+    margin:0 0 0 0;
+    border:none;
+    background:#8EBFD3;
+    color:#373737;
+}
+.ta {
+    height:111px;
+    overflow:auto;
+    padding:5px 0 0 0;
+    margin:0 0 20px 0;
+}
+.eq_height {height:31px;}
+
+div.element {
+    margin-bottom: 2px;
+}
+
+.form_1 {
+    border-top:1px solid #D9D9D9;
+    background:#F0F0F0;
+    padding:17px 34px 16px 8px;
+}
+.form_1 .link_1 {
+    background:url(images/bullet1.gif) 0 0 no-repeat;
+    padding:0 0 0 10px;
+    color:#14729E;
+    font:normal 10px Tahoma;
+}
+.form_1 input {
+    border:1px solid #A1A1A1;
+    width:180px;
+    height:17px;
+    margin:0 0 13px 0;
+}
+.form_row {
+    clear: both;
+    width: 100%;
+    height: 100%;
+    margin: 10px auto;
+    font-family: Verdana;
+    font-size: 11px;
+    color: #666;
+}
+
+.form_leftcol {
+    padding-left: 9px;
+    float: left;
+    width:110px;
+}
+
+.form_leftcollabel {
+    float: left;
+    color: #000000;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+}
+.form_leftcolmark {
+    float: left;
+    width:10px;
+    color: #CC0000;
+}
+
+.form_rightcol {
+    display: inline;
+    width: 225px;
+}
+
+.form_rightcol_left {
+    float: left;
+    width: 105px;
+}
+
+.form_rightcol_middle {
+    float: left;
+    width:23px;
+}
+
+.form_rightcol_right {
+    float: left;
+    width: 105px;
+}
+
+div.form_captchatimer {
+    float: left;
+    border: 1px solid #CCCCCC;
+}
+
+div.form_captchatimer_bar {
+    float: left;
+    background-color:#CCCCCC;
+    height: 8px;
+}
+
+div.form_captcha_input {
+    float: left;
+    vertical-align: baseline;
+    padding-top: 4px;
+}
+
+div.form_captcha_img {
+    float: left;
+    vertical-align: baseline;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+div.form_captcha_refresh {
+    float: left;
+    padding-top: 4px;
+}
+
+/*-LINKS-*/
+.link_1 {
+    background:url(images/bullet2.gif) 0 0 no-repeat;
+    font:normal 11px Tahoma;
+    color:#FFF;
+    padding:0 0 0 12px;
+}
+
+.link_2 {
+    background:url(images/bullet5.gif) 0 0 no-repeat;
+    font:normal 11px Tahoma;
+    color:#4F960F;
+    padding:0 0 0 12px;
+}
+
+div.tagcloud {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* feedlink component */
+div.feedlink {
+    height:20px;
+    line-height:20px;
+}
+
+a.feedlink-icon {
+    background:transparent url("/libs/collab/components/feedlink/feed.png") 0 3px no-repeat;
+    padding-left:20px;
+}
+
+a.feedlink-text {
+    padding-top:2px;
+    padding-bottom:2px;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+/* comments component */
+.comments-count {
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+.comments-count.replies {
+    font-size:1em;
+}
+
+.comment {
+    margin-top:14px;
+}
+
+.comment-header {
+    font-size:0.75em;
+    height:30px;
+    line-height:30px;
+    background-color:#efefef;
+    border-top:solid 1px #bcbcbc;
+}
+
+.comment-header a {
+    color:#000;
+    text-decoration:none;
+}
+
+.comment-header-avatar {
+    float:left;
+}
+
+.comment-header-avatar img {
+    width:24px;
+    height:24px;
+    margin:2px;
+}
+
+.comment-header-meta {
+    float:left;
+}
+
+.comment-header-time {
+}
+
+.comment-header cite {
+    float:left;
+    margin:0 10px 0 10px;
+}
+
+.comment-header cite a {
+    font-weight:bold;
+}
+
+.comment-body {
+    clear:left;
+    margin-top:5px;
+}
+
+.comment-replies {
+}
+
+.comment-replies.tree {
+    padding-left:20px;
+}
+
+form.comment {
+    margin: 0;
+    padding: 0;
+}
+
+.comment-error {
+    font-weight:bold;
+    color:#f60;
+}
+
+.comment-info{
+    width: 190px;
+    margin-bottom:10px;
+}
+
+.comment-block {
+}
+
+.comment-text-label {
+    font-weight: bold;
+}
+
+input.comment-text{
+    margin: 0 10px 7px 0;
+    padding: 2px;
+    font-size: 95%;
+    color: #333;
+    display: block;
+}
+
+textarea.comment-text {
+    margin: 0;
+    padding: 0;
+    color: #888;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 99%;
+    height: 100px;
+}
+
+.comment-text-label {
+}
+
+.comment-spam {
+    font-size:1.2em;
+    font-weight:bold;
+    padding:2px;
+    background-color:#c00;
+    color:#fff
+}
+
+/* ratings component */
+.ratings .empty {
+    background-image:url("../../../libs/collab/components/ratings/star_empty.png");
+}
+
+.ratings .full {
+    background-image:url("../../../libs/collab/components/ratings/star_full.png");
+}
+
+.ratings-bar {
+    background-repeat:repeat-x;
+    height:16px;
+}
+
+.ratings-stars {
+    width:80px;
+    height:16px;
+}
+
+.ratings-star {
+    float:left;
+    background-repeat:no-repeat;
+    height:16px;
+    width:16px;
+}
+
+.comments-count .ratings-bar.empty {
+    width:80px;
+}
+
+.comments-count .ratings-bar.full {
+    width:0;
+}
+
+.comment-header .ratings-stars {
+    float:right;
+    height:30px;
+    padding-top:6px;
+    margin-right:5px;
+}
+
+.comment-header {
+    clear:both;
+}
+
+.comment-header .ratings-bar.empty {
+    width:80px;
+}
+
+/* version diff */
+ins.textAdded {
+    color: #c00;
+}
+del.textRemoved {
+    color: #c00;
+}
+div.imageRemoved {
+    border: 1px solid #c00;
+}
+div.imageAdded {
+    border: 1px solid #c00;
+}
+img.imageChanged {
+    border: 1px solid #c00;
+}
+img.imageAdded {
+    border: 1px solid #c00;
+}
+img.imageRemoved {
+    border: 1px solid #c00;
+}
+
+/* for external CSS for text image */
+.redText {
+    font-family: Arial; 
+    font-size: 13px;
+    font-weight: bold; 
+    color: #CC0000; 
+    text-decoration: none; 
+}
+    
+.greenText {
+    font-family: Arial; 
+    font-size: 13px;
+    font-weight: bold; 
+    color: #009900; 
+    text-decoration: none; 
+}
+    
+.blueText {
+    font-family: Arial; 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #0000FF; 
+    text-decoration: none; 
+}
+
+.whiteText {
+    font-family: Arial; 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #FFFFFF; 
+    text-decoration: none; 
+}
+
+.blackText {
+    font-family: Verdana; 
+    font-size: 11px; 
+    font-weight: bold; 
+    color: #000000; 
+    text-decoration: none; 
+}
+/*div.cq-colctrl-lt6 {margin:-18px 0pt; }*/
+
+.imindefPars .table table {
+    border-collapse: collapse;
+    border-style:inset;
+    border-width: 1px 1px 1px 1px;
+    border-spacing: 2px;
+    border-style: outset outset outset outset;
+    border-color: gray gray gray gray;
+}
+
+.imindefPars .table th {
+    border-width: 2px 2px 2px 2px;
+    padding: 1px 1px 1px 1px;
+    border-style: inset inset inset inset;
+    border-color: gray gray gray gray;
+    -moz-border-radius: 0px 0px 0px 0px;
+    background-color:#B3CADC;
+    text-align:left;
+    color:#000000;
+    font-size:12;
+    font-family:Arial;
+    font-weight:bold;
+    vertical-align:middle;
+    padding: 5px;
+    font-size: 12px;
+}
+.imindefPars .table td {
+    border-width: 2px 2px 2px 2px;
+    padding: 1px 1px 1px 1px;
+    border-style: inset inset inset inset;
+    border-color: gray gray gray gray;
+    -moz-border-radius: 0px 0px 0px 0px;
+    font-style:normal;
+    text-align:left;
+    color:#000000;
+    font-size:12;
+    font-family:Arial;
+    font-weight:normal;
+    vertical-align:middle;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.imindefPars .table tr.colourbg { 
+    background-color: #FFFFCC;
+}
+
+.imindefPars .table td.colourbg { 
+    background-color: #FFFFCC;
+}
+
+.Single  .imindefParstextimageText{
+    color: #666666;
+    font-family: Verdana;
+    font-size: 11px;
+} 
+
+.imageGalleryTitle {
+    color:#CC0000;
+    font-family:Arial;              
+    font-size:15px;
+    font-weight:bold;
+}
+.imageGallery small{
+    font-family:Verdana; 
+    font-size:11px; 
+    color:#666666; 
+}
+
+.imageGallery a:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.imageGallery a:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imageGallery a:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.imageGallery a:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+.contentEmbed a:link {  
+    color:#0000FF; 
+    text-decoration:underline; 
+} 
+.contentEmbed a:active {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.contentEmbed a:hover {  
+    color:#CC0000; 
+    text-decoration:none; 
+} 
+.contentEmbed a:visited {  
+    color:#663399; 
+    text-decoration:underline; 
+}
+
+.contentEmbedText {  
+    font-family:Arial; 
+    font-size:12px; 
+    color:#000000; 
+    font-style:normal; 
+    font-weight:normal; 
+} 
+
+p {
+margin-top: 0.1em;
+margin-bottom: 0.8em;
+}
+p + p {
+margin-top: 0.1em;
+margin-bottom: 0.8em;
+}
+
+div.section text parbase {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+div.text {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+
+/*2% 1% 47% 1% 47%|3*/
+.cq-colctrl-lt6 {margin:0px; }
+.cq-colctrl-lt6-c0 { width: 2%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt6-c1 { width: 1%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt6-c2 { width: 47%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt6-c3 { width: 1%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt6-c4 { width: 47%; vertical-align: top; }
+
+/*2% 48% 48%|3*/
+.cq-colctrl-lt7 {margin:0px; }
+.cq-colctrl-lt7-c0 { width: 2%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt7-c1 { width: 48%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt7-c2 { width: 48%; vertical-align: top; }
+
+/*48% 48%|3 */
+.cq-colctrl-lt8 {margin:0px; }
+.cq-colctrl-lt8-c0 { width: 48%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt8-c1 { width: 48%;  vertical-align: top;}
+
+/*48% 1% 48%|3 */
+.cq-colctrl-lt9 {margin:0px; }
+.cq-colctrl-lt9-c0 { width: 48%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt9-c1 { width: 1%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt9-c2 { width: 48%;  vertical-align: top;}
+
+/*2% 98%|0  */
+.cq-colctrl-lt10{margin:0px; }
+.cq-colctrl-lt10-c0 { width: 2%; vertical-align: top;}
+.cq-colctrl-lt10-c1 { width: 98%; vertical-align: top;}
+
+/*2% 97% 1%|0 */
+.cq-colctrl-lt11 {margin:0px; }
+.cq-colctrl-lt11-c0 { width: 2%; vertical-align: top;}
+.cq-colctrl-lt11-c1 { width: 97%; vertical-align: top;}
+.cq-colctrl-lt11-c2 { width: 1%; vertical-align: top;}
+
+/*30% 70%|0 */
+.cq-colctrl-lt12 {margin:0px; }
+.cq-colctrl-lt12-c0 { width: 30%; vertical-align: top;}
+.cq-colctrl-lt12-c1 { width: 70%; vertical-align: top;}
+
+/*20% 70% 10%|0*/
+.cq-colctrl-lt13{margin:0px; }
+.cq-colctrl-lt13-c0 { width: 20%; vertical-align: top;}
+.cq-colctrl-lt13-c1 { width: 70%; vertical-align: top;}
+.cq-colctrl-lt13-c2 { width: 10%; vertical-align: top;}
+
+/*120px 300px|0 */
+.cq-colctrl-lt14 {margin:0px; }
+.cq-colctrl-lt14-c0 { width: 120px; vertical-align: top;}
+.cq-colctrl-lt14-c1 { width: 300px; vertical-align: top;}
+
+/*99% 1%|1 */
+.cq-colctrl-lt15 {margin:0px; }
+.cq-colctrl-lt15-c0 { width: 98%; vertical-align: top; padding-right: 1px;}
+.cq-colctrl-lt15-c1 { width: 1%; vertical-align: top;}
+
+/*2% 96% 2%|0 */
+.cq-colctrl-lt16 {margin:0px; }
+.cq-colctrl-lt16-c0 { width: 2%; vertical-align: top;}
+.cq-colctrl-lt16-c1 { width: 96%; vertical-align: top;}
+.cq-colctrl-lt16-c2 { width: 2%; vertical-align: top;}
+
+/*50% 50%|3*/
+/* TAKE NOTE */
+.cq-colctrl-lt17 {
+    /*margin:-18px 0px; */
+    margin:0px;
+    /*border:2px solid red;*/
+}
+.cq-colctrl-lt17-c0 { width: 49%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt17-c1 { width: 49%; vertical-align: top;}
+
+/*50px 350px|5 */
+.cq-colctrl-lt18 {margin:0px; }
+.cq-colctrl-lt18-c0 { width: 50px; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt18-c1 { width: 350px; vertical-align: top;}
+
+/*25% 25% 25% 25%|3 */
+.cq-colctrl-lt19 {margin:0px;}
+.cq-colctrl-lt19-c0 { width: 24%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt19-c1 { width: 24%; height: 100%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt19-c2 { width: 24%; height: 100%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt19-c3 { width: 24%; vertical-align: top;}
+
+/*33% 33% 33%|3 */
+.cq-colctrl-lt20 {margin:0px; }
+.cq-colctrl-lt20-c0 { width: 32%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt20-c1 { width: 32%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt20-c2 { width: 33%; vertical-align: top;}
+
+/*60% 40%|3 */
+.cq-colctrl-lt21 {margin:0px; }
+.cq-colctrl-lt21-c0 { width: 59%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt21-c1 { width: 39%; vertical-align: top;}
+
+/*440px 155px 155px|3 */
+.cq-colctrl-lt22 {margin:0px; }
+.cq-colctrl-lt22-c0 { width: 440px; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt22-c1 { width: 155px; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt22-c2 { width: 155px; vertical-align: top;}
+
+/*75% 25%|3 */
+.cq-colctrl-lt23 {
+    /* margin:-18px 0pt; */
+    margin:0px;
+}
+.cq-colctrl-lt23-c0 { width: 74%; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt23-c1 { width: 24%; vertical-align:top; }
+
+/*20% 20% 20% 20% 20%|10 */
+.cq-colctrl-lt24 {margin:0px; }
+.cq-colctrl-lt24-c0 { width: 19%; vertical-align: top;}
+.cq-colctrl-lt24-c1 { width: 19%; vertical-align: top; margin-right:10px}
+.cq-colctrl-lt24-c2 { width: 19%; vertical-align: top;}
+.cq-colctrl-lt24-c3 { width: 19%; vertical-align: top;}
+.cq-colctrl-lt24-c4 { width: 19%; vertical-align: top;}
+
+/*30% 70%|5 */
+.cq-colctrl-lt25 {margin:0px; }
+.cq-colctrl-lt25-c0 { width: 29%; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt25-c1 { width: 69%; vertical-align: top;}
+
+/*70% 30%|10 */
+.cq-colctrl-lt26{margin:0px; }
+.cq-colctrl-lt26-c0 { width: 69%; vertical-align: top; padding-right: 10px;}
+.cq-colctrl-lt26-c1 { width: 29%; vertical-align: top;}
+
+/*25% 25% 25% 25%|5 */
+.cq-colctrl-lt27{margin:0px; }
+.cq-colctrl-lt27-c0 { width: 24%; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt27-c1 { width: 24%; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt27-c2 { width: 24%; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt27-c3 { width: 24%; vertical-align: top;}
+
+/*20% 80%|10 */               
+.cq-colctrl-lt28 {margin:0px; }
+.cq-colctrl-lt28-c0 { width: 19%; vertical-align: top; padding-right: 10px;}
+.cq-colctrl-lt28-c1 { width: 79%; vertical-align: top; }
+
+/*16% 16% 16% 16% 16% 16%|0  */             
+.cq-colctrl-lt29 {margin:0px; }
+.cq-colctrl-lt29-c0 { width: 16%; vertical-align: top;}
+.cq-colctrl-lt29-c1 { width: 16%; vertical-align: top;}
+.cq-colctrl-lt29-c2 { width: 16%; vertical-align: top;}
+.cq-colctrl-lt29-c3 { width: 16%; vertical-align: top;}
+.cq-colctrl-lt29-c4 { width: 16%; vertical-align: top;}                    
+.cq-colctrl-lt29-c5 { width: 16%; vertical-align: top;}                    
+
+/*150px 150px 150px|5  */             
+.cq-colctrl-lt30 {margin:0px; }
+.cq-colctrl-lt30-c0 { width: 150px; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt30-c1 { width: 150px; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt30-c2 { width: 150px; vertical-align: top;}
+
+/*165px 5px 250px|2      */             
+/*.cq-colctrl-lt31{margin:0px; }
+.cq-colctrl-lt31-c0 { width: 165px; padding-right: 2px;}
+.cq-colctrl-lt31-c1 { width: 5px; padding-right: 2px;}
+.cq-colctrl-lt31-c2 { width: 250px; } */
+
+.cq-colctrl-lt31{margin:0px; }
+.cq-colctrl-lt31-c0 { width: 66%; vertical-align: top; padding-right: 2px;}
+.cq-colctrl-lt31-c1 { width: 3%; vertical-align: top; padding-right: 2px;}
+.cq-colctrl-lt31-c2 { width: 30%; vertical-align: top;}
+
+//*30px 5px 275px 300px|2 */
+.cq-colctrl-lt32 {margin:0px; }
+.cq-colctrl-lt32-c0 { width: 130x; vertical-align: top; padding-right: 2px;}
+.cq-colctrl-lt32-c1 { width: 5px; vertical-align: top; padding-right: 2px;}
+.cq-colctrl-lt32-c2 { width: 275px; vertical-align: top; padding-right: 2px;}
+.cq-colctrl-lt32-c3 { width: 300px; vertical-align: top;}
+
+/*60% 40%|10 */
+.cq-colctrl-lt33 {margin:0px; }
+.cq-colctrl-lt33-c0 { width: 59%; vertical-align: top; padding-right: 10px;}
+.cq-colctrl-lt33-c1 { width: 39%; vertical-align: top;}
+
+/*120px 120px 120px 120px 250px|5     */               
+.cq-colctrl-lt34 {margin:0px; }
+.cq-colctrl-lt34-c0 { width: 120px; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt34-c1 { width: 120px; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt34-c2 { width: 120px; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt34-c3 { width: 120px; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt34-c4 { width: 250px; vertical-align: top;}
+
+/*75% 25%|10 */  
+.cq-colctrl-lt35 {margin:0px; }
+.cq-colctrl-lt35-c0 { width: 74%; vertical-align: top; padding-right: 10px;}
+.cq-colctrl-lt35-c1 { width: 24%; vertical-align: top;}
+
+/*50% 50%|10 */
+.cq-colctrl-lt36 {margin:0px; }
+.cq-colctrl-lt36-c0 { width: 47%; vertical-align: top; padding-right: 10px;}
+.cq-colctrl-lt36-c1 { width: 47%; vertical-align: top;}
+
+/*80% 20%|10 */
+.cq-colctrl-lt37 {margin:0px; }
+.cq-colctrl-lt37-c0 { width: 79%; vertical-align: top; padding-right: 10px;}
+.cq-colctrl-lt37-c1 { width: 19%; vertical-align: top;}
+
+/*175px 335px 230px|3 */
+.cq-colctrl-lt38 {margin:0px; }
+.cq-colctrl-lt38-c0 { width: 175px; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt38-c1 { width: 335px; vertical-align: top; padding-right: 3px;}
+.cq-colctrl-lt38-c2 { width: 230px; vertical-align: top;}
+
+/*13% 34% 6% 13% 34%|0 */
+.cq-colctrl-lt39 {margin:0px; }
+.cq-colctrl-lt39-c0 { width: 13%; vertical-align: top;}
+.cq-colctrl-lt39-c1 { width: 34%; vertical-align: top;}
+.cq-colctrl-lt39-c2 { width: 6%; vertical-align: top;}
+.cq-colctrl-lt39-c3 { width: 13%; vertical-align: top;}
+.cq-colctrl-lt39-c4 { width: 34%; vertical-align: top;}
+
+/*13% 87%|0    */              
+.cq-colctrl-lt40 {margin:0px; }
+.cq-colctrl-lt40-c0 { width: 13%; vertical-align: top;}
+.cq-colctrl-lt40-c1 { width: 87%; vertical-align: top;}
+
+/*25% 25% 25% 25%|5         */      
+.cq-colctrl-lt41{margin:0px; }
+.cq-colctrl-lt41-c0 { width: 24%; vertical-align: top; padding-right: 2px;}
+.cq-colctrl-lt41-c1 { width: 24%; vertical-align: top; padding-right: 2px;}
+.cq-colctrl-lt41-c2 { width: 24%; vertical-align: top; padding-right: 2px;}
+.cq-colctrl-lt41-c3 { width: 24%; vertical-align: top;}
+
+/*25% 40% 35%|5*/
+.cq-colctrl-lt42 {margin:0px; }
+.cq-colctrl-lt42-c0 { width: 24%; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt42-c1 { width: 39%; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt42-c2 { width: 34%; vertical-align: top;}
+
+/*10% 70% 20%|5*/                      
+.cq-colctrl-lt43{margin:0px; }
+.cq-colctrl-lt43-c0 { width: 9%; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt43-c1 { width: 69%; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt43-c2 { width: 19%; }
+
+/*10% 55% 35%|5  */
+.cq-colctrl-lt44 {margin:0px; }
+.cq-colctrl-lt44-c0 { width: 9%; vertical-align: top; padding-right: 5px;}
+.cq-colctrl-lt44-c1 { width: 54%; vertical-align: top;padding-right: 5px;}
+.cq-colctrl-lt44-c2 { width: 34%; vertical-align: top;}
+
+/*33% 33% 33%|10       */             
+.cq-colctrl-lt45 {margin:0px; }
+.cq-colctrl-lt45-c0 { width: 32%; vertical-align: top; padding-right: 10px;}
+.cq-colctrl-lt45-c1 { width: 33%; vertical-align: top; padding-right: 10px;}
+.cq-colctrl-lt45-c2 { width: 32%; vertical-align: top;}
+
+/*220px 60px 480px|0 */
+.cq-colctrl-lt46 {margin:0px; }
+.cq-colctrl-lt46-c0 { width: 220px; vertical-align: top;}
+.cq-colctrl-lt46-c1 { width: 60px; vertical-align: top;}
+.cq-colctrl-lt46-c2 { width: 480px; vertical-align: top;}
+
+/*32% 32% 32%|10 */
+.cq-colctrl-lt47{margin:0px; }
+.cq-colctrl-lt47-c0 { width: 32%; vertical-align: top;}
+.cq-colctrl-lt47-c1 { width: 32%; vertical-align: top;}
+.cq-colctrl-lt47-c2 { width: 32%; vertical-align: top;}
+
+/*50% 25% 25%|20 */
+.cq-colctrl-lt48 {margin:0px; }
+.cq-colctrl-lt48-c0 { width: 49%; vertical-align: top; padding-right: 20px}
+.cq-colctrl-lt48-c1 { width: 24%; vertical-align: top; padding-right: 20px}
+.cq-colctrl-lt48-c2 { width: 24%; vertical-align: top;}
+
+/*10% 80% 10%|0 */
+.cq-colctrl-lt49 {margin:0px; }
+.cq-colctrl-lt49-c0 { width: 10%; vertical-align: top;}
+.cq-colctrl-lt49-c1 { width: 80%; vertical-align: top;}
+.cq-colctrl-lt49-c2 { width: 10%; vertical-align: top;}
+
+/*20% 80%|0 */
+.cq-colctrl-lt50 {margin:0px; }
+.cq-colctrl-lt50-c0 { width: 20%; vertical-align: top;}
+.cq-colctrl-lt50-c1 { width: 80%; vertical-align: top;}
+
+/*40% 60%|3 */
+.cq-colctrl-lt51 {margin:0px; }
+.cq-colctrl-lt51-c0 { width: 40%; vertical-align: top; padding-right: 2px}
+.cq-colctrl-lt51-c1 { width: 59%; vertical-align: top;}
