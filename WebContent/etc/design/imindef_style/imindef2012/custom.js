@@ -32,13 +32,3 @@ $('#tab_official_news-3 .officialslides').find(".activities-desc").dotdotdot({
 });	
 $('#tab_official_news-2').attr('style', 'display: none;');
 $('#tab_official_news-3').attr('style', 'display: none;');
-$(document).on('click','#tab_official_news-1 .officialslides a',function(){
-	var title = $(this).data('title');
-	var date = $(this).data('date');
-	window.location.href="details.html?title="+title+"&date="+date;
-});
-$(document).on('click','#tab_official_news-2 .officialslides a',function(){
-	var title = $(this).data('title');
-	var date = $(this).data('date');
-	window.location.href="details.html?title="+title+"&date="+date;
-});	
